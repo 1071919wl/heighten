@@ -22,3 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+<!-- // u8 = { email: 'test8@gmail.com', password: 123456 } -->

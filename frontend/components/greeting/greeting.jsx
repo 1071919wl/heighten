@@ -27,4 +27,3 @@ const Greeting = ({ currentUser, logout }) => {
 
 export default Greeting;
 
-// u8 = { email: 'test8@gmail.com', password: 123456 }
