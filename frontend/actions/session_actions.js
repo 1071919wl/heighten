@@ -41,7 +41,7 @@ export const signup = (user) => dispatch => {
             .then(user => {
                 return (dispatch(receiveCurrentUser(user)))
             }, err => {
-                return (dispatch(receiveErrors(err.responseJSON)))     //! test what this code is doing  
+                return (dispatch(receiveErrors(err.responseJSON)))     //! test this code is doing  
             } 
     )
 };
@@ -58,7 +58,7 @@ export const login = user => dispatch => (
     .then(user => {
         return (dispatch(receiveCurrentUser(user)))
     }, err => {
-        return (dispatch(receiveErrors(err.responseJSON)))    //! test what this code is doing
+        return (dispatch(receiveErrors(err.responseJSON)))    //! test this code is doing
     }
     )
 );

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import SignUpForm from './signup_form';
+
+
 class SessionForm extends React.Component{
     constructor(props){
         super(props);
@@ -20,7 +23,6 @@ class SessionForm extends React.Component{
                 [field]: e.target.value
             });
     };
-
 
     handleSubmit(e) {
         e.preventDefault();
@@ -48,18 +50,21 @@ class SessionForm extends React.Component{
 
 
     render(){
+        const signup = this.props.signupForm;
         return (
             <div className='login_form_container'>
+
                 {this.renderErrors()}
+
                 <form onSubmit={this.handleSubmit} className='login_form_box'>
-                    <h1>{`${this.props.formType === "login"
+                    <h1>Registered Customers
+                        {/* {`${this.props.formType === "login"
                         ? "Registered Customers"
-                        : "Create New Customer Account"}`}
+                        : "Create New Customer Account"}`} */}
                     </h1>
-                    <p>{`${this.props.formType === "login"
-                        ? "If you have an account, sign in with your email address."
-                        : '' }`}
-                    </p>
+
+                    <p>If you have an account, sign in with your email address.</p>
+
                     <label>Email:
                         <input type="text" 
                         value={this.state.email}
@@ -73,14 +78,19 @@ class SessionForm extends React.Component{
                             onChange={this.handleInput('password')}
                         />
                     </label>
+
                     <input type="submit" value={`${this.props.formType === "login" ? "Sign In" : "Create An Account"}`} />
+
                 </form>
+                {this.props.formType === "login"
+                    ? <Link to='/signup'>Create an account</Link>
+                    : <Link to='/login' >Sign In</Link>
+                }
+                
                 <div>
-                    {this.props.formType === 'login' 
-                        ? <button type='submit' onClick={this.handleDemo}>Demo User</button> 
-                        : null 
-                    }
+                    <button type='submit' onClick={this.handleDemo}>Demo User</button>
                 </div>
+
             </div>
         )
     }

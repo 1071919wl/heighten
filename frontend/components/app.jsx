@@ -6,25 +6,21 @@ import SignupFormContainer from './session_form/signup_form_container';
 import { AuthRoute } from '../util/route_util';
 
 
-
-
-
 const App = () => (
     <div>
         <div className='info'>
             <div className='github'>
-                <span><a href="https://www.linkedin.com/in/william-leung-60589a73/"><img src='/icons/linkedin.png' alt="pic" /></a> </span>
-                <span><a href="#"><img src='/icons/email.png' alt="pic" /></a> </span>
-                <span><a href="https://github.com/1071919wl"><img src='/icons/github.png' alt="pic" /></a> </span>
-                <span><a href="https://github.com/1071919wl/heighten_fullstack"><img src='/icons/fork.png' alt="pic" /></a> </span>     
+                <span><a href="https://www.linkedin.com/in/william-leung-60589a73/"><img src={window.linkedinURL} /></a> </span>
+                <span><a href="#"><img src={window.emailURL} /></a> </span>
+                <span><a href="https://github.com/1071919wl"><img src={window.githubURL} /></a> </span>
+                <span><a href="https://github.com/1071919wl/heighten_fullstack"><img src={window.forkURL} /></a> </span>     
             </div>
             <div className='info_spacing'></div>
             <div className='cart'>
                 <GreetingContainer className='test'/>
-                <span><button type='submit'><img src='/icons/cart.png' alt="pic" /></button></span>
+                <span><button type='submit'><img src={window.cartURL} /></button></span>
             </div>
         </div>
-
 
         <header>
             <Link to="/" className="header-link">
