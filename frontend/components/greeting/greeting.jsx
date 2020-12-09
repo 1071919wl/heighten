@@ -2,20 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout }) => {
+
     const sessionLinks = () => {
         return (
-            <nav>
-                <Link to='/login'>Sign In</Link>
+            <div>
+                <Link to='/login' className='infoSignin'>Sign In</Link>
                 <br/>
-                <Link to='/signup'>Create an account</Link>
-            </nav>
+                {/* <Link to='/signup'>Create an account</Link> */}
+            </div>
         )
     };
 
     const personalGreeting = () => {
         return (
-            <div>
-                <h2>Welcome back!</h2>
+            <div className="header-group">
                 <button type='submit' onClick={logout}>Log Out</button>
             </div>
         )

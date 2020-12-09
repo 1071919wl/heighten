@@ -14,78 +14,104 @@
  *= require_self
  */
 
+.info {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 10px;
+    background-color: rgb(240, 240, 240);
+    padding: 5px;
+
+}
+
+.cart{
+    display: flex;
+}
+
+.cart button{
+    margin-left: 25px;
+}
+
+.github{
+    display: flex;
+}
+
+.github span{
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.github img{
+    height: 20px;
+    width: 20px;
+}
+
+
+.signin{
+    font-size: 13px;
+    margin-right: 20px;
+    position: relative;
+    bottom: 6px;
+    
+}
+
+.infoSignin {
+  font-size: 14px;
+  position: relative;
+  top: 4px;
+}
+
+.info_spacing{
+    margin-left: 230px;
+    margin-right: 230px;
+}
+
 .header-link{
     color: rgb(255, 217, 0);
     font-size: 36px;
     font-weight: bolder;
-    
-    background-color:greenyellow
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: space-evenly; *//*! might need above with search and nav */
+    padding: 30px;
+    background-color: rgb(233, 245, 250);
+    border-bottom: 2px solid rgb(240, 240, 240);
+
+}
+
+.header-group{
+    background-color: pink;
+}
+
+
+
+/*! user signup/login section */
+.login_section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    background-color: lightgray;
+
+}
+
+.login_form_container{
+    outline: 1px solid black;
+}
+
+
+.login_form_box{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /*! PHASE 0: Reset */
- html, body, header, nav, h1, a,
- ul, li, strong, main, button, i,
- section, img, div, h2, p, form,
- fieldset, label, input, textarea,
- span, article, footer, time, small {
-   margin: 0;
-   padding: 0;
-   border: 0;
-   outline: 0;
-   font: inherit;
-   color: inherit;
-   text-align: inherit;
-   text-decoration: inherit;
-   vertical-align: inherit;
-   box-sizing: inherit;
-   background: transparent;
- }
- 
- ul {
-   list-style: none;
- }
- 
- img {
-   display: block;
-   width: 100%;
-   height: auto;
- }
- 
- input[type="password"],
- input[type="email"],
- input[type="text"],
- input[type="submit"],
- textarea,
- button {
-   /*
-   Get rid of native styling. Read more here:
-   http://css-tricks.com/almanac/properties/a/appearance/
-   */
-   -webkit-appearance: none;
-   -moz-appearance: none;
- }
- 
- button,
- input[type="submit"] {
-   cursor: pointer;
- }
- /*! PHASE 0: Reset */
 
 

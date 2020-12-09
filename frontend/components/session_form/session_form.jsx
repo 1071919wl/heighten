@@ -47,13 +47,13 @@ class SessionForm extends React.Component{
 
     render(){
         return (
-            <div>
-                <h1>{`${this.props.formType === "login" 
-                    ? "Customer Login" 
-                    : "Create New Customer Account"}`}
-                </h1>
+            <div className='login_form_container'>
+                    <h1>{`${this.props.formType === "login"
+                        ? "Registered Customers"
+                        : "Create New Customer Account"}`}
+                    </h1>
                 {this.renderErrors()}
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className='login_form_box'>
                     <label>Email:
                         <input type="text" 
                         value={this.state.email}
