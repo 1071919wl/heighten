@@ -62,15 +62,14 @@ class SessionForm extends React.Component{
                         <hr/>
                         <form onSubmit={this.handleSubmit} className='login_form_box'>
                             <p>If you have an account, sign in with your email address.</p>
-
-                            <label>Email:
+                            <label className='email_login'>Email<span className='asterisk'>*</span>
                                 <input type="text" 
                                 value={this.state.email}
                                 onChange={this.handleInput('email')}
                                 />
                             </label>
 
-                            <label>Password:
+                            <label className='password_login'>Password<span className='asterisk'>*</span> 
                                 <input type="password"
                                     value={this.state.password}
                                     onChange={this.handleInput('password')}
@@ -78,7 +77,7 @@ class SessionForm extends React.Component{
                             </label>
 
                             <button type="submit" value="Sign In" className='signinButton'>Sign In</button>
-                            <span className='requried_field'>*Required Field</span>
+                            <span className='requried_field'>* Required Field</span>
                         </form>
                     </div>
 

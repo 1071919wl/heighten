@@ -150,27 +150,50 @@ header {
     max-width: 450px;
     padding-right: 100px;
 
-
-}
-
-
-
-.login_form_box input{
-    outline: 2px solid black;
-    border: 1px solid black;
-    
 }
 
 .userOption{
-
     display: flex;
     flex-direction: column;
     justify-content:space-between;
 
     max-width: 450px;
     bottom: 50px;
-
 }
+
+
+.login_form_box input{
+    /* outline: 2px solid black;
+    border: 1px solid black; */
+    
+}
+
+
+.email_login {
+    font-size: 14px;
+    outline: 1px solid lightgray;
+    color: black;
+    margin-top: 25px;
+    padding: 12px;
+}
+
+.password_login {
+    font-size: 14px;
+    outline: 1px solid lightgray;
+    color: black;
+    margin-top: 25px;
+    padding: 12px;
+}
+
+.asterisk{
+    font-size: 11px;
+    color: red;
+    padding-right: 10px;
+    align-content: row;
+}
+
+
+        /*? buttons */
 
 .demoButton{
     font-size:16px;
@@ -182,18 +205,28 @@ header {
     margin-top: 30px;
     margin-bottom: 10px;
     padding: 10px;
+}
 
+.demoButton:hover {
+    background-color: rgb(248, 207, 24);
+    outline: 3px solid rgb(248, 207, 24);
 }
 
 .createButton{
-    outline: 2.5px solid rgb(4, 4, 179);
-    color: rgb(4, 4, 179);
+    outline: 2.5px solid rgba(4, 4, 179, 0.877);
+    color: rgbrgba(4, 4, 179, 0.877);
     max-width: 130px;
     text-align: center;
     padding: 7px;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 20px;
+    
+}
+
+.createButton:hover {
+    background-color: rgba(4, 4, 179, 0.877);
+    color: white;
 }
 
 .signinButton{
@@ -204,14 +237,20 @@ header {
     padding: 7px;
     padding-top: 8px;
     padding-bottom: 8px;
-    margin-top: 20px;
+    margin-top: 45px;
     margin-bottom: 10px;
     background-color:rgb(255, 220, 61);
 }
 
+.signinButton:hover {
+    background-color: rgb(248, 207, 24);
+    outline: 3px solid rgb(248, 207, 24);
+}
+
+
 .requried_field{
     font-size: 12px;
     color: rgb(255, 98, 59);
-    margin-top: -5px;
+    margin-top: -3px;
 }
 
