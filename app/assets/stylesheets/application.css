@@ -78,7 +78,7 @@ header {
     /* justify-content: space-evenly; *//*! might need above with search and nav */
     padding: 30px;
     background-color: rgb(233, 245, 250);
-    border-bottom: 2px solid rgb(240, 240, 240);
+    border-bottom: 3px solid rgb(240, 240, 240);
 
 }
 
@@ -98,6 +98,7 @@ header {
 }
 
 .login_form_container{
+    display: flex;
     outline: 1px solid black;
 }
 
@@ -111,7 +112,9 @@ header {
 }
 
 
-
+.login_form_box input{
+    outline: 2px sold black;
+}
 
 
 

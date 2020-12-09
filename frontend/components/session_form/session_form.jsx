@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -45,15 +46,20 @@ class SessionForm extends React.Component{
         this.props.processForm(user);
     }
 
+
     render(){
         return (
             <div className='login_form_container'>
+                {this.renderErrors()}
+                <form onSubmit={this.handleSubmit} className='login_form_box'>
                     <h1>{`${this.props.formType === "login"
                         ? "Registered Customers"
                         : "Create New Customer Account"}`}
                     </h1>
-                {this.renderErrors()}
-                <form onSubmit={this.handleSubmit} className='login_form_box'>
+                    <p>{`${this.props.formType === "login"
+                        ? "If you have an account, sign in with your email address."
+                        : '' }`}
+                    </p>
                     <label>Email:
                         <input type="text" 
                         value={this.state.email}
@@ -69,10 +75,12 @@ class SessionForm extends React.Component{
                     </label>
                     <input type="submit" value={`${this.props.formType === "login" ? "Sign In" : "Create An Account"}`} />
                 </form>
-                {this.props.formType === 'login' 
-                    ? <button type='submit' onClick={this.handleDemo}>Demo User</button> 
-                    : null 
-                }
+                <div>
+                    {this.props.formType === 'login' 
+                        ? <button type='submit' onClick={this.handleDemo}>Demo User</button> 
+                        : null 
+                    }
+                </div>
             </div>
         )
     }
