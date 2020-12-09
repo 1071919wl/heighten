@@ -50,47 +50,54 @@ class SessionForm extends React.Component{
 
 
     render(){
-        const signup = this.props.signupForm;
         return (
-            <div className='login_form_container'>
-
-                {this.renderErrors()}
-
-                <form onSubmit={this.handleSubmit} className='login_form_box'>
-                    <h1>Registered Customers
-                        {/* {`${this.props.formType === "login"
-                        ? "Registered Customers"
-                        : "Create New Customer Account"}`} */}
-                    </h1>
-
-                    <p>If you have an account, sign in with your email address.</p>
-
-                    <label>Email:
-                        <input type="text" 
-                        value={this.state.email}
-                        onChange={this.handleInput('email')}
-                        />
-                    </label>
-
-                    <label>Password:
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput('password')}
-                        />
-                    </label>
-
-                    <input type="submit" value={`${this.props.formType === "login" ? "Sign In" : "Create An Account"}`} />
-
-                </form>
-                {this.props.formType === "login"
-                    ? <Link to='/signup'>Create an account</Link>
-                    : <Link to='/login' >Sign In</Link>
-                }
+            <div>
+                <span className='login_title'>Customer Login</span>
                 
-                <div>
-                    <button type='submit' onClick={this.handleDemo}>Demo User</button>
-                </div>
+                <div className='login_form_container'>
+                    {this.renderErrors()}
 
+                    <div className='left_login'>
+                        <h2 className='sub_title'>Registered Customers</h2>
+                        <hr/>
+                        <form onSubmit={this.handleSubmit} className='login_form_box'>
+                            <p>If you have an account, sign in with your email address.</p>
+
+                            <label>Email:
+                                <input type="text" 
+                                value={this.state.email}
+                                onChange={this.handleInput('email')}
+                                />
+                            </label>
+
+                            <label>Password:
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.handleInput('password')}
+                                />
+                            </label>
+
+                            <button type="submit" value="Sign In" className='signinButton'>Sign In</button>
+                            <span className='requried_field'>*Required Field</span>
+                        </form>
+                    </div>
+
+                    <div className='spacer_login'></div>
+                    
+                    <div className='right_login'>
+                        <h1 className='sub_title'>New Customers</h1>
+                        <hr />
+                        <div className='userOption'>
+                            <p>Creating an account has many benefits: check out faster, keep more than one address, track orders and more.</p> 
+                            {this.props.formType === "login"
+                                ? <Link to='/signup' className='createButton'>Create an account</Link>
+                                : <Link to='/login' >Sign In</Link> 
+                            }
+                        
+                            <button type='submit' onClick={this.handleDemo} className='demoButton'>Demo User</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

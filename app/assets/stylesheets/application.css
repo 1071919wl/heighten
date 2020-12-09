@@ -88,33 +88,130 @@ header {
 
 
 
-/*! user signup/login section */
-.login_section {
-    display: flex;
+/*! user login section */
+.login_signup {
+    /* display: flex;
     justify-content: space-evenly;
     margin-top: 100px;
-    background-color: lightgray;
+    background-color: lightgray; */
+}
 
+.login_title{
+    font-size: 26px;
+    margin-left: 35px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display:flex;
+    justify-content:space-between;
 }
 
 .login_form_container{
     display: flex;
-    outline: 1px solid black;
+    justify-content: space-evenly;
+    
+}
+
+.sub_title {
+    /* border-bottom: 2px solid lightgray; */
+    font-size: 19px;
+}
+
+.login_form_container hr {
+    display: block;
+    border-top: 1px solid lightgray;
+    top: 4px;
+    margin: 1em 0;
+
+}
+
+
+.left_login{
+    display: flex;
+    flex-direction: column;
+}
+
+.right_login {
+    display: flex;
+    flex-direction: column;
+    margin-right: 150px;
+
+}
+
+.spacer_login {
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
 
 .login_form_box{
-    background-color: grey;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    padding: 40px;
+    justify-content: space-between;
+    max-width: 450px;
+    padding-right: 100px;
+
+
 }
+
 
 
 .login_form_box input{
-    outline: 2px sold black;
+    outline: 2px solid black;
+    border: 1px solid black;
+    
 }
 
+.userOption{
 
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+
+    max-width: 450px;
+    bottom: 50px;
+
+}
+
+.demoButton{
+    font-size:16px;
+    color: black;
+    background-color: rgb(255, 220, 61);
+    outline: 3px solid rgb(255, 220, 61);
+    max-width: 100px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+}
+
+.createButton{
+    outline: 2.5px solid rgb(4, 4, 179);
+    color: rgb(4, 4, 179);
+    max-width: 130px;
+    text-align: center;
+    padding: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.signinButton{
+    outline: 3px solid rgb(255, 220, 61);
+    color: black;
+    max-width: 130px;
+    text-align: center;
+    padding: 7px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color:rgb(255, 220, 61);
+}
+
+.requried_field{
+    font-size: 12px;
+    color: rgb(255, 98, 59);
+    margin-top: -5px;
+}
 

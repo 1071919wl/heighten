@@ -27,7 +27,7 @@ const App = () => (
                 <span>heighten</span>
             </Link>
         </header>
-        <div className='login_section'>
+        <div className='login_signup'>
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
         </div>
