@@ -51,15 +51,15 @@ class SessionForm extends React.Component{
 
     render(){
         return (
-            <div>
+            <div className='userAuth'>
                 <span className='login_title'>Customer Login</span>
                 
                 <div className='login_form_container'>
-                    {this.renderErrors()}
 
                     <div className='left_login'>
                         <h2 className='sub_title'>Registered Customers</h2>
                         <hr/>
+                        <div className='error_message'>{this.renderErrors()}</div>
                         <form onSubmit={this.handleSubmit} className='login_form_box'>
                             <p>If you have an account, sign in with your email address.</p>
                             <label className='email_login'>Email<span className='asterisk'>*</span>

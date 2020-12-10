@@ -19,8 +19,7 @@
     justify-content: space-evenly;
     font-size: 10px;
     background-color: rgb(240, 240, 240);
-    padding: 5px;
-
+    padding: 1px;
 }
 
 .cart{
@@ -42,8 +41,14 @@
 }
 
 .github img{
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
+}
+
+#linkedin_info{
+    margin-top: 1px;
+    height: 16px;
+    width: 16px;
 }
 
 
@@ -66,35 +71,67 @@
     margin-right: 230px;
 }
 
+                /*! HEADER DROP DOWN */
+
 .header-link{
     color: rgb(255, 217, 0);
     font-size: 36px;
     font-weight: bolder;
+    margin-left: -150px;
 }
 
-header {
+.header {
     display: flex;
-    justify-content: space-between;
-    /* justify-content: space-evenly; *//*! might need above with search and nav */
+    /* justify-content: space-between; */
+    justify-content: space-evenly;/*! might need above with search and nav */
     padding: 30px;
-    background-color: rgb(233, 245, 250);
+    background-color: rgb(238, 247, 252);
     border-bottom: 3px solid rgb(240, 240, 240);
 
 }
 
-.header-group{
-    background-color: pink;
+.header_center {
+    color: rgb(93, 93, 93);
+    margin-top: 15px;
+    font-size: 16px;
+    display: flex;
 }
 
+.header_center ul {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header_center span {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header_center a {
+    padding-bottom: 25px;
+}
+
+.search_icon img{
+    height: 25px;
+    width: 25px;
+}
+
+
+
+
+                    /*! All of userAuth */
+.userAuth{
+    font-family: Sans-serif;
+}
 
 
                 /*! user login section */
 
 .login_title{
     font-size: 26px;
-    margin-left: 35px;
+    margin-left: 50px;
     margin-top: 35px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     display:flex;
     justify-content:space-between;
 }
@@ -168,9 +205,13 @@ form input{
 
 .asterisk{
     font-size: 11px;
-    color: red;
+    color: rgb(255, 98, 59);
     padding-right: 10px;
     align-content: row;
+}
+
+.error_message{
+    color: rgb(255, 98, 59);
 }
 
 
@@ -183,7 +224,7 @@ form input{
     outline: 3px solid rgb(255, 220, 61);
     max-width: 100px;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 10px;
     padding: 10px;
 }
@@ -195,13 +236,13 @@ form input{
 
 .createButton{
     outline: 2.5px solid rgba(4, 4, 179, 0.877);
-    color: rgbrgba(4, 4, 179, 0.877);
-    max-width: 130px;
+    color: rgba(4, 4, 179, 0.877);
+    max-width: 140px;
     text-align: center;
     padding: 7px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 25px;
     
 }
 
@@ -213,11 +254,11 @@ form input{
 .signinButton{
     outline: 3px solid rgb(255, 220, 61);
     color: black;
-    max-width: 130px;
+    max-width: 140px;
     text-align: center;
     padding: 7px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 9px;
+    padding-bottom: 9px;
     margin-top: 45px;
     margin-bottom: 10px;
     background-color:rgb(255, 220, 61);
@@ -253,7 +294,6 @@ form input{
     display:flex;
     justify-content:space-between;
 
-
 }
 
 .signup_form_box{
@@ -262,9 +302,6 @@ form input{
     justify-content: space-between;
     max-width: 450px;
     padding-right: 100px;
-
-
-
 }
 
 .left_signin{
@@ -299,6 +336,10 @@ form input{
     padding: 12px;
 }
 
+.personal_input{
+    margin-left: 10px;
+}
+
 
 .enter_back {
     display: flex;
@@ -308,11 +349,11 @@ form input{
 .signupButton{
     outline: 3px solid rgb(255, 220, 61);
     color: black;
-    max-width: 130px;
+    max-width: 140px;
     text-align: center;
-    padding: 7px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding: 10px;
+    padding-top: 9px;
+    padding-bottom: 9px;
     margin-top: 45px;
     margin-bottom: 10px;
     background-color:rgb(255, 220, 61);
@@ -334,17 +375,78 @@ form input{
 
 .check_div{
     display: flex;
-    margin-top: 30px;
+    margin-top: 25px;
+    font-size: 14px;
 }
-
-.newsletter {
-    position: relative;
-    cursor: pointer;
-}
-
 
 .check{
     max-width: 15px;
     margin-right: 5px;
-    margin-top: 5px
+    margin-top: 1px;
+    cursor: pointer;
+    padding: 15px;
 }
+
+.disclaimer{
+    margin-top: 9px;
+    font-size: 11.5px;
+}
+
+
+                /*! footer */
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.Site-content {
+    flex: 1;
+}
+
+footer{
+    background-color: #414141;
+    height: 230px;
+    margin-top: 65px;
+}
+
+.site_info{
+    color: #cacaca;
+    font-family: Sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.footer_info{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.footer_linkedin,
+.footer_email,
+.footer_github,
+.footer_repository {
+    display: flex;
+}
+
+.footer_icon_spacing{
+    margin-left: 8px;
+    height: 30px;
+    width: 30px;
+}
+
+#email_foot{
+    height: 32px;
+    width: 32px;
+
+}
+
+                /*! footer */
+
