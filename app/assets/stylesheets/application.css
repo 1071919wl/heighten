@@ -88,26 +88,20 @@ header {
 
 
 
-/*! user login section */
-.login_signup {
-    /* display: flex;
-    justify-content: space-evenly;
-    margin-top: 100px;
-    background-color: lightgray; */
-}
+                /*! user login section */
 
 .login_title{
     font-size: 26px;
     margin-left: 35px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 35px;
+    margin-bottom: 40px;
     display:flex;
     justify-content:space-between;
 }
 
 .login_form_container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     
 }
 
@@ -121,7 +115,10 @@ header {
     border-top: 1px solid lightgray;
     top: 4px;
     margin: 1em 0;
+}
 
+form input{
+    width: 280px;
 }
 
 
@@ -133,13 +130,13 @@ header {
 .right_login {
     display: flex;
     flex-direction: column;
-    margin-right: 150px;
+    margin-right: 100px;
 
 }
 
 .spacer_login {
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 
@@ -156,20 +153,11 @@ header {
     display: flex;
     flex-direction: column;
     justify-content:space-between;
-
-    max-width: 450px;
+    max-width: 420px;
     bottom: 50px;
 }
 
-
-.login_form_box input{
-    /* outline: 2px solid black;
-    border: 1px solid black; */
-    
-}
-
-
-.email_login {
+.email_login, .password_login {
     font-size: 14px;
     outline: 1px solid lightgray;
     color: black;
@@ -177,13 +165,6 @@ header {
     padding: 12px;
 }
 
-.password_login {
-    font-size: 14px;
-    outline: 1px solid lightgray;
-    color: black;
-    margin-top: 25px;
-    padding: 12px;
-}
 
 .asterisk{
     font-size: 11px;
@@ -193,7 +174,7 @@ header {
 }
 
 
-        /*? buttons */
+        /*? Login buttons */
 
 .demoButton{
     font-size:16px;
@@ -254,3 +235,116 @@ header {
     margin-top: -3px;
 }
 
+
+
+
+            /*! user signup section */
+
+.signup_form_container{
+    display:flex;
+
+}
+
+
+.signup_title{
+    font-size: 26px;
+    margin-left: 35px;
+    margin-top: 35px;
+    display:flex;
+    justify-content:space-between;
+
+
+}
+
+.signup_form_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 450px;
+    padding-right: 100px;
+
+
+
+}
+
+.left_signin{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding-left: 150px;
+}
+
+.personal_login{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sign_info{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sub_title {
+    margin-top: 50px;
+
+}
+
+.name_signup, .lname_signup, .email_signup, .password_signup{
+    font-size: 14px;
+    outline: 1px solid lightgray;
+    color: black;
+    margin-top: 25px;
+    padding: 12px;
+}
+
+
+.enter_back {
+    display: flex;
+    justify-content: space-between;
+}
+
+.signupButton{
+    outline: 3px solid rgb(255, 220, 61);
+    color: black;
+    max-width: 130px;
+    text-align: center;
+    padding: 7px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+    background-color:rgb(255, 220, 61);
+}
+
+.signupButton:hover {
+    background-color: rgb(248, 207, 24);
+    outline: 3px solid rgb(248, 207, 24);
+}
+
+.backLogin{
+    font-size: 14px;
+    color: rgba(4, 4, 179, 0.877);
+    margin-top: 50px;
+    margin-left: 50px;
+    max-height: 20px;
+
+}
+
+.check_div{
+    display: flex;
+    margin-top: 30px;
+}
+
+.newsletter {
+    position: relative;
+    cursor: pointer;
+}
+
+
+.check{
+    max-width: 15px;
+    margin-right: 5px;
+    margin-top: 5px
+}
