@@ -47,7 +47,9 @@ class SignUpForm extends React.Component {
 
                     <div className='left_signin'>
                         <h2 className='sub_title'>Personal Information</h2>
+                        
                         <div className='error_message'>{this.renderErrors()}</div>
+
                         <form onSubmit={this.handleSubmit} className='signup_form_box'>
                             <div className='personal_login'>
                                 <label className='name_signup'>First Name

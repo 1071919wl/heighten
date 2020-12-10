@@ -116,7 +116,9 @@
     width: 25px;
 }
 
-
+.header-group{
+    background-color: pink;
+}
 
 
                     /*! All of userAuth */
@@ -162,6 +164,7 @@ form input{
 .left_login{
     display: flex;
     flex-direction: column;
+    margin-left: 30px;
 }
 
 .right_login {
@@ -212,7 +215,11 @@ form input{
 
 .error_message{
     color: rgb(255, 98, 59);
+    position: absolute;             /*!display error messages without shifting other css.*/
+                                    /*! not sure if i like it */
+
 }
+
 
 
         /*? Login buttons */
@@ -278,7 +285,6 @@ form input{
 
 
 
-
             /*! user signup section */
 
 .signup_form_container{
@@ -308,13 +314,12 @@ form input{
     display: flex;
     flex-direction: column;
     /* align-items: center; */
-    padding-left: 150px;
+    padding-left: 120px;
 }
 
 .personal_login{
     display: flex;
     flex-direction: column;
-
 }
 
 .sign_info{
@@ -424,7 +429,7 @@ footer{
     justify-content: space-evenly;
     padding: 50px;
     font-size: 25px;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 80px;
     margin-right: 80px;
 }
@@ -450,3 +455,35 @@ footer{
 
                 /*! footer */
 
+
+
+
+
+                /*! error page*/
+.errorPage{
+    padding-left: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.errSent{
+    margin-top: 45px;
+    margin-right: 50px;
+}
+
+.errTitle{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.errContent{
+    display: flex;
+    justify-content: center;
+}
+
+.errContent img{
+    height: auto;
+    width: 480px;
+    margin-right: 40px;
+    margin-left: 40px;
+}

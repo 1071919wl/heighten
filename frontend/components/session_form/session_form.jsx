@@ -59,7 +59,12 @@ class SessionForm extends React.Component{
                     <div className='left_login'>
                         <h2 className='sub_title'>Registered Customers</h2>
                         <hr/>
-                        <div className='error_message'>{this.renderErrors()}</div>
+
+                        <div className='error_message'>
+                            {this.renderErrors()}
+                        </div>
+
+
                         <form onSubmit={this.handleSubmit} className='login_form_box'>
                             <p>If you have an account, sign in with your email address.</p>
                             <label className='email_login'>Email<span className='asterisk'>*</span>

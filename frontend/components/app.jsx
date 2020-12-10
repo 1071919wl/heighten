@@ -3,6 +3,7 @@ import {Route, Redirect, Switch, Link, HashRouter} from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+import Error404 from './error_404'
 import { AuthRoute } from '../util/route_util';
 
 
@@ -75,15 +76,16 @@ const App = () => (
                 </div>
             </div>
 
-
-
-
         </header>
         <div className='login_signup'>
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
+            <Switch>
+                <AuthRoute path="/login" component={LoginFormContainer} />
+                <AuthRoute path="/signup" component={SignupFormContainer} />
+                <Route exact path="/" />
+                <Route component={Error404} />
+            </Switch>
         </div>
-        <Route exact path="/" />
+        
 
 
     </div>
