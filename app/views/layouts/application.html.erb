@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HeightenFullstack</title>
+    <title>heighten</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script type="text/javascript">
+      window.cartURL = "<%= image_url('icons/cart.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.linkedinURL = "<%= image_url('icons/linkedin.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.email2URL = "<%= image_url('icons/email2.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.fork2URL = "<%= image_url('icons/fork2.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.githubURL = "<%= image_url('icons/github.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.searchURL = "<%= image_url('icons/search.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.error404URL = "<%= image_url('404-not-found.jpg') %>";
+    </script>
+
+
   </head>
 
-  <body>
+  <body class="Site">
     <%= yield %>
+
+
+    <footer>
+      <div class='site_info'>This project is based of the website, wwww.fully.com and is meant for demonstration purposes. Please do not use personal information to for sign up. I hope you enjoy!</div>
+      <div class='footer_info'>
+        <div class='footer_linkedin'>
+          <div><a href="https://www.linkedin.com/in/william-leung-60589a73/">Linkedin</a></div>
+          <a href="https://www.linkedin.com/in/william-leung-60589a73/"><div class="footer_icon_spacing"><%= image_tag("icons/linkedin.png") %></div></a>
+        </div>
+        <div class='footer_email'>
+          <div><a href="#">Email</a></div>
+          <a href="#"><div class="footer_icon_spacing" id='email_foot'><%= image_tag("icons/email2.png") %></div></a>
+        </div>
+        <div class='footer_github'>
+          <div><a href="https://github.com/1071919wl">Github</a></div>
+          <a href="https://github.com/1071919wl"><div class="footer_icon_spacing"><%= image_tag("icons/github2.png") %></div></a>
+        </div>
+        <div class='footer_repository'>
+          <div><a href="https://github.com/1071919wl/heighten_fullstack">Repository</a></div>
+          <a href="https://github.com/1071919wl/heighten_fullstack"><div class="footer_icon_spacing"><%= image_tag("icons/fork.png") %></div></a>
+        </div>
+      </div>
+    
+    </footer>
+    <!--# https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ -->
   </body>
+
+    
 </html>
+

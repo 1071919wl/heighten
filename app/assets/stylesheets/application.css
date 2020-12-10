@@ -13,3 +13,472 @@
  *= require_tree .
  *= require_self
  */
+
+.info {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 10px;
+    background-color: rgb(240, 240, 240);
+    padding: 1px;
+}
+
+.cart{
+    display: flex;
+}
+
+.cart button{
+    margin-left: 25px;
+}
+
+.github{
+    display: flex;
+}
+
+.github span{
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.github img{
+    height: 18px;
+    width: 18px;
+}
+
+#linkedin_info{
+    margin-top: 1px;
+    height: 16px;
+    width: 16px;
+}
+
+
+.signin{
+    font-size: 13px;
+    margin-right: 20px;
+    position: relative;
+    bottom: 6px;
+    
+}
+
+.infoSignin {
+  font-size: 14px;
+  position: relative;
+  top: 4px;
+}
+
+.info_spacing{
+    margin-left: 230px;
+    margin-right: 230px;
+}
+
+                /*! HEADER DROP DOWN */
+
+.header-link{
+    color: rgb(255, 217, 0);
+    font-size: 36px;
+    font-weight: bolder;
+    margin-left: -150px;
+}
+
+.header {
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: space-evenly;/*! might need above with search and nav */
+    padding: 30px;
+    background-color: rgb(238, 247, 252);
+    border-bottom: 3px solid rgb(240, 240, 240);
+
+}
+
+.header_center {
+    color: rgb(93, 93, 93);
+    margin-top: 15px;
+    font-size: 16px;
+    display: flex;
+}
+
+.header_center ul {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header_center span {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header_center a {
+    padding-bottom: 25px;
+}
+
+.search_icon img{
+    height: 25px;
+    width: 25px;
+}
+
+.header-group{
+    background-color: pink;
+}
+
+
+                    /*! All of userAuth */
+                    /*? moved to userAuth.css */
+/* .userAuth{
+    font-family: Sans-serif;
+} */
+
+
+                /*! user login section */
+                /*? moved to userAuth.css */
+
+/* .login_title{
+    font-size: 26px;
+    margin-left: 50px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.login_form_container{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.sub_title {
+    font-size: 19px;
+}
+
+.login_form_container hr {
+    display: block;
+    border-top: 1px solid lightgray;
+    top: 4px;
+    margin: 1em 0;
+}
+
+form input{
+    width: 280px;
+}
+
+
+.left_login{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.right_login {
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+
+}
+
+.spacer_login {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.login_form_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 450px;
+    padding-right: 100px;
+
+}
+
+.userOption{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    max-width: 420px;
+    bottom: 50px;
+}
+
+.email_login, .password_login {
+    font-size: 14px;
+    outline: 1px solid lightgray;
+    color: black;
+    margin-top: 25px;
+    padding: 12px;
+}
+
+
+.asterisk{
+    font-size: 11px;
+    color: rgb(255, 98, 59);
+    padding-right: 10px;
+    align-content: row;
+} */
+
+.error_message{
+    color: rgb(255, 98, 59);
+    position: absolute;             /*!display error messages without shifting other css.*/
+                                    /*! not sure if i like it */
+
+}
+
+
+
+        /* Login buttons */
+        /*? moved to userAuth.css */
+/* .demoButton{
+    font-size:16px;
+    color: black;
+    background-color: rgb(255, 220, 61);
+    outline: 3px solid rgb(255, 220, 61);
+    max-width: 100px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.demoButton:hover {
+    background-color: rgb(248, 207, 24);
+    outline: 3px solid rgb(248, 207, 24);
+}
+
+.createButton{
+    outline: 2.5px solid rgba(4, 4, 179, 0.877);
+    color: rgba(4, 4, 179, 0.877);
+    max-width: 140px;
+    text-align: center;
+    padding: 7px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 25px;
+    
+}
+
+.createButton:hover {
+    background-color: rgba(4, 4, 179, 0.877);
+    color: white;
+}
+
+.signinButton{
+    outline: 3px solid rgb(255, 220, 61);
+    color: black;
+    max-width: 140px;
+    text-align: center;
+    padding: 7px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+    background-color:rgb(255, 220, 61);
+}
+
+.signinButton:hover {
+    background-color: rgb(248, 207, 24);
+    outline: 3px solid rgb(248, 207, 24);
+}
+
+
+.requried_field{
+    font-size: 12px;
+    color: rgb(255, 98, 59);
+    margin-top: -3px;
+} */
+
+
+
+            /*! user signup section */
+            /*? moved to userAuth.css */
+
+/* .signup_form_container{
+    display:flex;
+} */
+
+
+/* .signup_title{
+    font-size: 26px;
+    margin-left: 35px;
+    margin-top: 35px;
+    display:flex;
+    justify-content:space-between;
+
+} */
+
+/* .signup_form_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 450px;
+    padding-right: 100px;
+} */
+
+/* .left_signin{
+    display: flex;
+    flex-direction: column;
+    padding-left: 120px;
+} */
+
+/* .personal_login{
+    display: flex;
+    flex-direction: column;
+} */
+
+/* .sign_info{
+    display: flex;
+    flex-direction: column;
+} */
+
+/* .sub_title {
+    margin-top: 50px;
+
+} */
+
+/* .name_signup, .lname_signup, .email_signup, .password_signup{
+    font-size: 14px;
+    outline: 1px solid lightgray;
+    color: black;
+    margin-top: 25px;
+    padding: 12px;
+} */
+
+/* .personal_input{
+    margin-left: 10px;
+} */
+
+
+/* .enter_back {
+    display: flex;
+    justify-content: space-between;
+} */
+
+/* .signupButton{
+    outline: 3px solid rgb(255, 220, 61);
+    color: black;
+    max-width: 140px;
+    text-align: center;
+    padding: 10px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+    background-color:rgb(255, 220, 61);
+} */
+
+/* .signupButton:hover {
+    background-color: rgb(248, 207, 24);
+    outline: 3px solid rgb(248, 207, 24);
+} */
+
+/* .backLogin{
+    font-size: 14px;
+    color: rgba(4, 4, 179, 0.877);
+    margin-top: 50px;
+    margin-left: 50px;
+    max-height: 20px;
+
+} */
+
+/* .check_div{
+    display: flex;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.check{
+    max-width: 15px;
+    margin-right: 5px;
+    margin-top: 1px;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.disclaimer{
+    margin-top: 9px;
+    font-size: 11.5px;
+} */
+
+
+                /* ! footer */
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.Site-content {
+    flex: 1;
+}
+
+footer{
+    background-color: #414141;
+    height: 230px;
+    margin-top: 65px;
+}
+
+.site_info{
+    color: #cacaca;
+    font-family: Sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+                /*? moved to footer.css */
+/* .footer_info{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.footer_linkedin,
+.footer_email,
+.footer_github,
+.footer_repository {
+    display: flex;
+}
+
+.footer_icon_spacing{
+    margin-left: 8px;
+    height: 30px;
+    width: 30px;
+}
+
+#email_foot{
+    height: 32px;
+    width: 32px;
+} */
+
+
+
+                /*! error page*/
+/* .errorPage{
+    padding-left: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.errSent{
+    margin-top: 45px;
+    margin-right: 50px;
+}
+
+.errTitle{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.errContent{
+    display: flex;
+    justify-content: center;
+}
+
+.errContent img{
+    height: auto;
+    width: 480px;
+    margin-right: 40px;
+    margin-left: 40px;
+} */
