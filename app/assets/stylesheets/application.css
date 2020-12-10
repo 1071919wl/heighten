@@ -122,14 +122,16 @@
 
 
                     /*! All of userAuth */
-.userAuth{
+                    /*? moved to userAuth.css */
+/* .userAuth{
     font-family: Sans-serif;
-}
+} */
 
 
                 /*! user login section */
+                /*? moved to userAuth.css */
 
-.login_title{
+/* .login_title{
     font-size: 26px;
     margin-left: 50px;
     margin-top: 35px;
@@ -145,7 +147,6 @@
 }
 
 .sub_title {
-    /* border-bottom: 2px solid lightgray; */
     font-size: 19px;
 }
 
@@ -211,7 +212,7 @@ form input{
     color: rgb(255, 98, 59);
     padding-right: 10px;
     align-content: row;
-}
+} */
 
 .error_message{
     color: rgb(255, 98, 59);
@@ -222,9 +223,9 @@ form input{
 
 
 
-        /*? Login buttons */
-
-.demoButton{
+        /* Login buttons */
+        /*? moved to userAuth.css */
+/* .demoButton{
     font-size:16px;
     color: black;
     background-color: rgb(255, 220, 61);
@@ -281,77 +282,75 @@ form input{
     font-size: 12px;
     color: rgb(255, 98, 59);
     margin-top: -3px;
-}
+} */
 
 
 
             /*! user signup section */
+            /*? moved to userAuth.css */
 
-.signup_form_container{
+/* .signup_form_container{
     display:flex;
+} */
 
-}
 
-
-.signup_title{
+/* .signup_title{
     font-size: 26px;
     margin-left: 35px;
     margin-top: 35px;
     display:flex;
     justify-content:space-between;
 
-}
+} */
 
-.signup_form_box{
+/* .signup_form_box{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     max-width: 450px;
     padding-right: 100px;
-}
+} */
 
-.left_signin{
+/* .left_signin{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     padding-left: 120px;
-}
+} */
 
-.personal_login{
+/* .personal_login{
     display: flex;
     flex-direction: column;
-}
+} */
 
-.sign_info{
+/* .sign_info{
     display: flex;
     flex-direction: column;
+} */
 
-}
-
-.sub_title {
+/* .sub_title {
     margin-top: 50px;
 
-}
+} */
 
-.name_signup, .lname_signup, .email_signup, .password_signup{
+/* .name_signup, .lname_signup, .email_signup, .password_signup{
     font-size: 14px;
     outline: 1px solid lightgray;
     color: black;
     margin-top: 25px;
     padding: 12px;
-}
+} */
 
-.personal_input{
+/* .personal_input{
     margin-left: 10px;
-}
+} */
 
 
-.enter_back {
+/* .enter_back {
     display: flex;
     justify-content: space-between;
-}
+} */
 
-.signupButton{
+/* .signupButton{
     outline: 3px solid rgb(255, 220, 61);
     color: black;
     max-width: 140px;
@@ -362,23 +361,23 @@ form input{
     margin-top: 45px;
     margin-bottom: 10px;
     background-color:rgb(255, 220, 61);
-}
+} */
 
-.signupButton:hover {
+/* .signupButton:hover {
     background-color: rgb(248, 207, 24);
     outline: 3px solid rgb(248, 207, 24);
-}
+} */
 
-.backLogin{
+/* .backLogin{
     font-size: 14px;
     color: rgba(4, 4, 179, 0.877);
     margin-top: 50px;
     margin-left: 50px;
     max-height: 20px;
 
-}
+} */
 
-.check_div{
+/* .check_div{
     display: flex;
     margin-top: 25px;
     font-size: 14px;
@@ -395,10 +394,10 @@ form input{
 .disclaimer{
     margin-top: 9px;
     font-size: 11.5px;
-}
+} */
 
 
-                /*! footer */
+                /* ! footer */
 .Site {
     display: flex;
     min-height: 100vh;
@@ -424,7 +423,8 @@ footer{
     margin-top: 40px;
 }
 
-.footer_info{
+                /*? moved to footer.css */
+/* .footer_info{
     display: flex;
     justify-content: space-evenly;
     padding: 50px;
@@ -450,17 +450,12 @@ footer{
 #email_foot{
     height: 32px;
     width: 32px;
-
-}
-
-                /*! footer */
-
-
+} */
 
 
 
                 /*! error page*/
-.errorPage{
+/* .errorPage{
     padding-left: 40px;
     padding-top: 80px;
     padding-bottom: 80px;
@@ -486,4 +481,4 @@ footer{
     width: 480px;
     margin-right: 40px;
     margin-left: 40px;
-}
+} */

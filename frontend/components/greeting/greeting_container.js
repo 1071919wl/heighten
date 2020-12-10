@@ -3,11 +3,6 @@ import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 
 
-// const mapStateToProps = (state) => {
-//   return {
-//     currentUser: state.entities.users[state.session.id] //window.getState() to see why
-//   };
-// };
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
     currentUser: users[session.id]
