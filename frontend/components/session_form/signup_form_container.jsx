@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
 import SignUpForm from './signup_form';
 
+import { removeErrors } from '../../actions/session_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
     return{ 
@@ -17,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return{
         // processForm: (user) => dispatch(signup(user))
-        signupForm: (user) => dispatch(signup(user))
+        signupForm: (user) => dispatch(signup(user)),
+        removeErrors: () => dispatch(removeErrors())
     }
 }
 
