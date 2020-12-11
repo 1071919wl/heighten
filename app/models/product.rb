@@ -12,7 +12,7 @@
 #
 class Product < ApplicationRecord
     validates :name, presence: true, uniqueness: true
-    validates :type_id, presence: true, uniqueness: true
+    validates :type_id, presence: true
     validates :description, presence: true
     validates :price, presence: true
     

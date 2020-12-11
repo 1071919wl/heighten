@@ -18,6 +18,12 @@ Product.create(
     description: "A popular favorite among our craft- and earth-conscious customers. Customize your workspace with our beautiful, eco-friendly bamboo on our best reviewed, customer-adored Jarvis frame.",
     price: 559
 )
+Product.create(
+    name: "Jarvis Laminate Standing Desk", 
+    type_id: 1, 
+    description: "Made with longevity of desk and planet in mind, our Jarvis Laminate Standing Desk features an eco-friendly laminate desktop on our powerhouse Jarvis frame.",
+    price: 499
+)
 #! Chair
 Product.create(
     name: "ReGeneration Desk Chair by Knoll", 
