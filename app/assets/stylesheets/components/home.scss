@@ -3,9 +3,9 @@
     display:flex;
     justify-content: space-evenly;
     height: auto;
-    width: 100%;
     align-items: flex-end;
     background-color: rgb(238, 247, 252);
+    font-family: sans-serif;
 }
 
 .capisco_fp,
@@ -14,6 +14,37 @@
 .jarvis_fp,
 .tictoc_fp,
 .regen_fp {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+
+    a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 25px;
+    }   
+    
+    img{
+        height: auto;
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    .arrow {
+        height: auto;
+        width: 12px;
+    }
+
+
 }
+.hero_fp,{
+    img{
+        margin-bottom: -5px;
+    }
+}
+
+

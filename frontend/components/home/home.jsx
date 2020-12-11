@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 
 class Home extends React.Component {
@@ -11,23 +12,54 @@ class Home extends React.Component {
         return(
             <div>
                 <div className='jumpLady_sec'>
+
                     <div className='capisco_fp'>
-                        <img src={window.capiscoURL} />
+                        <Link to="/">
+                            <img src={window.capiscoURL} />
+                            <a href="#">
+                                Capisco
+                                <img className='arrow' src={window.arrowURL} />
+                            </a>
+                        </Link>
                     </div>
                     <div className='hero_fp'>
                         <img src={window.heroURL} />
                     </div>
                     <div className='luna_fp'>
-                        <img src={window.lunaURL} />
+                        <Link to="/">
+                            <img src={window.lunaURL} />
+                            <a href="#">
+                                Luna
+                                <img className='arrow' src={window.arrowURL} />
+                            </a>
+                        </Link>
                     </div>
                     <div className='jarvis_fp'>
-                        <img src={window.jarvisURL} />
+                        <Link to="/">
+                            <img src={window.jarvisURL} />
+                            <a href="#">
+                                Jarvis
+                                <img className='arrow' src={window.arrowURL} />
+                            </a>
+                        </Link>
                     </div>
                     <div className='tictoc_fp'>
-                        <img src={window.tictocURL} />
+                        <Link to="/">
+                            <img src={window.tictocURL} />
+                            <a href="#">
+                                Tic Toc
+                                <img className='arrow' src={window.arrowURL} />
+                            </a>
+                        </Link>
                     </div>
                     <div className='regen_fp'>
-                        <img src={window.regenURL} />
+                        <Link to="/">
+                            <img src={window.regenURL} />
+                            <a href="#">
+                                ReGeneration
+                                <img className='arrow' src={window.arrowURL} />
+                            </a>
+                        </Link>
                     </div>
 
                 </div>
