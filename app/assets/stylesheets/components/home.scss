@@ -1,0 +1,19 @@
+// jumplady section
+.jumpLady_sec {
+    display:flex;
+    justify-content: space-evenly;
+    height: auto;
+    width: 100%;
+    align-items: flex-end;
+    background-color: rgb(238, 247, 252);
+}
+
+.capisco_fp,
+.hero_fp,
+.luna_fp,
+.jarvis_fp,
+.tictoc_fp,
+.regen_fp {
+    margin-left: 5px;
+    margin-right: 5px;
+}
