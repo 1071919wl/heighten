@@ -32,7 +32,7 @@ class Home extends React.Component {
                     </div>
                     <div className='jarvis_fp'>
                         <Link to="/" className='fp_pics'>
-                            <img src={window.jarvisURL} />
+                            <img src={window.jarvis1URL} />
                             Jarvis
                             <img className='arrow' src={window.arrowURL} />
                         </Link>
