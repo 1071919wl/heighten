@@ -7,7 +7,11 @@ class Api::ProductsController < ApplicationController
 
     def show
         @product = Product.find(params[:id])
-        render :show
+        if @product
+            render :show
+        else
+            render json: ["404 Page not found"], status: 404
+        end
     end
 
 end

@@ -9,14 +9,17 @@ class Product extends React.Component {
     componentDidMount(){
         this.props.fetchProduct(this.props.productId);
     }
-
+    
     render(){
-
+        let product = '';
+        this.props.product ? product = this.props.product : product = null
         return (
+            product === null ? <div></div> :
             <div>
-                <h1>Product Page</h1>
-                
-                
+                    <h1>{product.name}</h1>
+                    <div>{product.description}</div>
+                    <div>${product.price}.00</div>
+                    
 
 
             </div>

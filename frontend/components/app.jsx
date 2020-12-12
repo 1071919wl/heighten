@@ -85,7 +85,7 @@ const App = () => (
                 <AuthRoute path="/signup" component={SignupFormContainer} />
                 <Route path="/products/:id" component={ProductContainer} /> //!need to call the container table first or youre skipping a step
                 <Route exact path="/" component={Home}/>
-                <Route component={Error404} />
+                <Route path='*' component={Error404} />
             </Switch>
         </div>
         
