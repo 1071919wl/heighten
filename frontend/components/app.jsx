@@ -4,6 +4,7 @@ import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import Home from './home/home';
+import ProductContainer from './product/product_container';
 import Error404 from './error_404';
 import { AuthRoute } from '../util/route_util';
 
@@ -82,6 +83,7 @@ const App = () => (
             <Switch>
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <AuthRoute path="/signup" component={SignupFormContainer} />
+                <Route path="/products/:id" component={ProductContainer} /> //!need to call the container table first or youre skipping a step
                 <Route exact path="/" component={Home}/>
                 <Route component={Error404} />
             </Switch>
@@ -94,3 +96,4 @@ const App = () => (
 
 export default App;
 
+// store.dispatch(receiveProduct(fetchProduct(1)))
