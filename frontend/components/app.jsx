@@ -5,6 +5,7 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import Home from './home/home';
 import ProductContainer from './product/product_container';
+import CategoryContainer from './category/category_container';
 import Error404 from './error_404';
 import { AuthRoute } from '../util/route_util';
 
@@ -73,7 +74,7 @@ const App = () => (
                                 <img src={window.deskURL} className='menuImg'/>
                                 <div className='randomSpacing'></div>
                                 <div className='menuContent'>
-                                        <div tclassName='dropLink1'>
+                                        <div className='dropLink1'>
                                             <div className='text_align_img top'>
                                                 <Link to='/' className='img_align'>
                                                     <img src={window.remiURL} className='littleImg' />
@@ -112,7 +113,7 @@ const App = () => (
                                 <img src={window.chairsMenuURL} className='menuImg' />
                                 <div className='randomSpacing'></div>
                                 <div className='menuContent'>
-                                    <div tclassName='dropLink1'>
+                                    <div className='dropLink1'>
                                         <div className='text_align_img top'>
                                             <Link to='/' className='img_align'>
                                                 <img src={window.littleChairURL} className='littleImg' />
@@ -151,7 +152,7 @@ const App = () => (
                                 <img src={window.menu3URL} className='menuImg' />
                                 <div className='randomSpacing'></div>
                                 <div className='menuContent'>
-                                    <div tclassName='dropLink1'>
+                                    <div className='dropLink1'>
                                         <div className='text_align_img top'>
                                             <Link to='/' className='img_align'>
                                                 <img src={window.wpseatingURL} className='littleImg' />
@@ -184,7 +185,7 @@ const App = () => (
                                 <img src={window.menu4URL} className='menuImg' />
                                 <div className='randomSpacing'></div>
                                 <div className='menuContent'>
-                                    <div tclassName='dropLink1'>
+                                    <div className='dropLink1'>
                                         <div className='text_align_img top'>
                                             <Link to='/' className='img_align'>
                                                 <img src={window.accessoriesAllURL} className='littleImg' />
@@ -217,6 +218,7 @@ const App = () => (
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <AuthRoute path="/signup" component={SignupFormContainer} />
                 <Route path="/products/:id" component={ProductContainer} /> //!need to call the container table first or youre skipping a step
+                <Route path="/categories/:id" component={CategoryContainer}/>
                 <Route exact path="/" component={Home}/>
                 <Route path='*' component={Error404} />
             </Switch>

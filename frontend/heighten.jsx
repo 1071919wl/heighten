@@ -6,6 +6,7 @@ import Root from './components/root';
 
 //! testing
 import { fetchProduct } from './actions/product_actions';
+import { fetchCategory } from './actions/category_actions';
 //! testing
 
 
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.fetchProduct = fetchProduct; //!store.dispatch(fetchProduct(1)) in browser
+    window.fetchCategory = fetchCategory; //!store.dispatch(fetchProduct(1)) in browser
     //! testing
 
     
