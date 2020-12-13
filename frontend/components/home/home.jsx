@@ -31,7 +31,7 @@ class Home extends React.Component {
                         </Link>
                     </div>
                     <div className='jarvis_fp'>
-                        <Link to="/" className='fp_pics'>
+                        <Link to="/products/1" className='fp_pics'>
                             <img src={window.jarvis1URL} />
                             Jarvis
                             <img className='arrow' src={window.arrowURL} />
@@ -45,7 +45,7 @@ class Home extends React.Component {
                         </Link>
                     </div>
                     <div className='regen_fp'>
-                        <Link to="/" className='fp_pics'>
+                        <Link to="/products/3" className='fp_pics'>
                             <img src={window.regenURL} />
                             ReGeneration
                             <img className='arrow' src={window.arrowURL} />

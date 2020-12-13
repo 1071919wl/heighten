@@ -1,5 +1,6 @@
 .userAuth {
     font-family: Sans-serif;
+    color: #414141;
 }
 
                             /*! user login section */
@@ -75,7 +76,7 @@ form input {
 .password_login {
     font-size: 14px;
     outline: 1px solid lightgray;
-    color: black;
+    color:#414141;
     margin-top: 25px;
     padding: 12px;
 }
@@ -94,7 +95,7 @@ form input {
                                 /* login button */
 .demoButton {
     font-size: 16px;
-    color: black;
+    color: #414141;
     background-color: rgb(255, 220, 61);
     outline: 3px solid rgb(255, 220, 61);
     max-width: 100px;
@@ -128,7 +129,7 @@ form input {
 
 .signinButton {
     outline: 3px solid rgb(255, 220, 61);
-    color: black;
+    color: #414141;
     max-width: 140px;
     text-align: center;
     padding: 7px;
@@ -203,7 +204,7 @@ form input {
 .password_signup {
     font-size: 14px;
     outline: 1px solid lightgray;
-    color: black;
+    color: #414141;
     margin-top: 25px;
     padding: 12px;
 }
@@ -219,7 +220,7 @@ form input {
 
 .signupButton {
     outline: 3px solid rgb(255, 220, 61);
-    color: black;
+    color: #414141;
     max-width: 140px;
     text-align: center;
     padding: 10px;

@@ -1,0 +1,109 @@
+
+.product_show_page{
+    font-family: sans-serif;
+    color: #414141;
+
+    .product_directory{
+        display: flex;
+        justify-content:center;
+        margin-top:40px;
+        margin-bottom:40px;
+    
+        background-color: yellow
+    }
+    
+    .main_content{
+        display: flex;
+        justify-content:column;
+        margin-left: 32px;
+        margin-right: 30px;
+
+        .content_arrangement {
+            display:flex;
+            justify-content:center;
+    
+            .title {
+                font-size: 26px;
+            }
+        }
+    
+    
+        .show_img{
+            height: auto;
+            width: 500px;
+        }
+    
+        .content_info{
+            margin-left: 60px;
+            max-width: 38%;
+    
+            .addToCart{
+                    font-size: 16px;
+                    color: #414141;
+                    background-color: rgb(255, 220, 61);
+                    // outline: 3px solid rgb(255, 220, 61);
+                    max-width: 100px;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                    padding: 10px;
+                    padding-left: 25px;
+                    padding-right: 25px;
+            }
+    
+            .addToCart:hover {
+                background-color: rgb(248, 207, 24);
+                outline: 3px solid rgb(248, 207, 24);
+            }
+
+            .product_description{
+                margin-top: 40px;
+                font-size:15px;
+            }
+
+            .starts_at{
+                color: #6e6c63;
+                font-size: 12px;
+            }
+
+            .shopbox{
+                margin-top: 80px;
+                display:flex;
+                // flex-direction: column;
+                // justify-content: center;
+                // align-content: center;
+                background-color: #EEF7FC;
+                color: #414141;
+
+                img{
+                    height: 35px;
+                    width: 35px;
+                    padding: 20px;
+                }
+
+                .shopbox_info{
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    font-size:12px;
+                    
+                    h1{
+                        font-weight: bold;    
+                        margin-bottom: 10px;
+                    }
+                }
+                
+                .showBox_container{
+                    display:flex;
+                    align-content: center;
+                }
+
+                .test{
+                    display:flex;
+                }
+            }
+    
+        }
+    
+    }
+
+}
