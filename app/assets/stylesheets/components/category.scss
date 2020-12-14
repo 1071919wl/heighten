@@ -1,0 +1,22 @@
+.category_show_page {
+    font-family: sans-serif;
+    color: #414141;
+
+    .category_directory {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        font-size: 14px;
+
+        span {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .productName {
+            color: #6E6C63
+        }
+
+    }
+}    

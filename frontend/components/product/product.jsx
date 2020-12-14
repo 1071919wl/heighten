@@ -14,8 +14,6 @@ class Product extends React.Component {
     render(){
         let product = '';
         this.props.product ? product = this.props.product : product = null
-
-       
         
         return (
             product === null ? <div></div> :
