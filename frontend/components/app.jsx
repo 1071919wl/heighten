@@ -68,7 +68,7 @@ const App = () => (
                 </Link>
 
                 <div className='header_center'>
-                    <ul className='desk_btn'> <Link to='/' className='dropdownHeader'>Standing Desks</Link>
+                    <ul className='desk_btn'> <Link to='/categories/1' className='dropdownHeader'>Standing Desks</Link>
                         <div className="desk_content">
                             <div className='forFlex'>
                                 <img src={window.deskURL} className='menuImg'/>
@@ -76,13 +76,13 @@ const App = () => (
                                 <div className='menuContent'>
                                         <div className='dropLink1'>
                                             <div className='text_align_img top'>
-                                                <Link to='/' className='img_align'>
+                                            <Link to='/categories/1' className='img_align'>
                                                     <img src={window.remiURL} className='littleImg' />
                                                     <div>All Desks</div>
                                                 </Link>
                                             </div>
                                             <div className='text_align_img'>
-                                                <Link to='/' className='img_align'>
+                                                <Link to='/categories/1' className='img_align'>
                                                     <img src={window.jarvisURL} className='littleImg'/>
                                                     <div>Jarvis Standing Desks</div>
                                                 </Link>
@@ -90,13 +90,13 @@ const App = () => (
                                         </div>
                                         <div className='dropLink2'>
                                             <div className='text_align_img top'>
-                                                <Link to='/' className='img_align'>
+                                                <Link to='/categories/1' className='img_align'>
                                                     <img src={window.convertersURL} className='littleImg' />
                                                     <div>Desk Converters</div>
                                                 </Link>    
                                             </div>
                                             <div className='text_align_img'>
-                                                <Link to='/login' className='img_align'>
+                                                <Link to='/categories/1' className='img_align'>
                                                     <img src={window.SmallSpacesURL} className='littleImg' />
                                                     <div>Desks for Small Spaces</div>
                                                 </Link>
@@ -107,7 +107,7 @@ const App = () => (
                         </div>
                     </ul>
 
-                    <ul className='chair_btn'><Link to='/' className='dropdownHeader'>Chairs</Link>
+                    <ul className='chair_btn'><Link to='/categories/2' className='dropdownHeader'>Chairs</Link>
                         <div className="chair_content">
                             <div className='forFlex'>
                                 <img src={window.chairsMenuURL} className='menuImg' />
@@ -115,13 +115,13 @@ const App = () => (
                                 <div className='menuContent'>
                                     <div className='dropLink1'>
                                         <div className='text_align_img top'>
-                                            <Link to='/' className='img_align'>
+                                            <Link to='/categories/2' className='img_align'>
                                                 <img src={window.littleChairURL} className='littleImg' />
                                                 <div>All Chairs</div>
                                             </Link>
                                         </div>
                                         <div className='text_align_img'>
-                                            <Link to='/' className='img_align'>
+                                            <Link to='/categories/2' className='img_align'>
                                                 <img src={window.chair2URL} className='littleImg' />
                                                 <div>For Traditional Desks</div>
                                             </Link>
@@ -129,13 +129,13 @@ const App = () => (
                                     </div>
                                     <div className='dropLink2'>
                                         <div className='text_align_img top'>
-                                            <Link to='/' className='img_align'>
+                                            <Link to='/categories/2' className='img_align'>
                                                 <img src={window.kneelingURL} className='littleImg' />
                                                 <div>Kneeling Chairs</div>
                                             </Link>
                                         </div>
                                         <div className='text_align_img'>
-                                            <Link to='/login' className='img_align'>
+                                            <Link to='/categories/2' className='img_align'>
                                                 <img src={window.standingChairURL} className='littleImg' />
                                                 <div>For Standing Desks</div>
                                             </Link>
@@ -146,7 +146,7 @@ const App = () => (
                         </div>
                     </ul>
 
-                    <ul className='workplace_btn'><Link to='/' className='dropdownHeader'>Workplace</Link>
+                    <ul className='workplace_btn'><Link to='/categories/1' className='dropdownHeader'>Workplace</Link>
                         <div className="workplace_content">
                             <div className='forFlex'>
                                 <img src={window.menu3URL} className='menuImg' />
@@ -154,13 +154,13 @@ const App = () => (
                                 <div className='menuContent'>
                                     <div className='dropLink1'>
                                         <div className='text_align_img top'>
-                                            <Link to='/' className='img_align'>
+                                            <Link to='/categories/2' className='img_align'>
                                                 <img src={window.wpseatingURL} className='littleImg' />
                                                 <div>Seating</div>
                                             </Link>
                                         </div>
                                         <div className='text_align_img'>
-                                            <Link to='/' className='img_align'>
+                                            <Link to='/categories/1' className='img_align'>
                                                 <img src={window.wptablesURL} className='littleImg' />
                                                 <div>Office Tables</div>
                                             </Link>
@@ -168,9 +168,9 @@ const App = () => (
                                     </div>
                                     <div className='dropLink2'>
                                         <div className='text_align_img top'>
-                                            <Link to='/' className='img_align'>
+                                            <Link to='/categories/3' className='img_align'>
                                                 <img src={window.workplaceAllURL} className='littleImg' />
-                                                <div>Desk Systems</div>
+                                                <div>Other Neccesities</div>
                                             </Link>
                                         </div>
                                     </div>
@@ -179,7 +179,7 @@ const App = () => (
                         </div>
                     </ul>
 
-                    <ul className='accessories_btn'><Link to='/' className='dropdownHeader'>Accessories</Link>
+                    <ul className='accessories_btn'><Link to='/categories/3' className='dropdownHeader'>Accessories</Link>
                         <div className="accessories_content">
                             <div className='forFlex'>
                                 <img src={window.menu4URL} className='menuImg' />
@@ -187,7 +187,7 @@ const App = () => (
                                 <div className='menuContent'>
                                     <div className='dropLink1'>
                                         <div className='text_align_img top'>
-                                            <Link to='/' className='img_align'>
+                                            <Link to='/categories/3' className='img_align'>
                                                 <img src={window.accessoriesAllURL} className='littleImg' />
                                                 <div>All Accessories</div>
                                             </Link>

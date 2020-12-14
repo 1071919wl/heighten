@@ -2,12 +2,15 @@
     font-family: sans-serif;
     color: #414141;
 
+    
     .category_directory {
         display: flex;
         justify-content: center;
-        margin-top: 40px;
-        margin-bottom: 50px;
+        margin-top: 30px;
+        margin-bottom: 30px;
         font-size: 14px;
+        
+
 
         span {
             margin-left: 10px;
@@ -19,4 +22,98 @@
         }
 
     }
+
+
+    .indexContainer{
+        background-color:#EEF7FC;
+        display: flex;
+        justify-content: center;
+
+        .indexCenter{
+            display:flex;
+            text-align:center;
+            margin-left: 50px;
+            margin-right: 50px;
+            max-width: 50%;
+            
+            
+            .indexTitle{
+                font-size: 24px;
+                color: #414141;
+                margin-bottom: 10px;
+                margin-top: 30px;
+            }
+            
+            p{
+                font-size: 16px;
+                color: #414141;
+                margin-top: 20px;
+                margin-bottom: 280px;
+            }
+        }
+        
+        
+    }
+
+    .idxImg{
+        display: flex;
+        justify-content:center;
+        margin-top: -250px;
+        
+        .menuImg{
+            height: auto;
+            width: 630px;
+            margin-bottom: 60px;
+        }
+
+    }
+
+
+
+    .index_items_container{
+        display:flex;
+        justify-content: center;
+        // margin-left: 250px;
+        // margin-right: 250px;
+        margin-left: 12%;
+        margin-right: 12%;
+
+
+        .index_img_flex{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            // max-width: 100%;
+            // margin-left: 10%;
+            // margin-right: 10%;
+            // background-color: green;
+
+            .idxProductTitle{
+                margin-bottom: 20px;
+                display: flex;
+                justify-content:center;
+            }
+
+            .starts_at_idx{
+                display:flex;
+                justify-content: center;
+            }
+
+            .testing{
+                display: flex;
+                flex: 0 0 33.333333%;
+            }
+            
+        }
+
+        .individual_img{
+            height: auto;
+            width: 250px;
+            margin-left: 20px;
+            margin-right: 20px;
+
+            margin-top: 100px;
+        }
+    }
+
 }    

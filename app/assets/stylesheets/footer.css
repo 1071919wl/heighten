@@ -22,7 +22,9 @@
 .footer_github:hover,
 .footer_repository:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
+
 
 
 
