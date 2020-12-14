@@ -7,9 +7,18 @@
         display: flex;
         justify-content:center;
         margin-top:40px;
-        margin-bottom:40px;
-    
-        background-color: yellow
+        margin-bottom:50px;
+        font-size: 14px;
+        
+        span{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .productName{
+            color: #6E6C63
+        }
+
     }
     
     .main_content{

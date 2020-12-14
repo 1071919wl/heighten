@@ -9,7 +9,6 @@ class Product extends React.Component {
 
     componentDidMount(){
         this.props.fetchProduct(this.props.productId);
-
     }
     
     render(){
@@ -25,10 +24,10 @@ class Product extends React.Component {
                     </Link>
                     <div>/</div>
                     <Link to='/'>
-                    <span>{product.category}</span>
+                    <span>{product.category[0].toUpperCase()+product.category.slice(1)}s</span>
                     </Link>
                     <div>/</div>
-                    <span>{product.name}</span>
+                    <span className='productName'>{product.name}</span>
                     
                 </div>
                 <div className='main_content'>
@@ -57,6 +56,9 @@ class Product extends React.Component {
                             </div> 
                         </div>
                     </div>
+                </div>
+                <div>
+                    
                 </div>
             </div>
         )
