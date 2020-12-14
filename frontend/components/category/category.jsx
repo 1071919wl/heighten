@@ -11,6 +11,14 @@ class Category extends React.Component {
         this.props.fetchCategory(this.props.categoryId);
     }
 
+
+    // fixes the issue of page not rendering when you navigate from cat1 to cat2 to etc
+    componentDidUpdate(prevProps){
+        if(prevProps.categoryId !== this.props.categoryId){
+            this.props.fetchCategory(this.props.categoryId);
+        }
+    }
+
     test(){
         
         if(this.props.categoryId === "1"){
@@ -72,7 +80,7 @@ class Category extends React.Component {
                 <div className='index_items_container'>
                     <ul className='index_img_flex'>
                         {this.shuffle(category.products).map( (product, i) =>  (
-                            <div className='idx_img_spacer'>
+                            <div key={i} className='idx_img_spacer'>
                                 <li key={product.id} >
                                     <Link to={`/products/${product.id}`}>
                                         <div className='individual_img'>

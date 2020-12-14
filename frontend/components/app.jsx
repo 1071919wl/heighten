@@ -76,7 +76,7 @@ const App = () => (
                                 <div className='menuContent'>
                                         <div className='dropLink1'>
                                             <div className='text_align_img top'>
-                                            <Link to='/categories/1' className='img_align'>
+                                                <Link to='/categories/1' className='img_align'>
                                                     <img src={window.remiURL} className='littleImg' />
                                                     <div>All Desks</div>
                                                 </Link>
