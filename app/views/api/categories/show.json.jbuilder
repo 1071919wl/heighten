@@ -1,6 +1,7 @@
 # @products.each do |product|
 #     json.set! product.id do
 #         json.extract! product, :id, :name, :type_id, :description, :price
+#         json.photoUrl url_for(product.photo)
 #         #!extract may need to be in a _product.json.jbuilder partial file.
 #         #! json.partial! 'product', product: product
 #     end
@@ -14,4 +15,7 @@ json.products @products do |product|
     json.type_id product.type_id
     json.description product.description
     json.price product.price
+
+    #! testing
+    json.photoUrl url_for(product.photo)
 end

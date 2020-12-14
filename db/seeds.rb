@@ -22,19 +22,19 @@ desk2 = Product.create!(
             price: 499
         )
 
-# desk3 = Product.create!(
-#             name: "Remi Standing Desk", 
-#             type_id: 1, 
-#             description: "An adjustable-height desk for the budget-conscious. Created by the same designers, engineers, and manufacturers as our award-winning Jarvis, Remi gives you stability and a smooth, powerful lift.",
-#             price: 449
-#         )
+desk3 = Product.create!(
+            name: "Remi Standing Desk", 
+            type_id: 1, 
+            description: "An adjustable-height desk for the budget-conscious. Created by the same designers, engineers, and manufacturers as our award-winning Jarvis, Remi gives you stability and a smooth, powerful lift.",
+            price: 449
+        )
 
-# desk4 = Product.create!(
-#             name: "Cora Standing Desk Converter", 
-#             type_id: 1, 
-#             description: "Create your own standing desk on any surface—traditional desk, kitchen table, hotel room table—and tuck it away when not in use. Welcome to your new active worklife.",
-#             price: 149
-#         )
+desk4 = Product.create!(
+            name: "Cora Standing Desk Converter", 
+            type_id: 1, 
+            description: "Create your own standing desk on any surface—traditional desk, kitchen table, hotel room table—and tuck it away when not in use. Welcome to your new active worklife.",
+            price: 149
+        )
         
 #! Chair
 chair1 = Product.create!(
@@ -44,12 +44,12 @@ chair1 = Product.create!(
             price: 610
         )
 
-# chair2 = Product.create!(
-#             name: "Capisco Chair by HÅG", 
-#             type_id: 2, 
-#             description: "Capisco’s award-winning design offers a variety of healthy and active sitting postures, making it the perfect complement to an adjustable standing desk.",
-#             price: 799
-#         )
+chair2 = Product.create!(
+            name: "Capisco Chair by HÅG", 
+            type_id: 2, 
+            description: "Capisco’s award-winning design offers a variety of healthy and active sitting postures, making it the perfect complement to an adjustable standing desk.",
+            price: 799
+        )
 
 #! Accessory
 accessory1 = Product.create!(
@@ -59,12 +59,12 @@ accessory1 = Product.create!(
                 price: 79
             )
 
-# accessory2 = Product.create!(
-#                 name: "Jarvis Monitor Arm", 
-#                 type_id: 3, 
-#                 description: "Elevating your monitor is the best way to keep your spine in healthy alignment. Added bonus: more desktop space.",
-#                 price: 99
-#             )
+accessory2 = Product.create!(
+                name: "Jarvis Monitor Arm", 
+                type_id: 3, 
+                description: "Elevating your monitor is the best way to keep your spine in healthy alignment. Added bonus: more desktop space.",
+                price: 99
+            )
 
 
 
@@ -76,8 +76,11 @@ require 'open-uri'
 file1 = open("https://heighten-seeds.s3-us-west-1.amazonaws.com/heighten_desks/heighten_desks/fully-jarvis-standing-desk-black-bamboo-contour-c-v1.jpg")
 desk1.photo.attach(io: file1, filename: "img_#{desk1.id}.jpg")
 
-# file2 = open("https://heighten-seeds.s3-us-west-1.amazonaws.com/heighten_desks/heighten_desks/fully-jarvis-standing-desk-alloy-laminate-walnut-c-v1.jpg")
-# desk2.photo.attach(io: file2, filename: "img_#{desk2.id}.jpg")
+file2 = open("https://heighten-seeds.s3-us-west-1.amazonaws.com/heighten_desks/heighten_desks/fully-jarvis-standing-desk-alloy-laminate-walnut-c-v1.jpg")
+desk2.photo.attach(io: file2, filename: "img_#{desk2.id}.jpg")
+
+file3 = open("https://heighten-seeds.s3-us-west-1.amazonaws.com/heighten_desks/heighten_desks/fully-jarvis-standing-desk-alloy-laminate-walnut-c-v1.jpg")
+desk3.photo.attach(io: file3, filename: "img_#{desk3.id}.jpg")
 
 
 #! Chair show page photo

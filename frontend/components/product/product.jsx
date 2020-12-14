@@ -114,6 +114,37 @@ class Product extends React.Component {
                                 <img src={window.other3URL} />
                             </div>
                         </div>
+                        <div className='other4Container'>
+                            <div>
+                                <img src={window.other4URL} />
+                            </div>
+                            <div>
+                                <h2>Balance boards</h2>
+                                <h3>
+                                    Floatdeck Balance Board
+                                </h3>
+                                <p>
+                                    Crafted for effortless, intuitive motion, Floatdeck keeps your joints loose and body aligned, while subtly strengthening your stabilizing muscles (core, hips, knees) during long periods of standing.
+                                </p>
+                                <ul>
+                                    <li>
+                                        29.5" wide x 12.2" deep
+                                    </li>
+                                </ul>
+                                <h3>
+                                    Tic Toc Stand
+                                </h3>
+                                <p>
+                                    Developed around the principles that movement is healthy, Tic Toc Stand is designed not so much to make you move, as to move with you when you naturally shift your weight side to side—or front to back, if you want to mix things up.
+                                </p>
+                                <ul>
+                                    <li>
+                                        17.6" wide x 11.5" deep
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
 
                 </div>
             </div>

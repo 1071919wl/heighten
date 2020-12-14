@@ -11,4 +11,5 @@ class Category < ApplicationRecord
     has_many :products,
     foreign_key: :type_id, 
     class_name: :Product
+
 end
