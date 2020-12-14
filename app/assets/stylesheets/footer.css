@@ -8,12 +8,25 @@
     margin-right: 80px;
 }
 
+
+
 .footer_linkedin,
 .footer_email,
 .footer_github,
 .footer_repository {
     display: flex;
 }
+
+.footer_linkedin:hover,
+.footer_email:hover,
+.footer_github:hover,
+.footer_repository:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
 
 .footer_icon_spacing {
     margin-left: 8px;
