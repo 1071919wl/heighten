@@ -16,9 +16,13 @@
         }
 
         .productName{
-            color: #6E6C63
+            color: #6E6C63;
         }
 
+    }
+
+    .product_directory span:first-child:hover {
+        text-decoration: underline;
     }
     
     .main_content{

@@ -13,7 +13,9 @@ class Product extends React.Component {
     
     render(){
         let product = '';
+        let currId= null;
         this.props.product ? product = this.props.product : product = null
+        this.props.product ? currId = this.props.product.type_id : currId = null
         
         return (
             product === null ? <div></div> :
@@ -22,9 +24,9 @@ class Product extends React.Component {
                     <Link to='/'>
                         <span>Home</span>
                     </Link>
-                    <div>/</div>
-                    <Link to='/'>
-                    <span>{product.category[0].toUpperCase()+product.category.slice(1)}s</span>
+                        <div>/</div>
+                        <Link to={`/categories/${currId}`}>
+                        <span>{product.category[0].toUpperCase()+product.category.slice(1)}s</span>
                     </Link>
                     <div>/</div>
                     <span className='productName'>{product.name}</span>

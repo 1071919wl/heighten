@@ -10,8 +10,6 @@
         margin-bottom: 30px;
         font-size: 14px;
         
-
-
         span {
             margin-left: 10px;
             margin-right: 10px;
@@ -21,6 +19,9 @@
             color: #6E6C63
         }
 
+    }
+    .category_directory:hover{
+        text-decoration: underline;
     }
 
 
@@ -90,6 +91,7 @@
 
             .idxProductTitle{
                 margin-bottom: 20px;
+                margin-top: 20px;
                 display: flex;
                 justify-content:center;
             }
@@ -99,7 +101,7 @@
                 justify-content: center;
             }
 
-            .testing{
+            .idx_img_spacer {
                 display: flex;
                 flex: 0 0 33.333333%;
             }

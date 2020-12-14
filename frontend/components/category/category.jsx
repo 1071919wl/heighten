@@ -12,7 +12,7 @@ class Category extends React.Component {
     }
 
     test(){
-        console.log(this.props.categoryId)
+        
         if(this.props.categoryId === "1"){
             return (
                 <p>
@@ -72,23 +72,25 @@ class Category extends React.Component {
                 <div className='index_items_container'>
                     <ul className='index_img_flex'>
                         {this.shuffle(category.products).map( (product, i) =>  (
-                            <div className='testing'>
-                                <li key={i} >
-                                    <div className='individual_img'>
-                                        <img src={product.photoUrl} />
-                                    </div> 
-                                    <h1 className='idxProductTitle'>{product.name}</h1>
-                                    <div className='starts_at_idx'>
-                                        <span className='starts_at'>Starts at </span>    
-                                        ${product.price}.00
-                                    </div>
+                            <div className='idx_img_spacer'>
+                                <li key={product.id} >
+                                    <Link to={`/products/${product.id}`}>
+                                        <div className='individual_img'>
+                                            <img src={product.photoUrl} />
+                                        </div> 
+                                    </Link>
+                                    <Link to={`/products/${product.id}`}>
+                                        <h1 className='idxProductTitle'>{product.name}</h1>
+                                        <div className='starts_at_idx'>
+                                            <span className='starts_at'>Starts at </span>    
+                                            ${product.price}.00
+                                        </div>
+                                    </Link>
                                 </li>
                             </div>
                         ))}
                     </ul>
                 </div>
-                
-
 
 
             </div>
