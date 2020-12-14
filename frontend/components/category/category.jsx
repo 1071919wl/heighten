@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class Category extends React.Component {
@@ -16,10 +17,19 @@ class Category extends React.Component {
         return (
             category === null ? <div></div> :
             <div>
+                <div className='product_directory'>
+                    <Link to='/'>
+                        <span>Home</span>
+                    </Link>
+                </div>
+
+
                 <ul>
-                    {category.products.map( (el, i) =>  (
+                    {category.products.map( (product, i) =>  (
                         <li key={i}>
-                            {el.name}
+                            <img src={product.photoUrl} />
+                            {product.name}
+                            {product.price}
                         </li>
                     ))}
                 </ul>
