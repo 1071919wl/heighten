@@ -10,6 +10,10 @@ class Cart extends React.Component {
         }
 
     }
+    
+    componentDidMount(){
+        this.calcTotal()
+    }
 
     allStorage() {
         var values = [],
@@ -19,9 +23,15 @@ class Cart extends React.Component {
         while (i--) {
             values.push(localStorage.getItem(keys[i]));
         }
-        console.log(values);
+        // console.log(keys);
         return values;
     }
+
+    deleteStorageItem(objId){
+        localStorage.removeItem(objId)
+        return this.calcTotal();
+    }
+
 
     handleInput(field){
         return e => {
@@ -29,58 +39,84 @@ class Cart extends React.Component {
         }
     }
 
-    calcTotal(count){
-        return this.setState({
-            subtotal: count
-        })
+    testUpdate(){
 
     }
 
+    calcTotal(){
+        let total = 0;
+        this.allStorage().map((el) => {
+            total += (JSON.parse(el).quantity * JSON.parse(el).object.price)
+        })
+        return this.setState({
+                subtotal: total
+            })
+    }
+
+    
     render(){
-        let count = 0;
         return (
-            <div>
-                <div>
+            <div className='cartComponent'>
+                <div className='cartLeft_contain'>
+                    <h2 className='cart_title'>Shopping Cart</h2>
                     <ul>  
                         {this.allStorage().map( (el, i) => ( 
-                            <li key={i}>
-                                {/* <p>{JSON.parse(el).test}</p> */}
-                                <p>QUANTITY:{JSON.parse(el).quantity}</p>
-                                <p>NAME:{JSON.parse(el).object.name}</p>
-                        {count += JSON.parse(el).object.price}
-                                <p>PRICE:{JSON.parse(el).object.price}</p>
-                                <p>ID:{JSON.parse(el).object.id}</p>
-                                {/* <img src={JSON.parse(el).object.photoUrl} /> */}
-                                <br/>  
-                                {/* {this.calcTotal(JSON.parse(el).object.price)} */}
-                                <input type='number' min='0' 
-                                    placeholder={JSON.parse(el).quantity} 
-                                    onChange={this.handleInput('quantity')}
-                                />
+                            <div key={i}>
+                                <li key={i} className='cart_item_info'>
+
+                                    <div>
+                                        <img src={JSON.parse(el).object.photoUrl} className='cart-item-img'/>
+                                    </div>
+                                    <div className='cart-item-info'>
+                                        <p>{JSON.parse(el).object.name}</p>
+                                        <p>{JSON.parse(el).object.price}</p>
+
+                                        <label className='cartQty'>Qty
+                                            <input type='number' min='0' 
+                                                placeholder={JSON.parse(el).quantity} 
+                                                onChange={this.handleInput('quantity')}
+                                                className='cart_quantity'
+                                            />
+                                        </label>
+                                    </div> 
+                                    <input type='submit' value='Update Cart' 
+                                        onClick={() => { 
+                                            localStorage.setItem(JSON.parse(el).object.id, 
+                                                JSON.stringify({ 
+                                                    'quantity': this.state.quantity, 
+                                                    'object': JSON.parse(el).object 
+                                            
+                                                })
+                                            )
+                                        }
+                                    }/>
 
 
-                                <input type='submit' value='Update Cart' 
-                                    onClick={() => { 
-                                        localStorage.setItem(JSON.parse(el).object.id, 
-                                            JSON.stringify({ 
-                                                'quantity': this.state.quantity, 
-                                                'object': JSON.parse(el).object 
-                                        
-                                            })
-                                        )
-                                    }
-                                }/>
-                            </li>
+                                    <br/>
+                                    <input type='submit' value='Remove Item'
+                                        onClick={() => {
+                                            this.deleteStorageItem(JSON.parse(el).object.id)
+                                        }}
+                                    />
+                                </li>
+                            </div> 
                         ))}
                     </ul>
+                        <input type='submit' onClick={() => this.calcTotal()} value='Recalculate Total'/> 
                     <br/>
-                            <h1>Subtotal: {this.state.subtotal}</h1>
-                        <input type='submit' onClick={() => this.calcTotal(count)} value='calculate'/> 
-                    {/* {JSON.parse(localStorage.getItem('24')).price} */}
                 </div> 
 
-                <div>
+                <div className='spacer_cart'></div>
 
+                <div className='cartright_contain'>
+                    <h2 className='checkout_title'>Cart Summary</h2>
+                    <div>Subtotal</div>
+                    <div>${this.state.subtotal}.00</div>
+                    <div>Standard Shipping</div>
+                    <div>$0.00</div>
+                    <div>Order Total</div>
+                    <div>${this.state.subtotal}.00</div>
+                    <input type='submit' value='Proceed to checkout'/>
                 </div> 
             </div> 
         )

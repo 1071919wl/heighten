@@ -114,7 +114,23 @@
                     display:flex;
                 }
             }
-    
+            
+            .productQty{
+                font-size: 12px;
+                outline: 1px solid lightgray;
+                color: #6e6c6e;;
+                margin-top: 25px;
+                margin-right: 10px;
+                padding: 10px;
+            }
+
+
+            .quantityInput{
+                font-size:14px;
+                width: 40px;
+                margin-left: 10px;
+                color: #414141;
+            }
         }
     
     }

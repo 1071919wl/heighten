@@ -22,14 +22,14 @@ class Product extends React.Component {
         }
     }
 
-
+    
     // test(){
     //     return(
 
     //         localStorage.setItem(this.props.product.id, JSON.stringify(this.props.product)) 
     //     )
     // }
-    
+
     render(){
         let product = '';
         let currId= null;
@@ -66,18 +66,15 @@ class Product extends React.Component {
                             <div className='product_description'>{product.description}</div>
 
 
-
-
-                            
-                            <input type='number' min='0' onChange={this.handleInput('quantity')}/>
-                            <input type='submit' value='Add to Cart' className='addToCart' 
-                                onClick={() => {localStorage.setItem(product.id, JSON.stringify({'quantity':this.state.quantity, 'object': product}))} }
-                            />
+                            <label className='productQty'>Qty  
+                                <input type='number' min='0' placeholder='0' onChange={this.handleInput('quantity')} className='quantityInput'/>
+                            </label>
+                                <input type='submit' value='Add to Cart' className='addToCart' 
+                                    onClick={() => {localStorage.setItem(product.id, JSON.stringify({'quantity':this.state.quantity, 'object': product}))}}
+                                />
 
 
                                 
-
-
                             <div className='shopbox'>
                                 <div className='test'>
                                     <div className='showBox_container'>

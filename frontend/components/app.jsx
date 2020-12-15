@@ -57,7 +57,11 @@ const App = () => (
             <div className='info_spacing'></div>
             <div className='cart'>
                 <GreetingContainer className='test'/>
-                <span><button type='submit'><img src={window.cartURL} /></button></span>
+                <Link to='/cart'>
+                    <span>
+                        <img src={window.cartURL} className='actualCartImg'/>
+                        </span>
+                </Link>
             </div>
         </div>
 
@@ -69,7 +73,7 @@ const App = () => (
                 </Link>
 
                 <div className='header_center'>
-                    <ul className='desk_btn'> <Link to={`/categories/${store.getState().entities}`} className='dropdownHeader'>Standing Desks</Link>
+                    <ul className='desk_btn'> <Link to={`/categories/1`} className='dropdownHeader'>Standing Desks</Link>
                         <div className="desk_content">
                             <div className='forFlex'>
                                 <img src={window.deskURL} className='menuImg'/>

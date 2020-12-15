@@ -93,17 +93,19 @@
     display:flex;
     justify-content: space-evenly;
     margin-left: 40px;
-    margin-right: 40px;
+    margin-right: 20px;
     
     .home1_img{
         height: auto;
-        width: 85%;
+        // width: 85%;
+        width: 480px;
         margin-top: -20px;
     }
 
     .home2_img {
         height: auto;
-        width: 89%;
+        // width: 89%;
+        width: 380px;
         margin-top: 70px;
         margin-left: -12%;
 
@@ -115,11 +117,14 @@
         // margin-right: 130px;
         margin-right: 5%;
         margin-top: 10%;
-
+        
+        
         p{
             font-family: sans-serif;
             margin-bottom: 35px;
             font-size: 16px;
+            // width: 50%;
+            min-width:100px;
         }
 
         .shopDesks{
