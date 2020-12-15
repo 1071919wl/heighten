@@ -4,6 +4,7 @@ import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import Home from './home/home';
+import Cart from './cart/cart';
 import ProductContainer from './product/product_container';
 import CategoryContainer from './category/category_container';
 import Error404 from './error_404';
@@ -68,7 +69,7 @@ const App = () => (
                 </Link>
 
                 <div className='header_center'>
-                    <ul className='desk_btn'> <Link to='/categories/1' className='dropdownHeader'>Standing Desks</Link>
+                    <ul className='desk_btn'> <Link to={`/categories/${store.getState().entities}`} className='dropdownHeader'>Standing Desks</Link>
                         <div className="desk_content">
                             <div className='forFlex'>
                                 <img src={window.deskURL} className='menuImg'/>
@@ -219,6 +220,7 @@ const App = () => (
                 <AuthRoute path="/signup" component={SignupFormContainer} />
                 <Route path="/products/:id" component={ProductContainer} /> //!need to call the container table first or youre skipping a step
                 <Route path="/categories/:id" component={CategoryContainer}/>
+                <Route path="/cart" component={Cart} />
                 <Route exact path="/" component={Home}/>
                 <Route path='*' component={Error404} />
             </Switch>

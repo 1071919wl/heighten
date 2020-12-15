@@ -6,6 +6,7 @@
     align-items: flex-end;
     background-color: rgb(238, 247, 252);
     font-family: sans-serif;
+    padding-bottom: 80px;
 }
 
 .capisco_fp,
@@ -27,6 +28,28 @@
         align-items: center;
         margin-top: 25px;
     }   
+
+    .fp_pics:hover .randomSent{
+        display: block;
+    }
+
+    .fp_pics:hover .randomSent2 {
+        display: block;
+    }
+    
+    .randomSent{
+        display: none;
+        text-align: center;
+        width: 85px;
+        margin-bottom: 15px
+    }
+
+    .randomSent2 {
+        display: none;
+        text-align: center;
+        width: 100px;
+        margin-bottom: 15px
+    }
     
     img{
         height: auto;
@@ -47,12 +70,79 @@
     //     // background-size: cover;
     // }
 
-
 }
-.hero_fp,{
+
+.hero_fp {
     img{
         margin-bottom: -5px;
     }
+}
+
+.midSent{
+    background-color: rgb(238, 247, 252);
+    display: flex;
+    justify-content: center;
+    color: #6E6C63;
+    font-size: 26px;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    font-family: sans-serif;
+}
+
+.home_sec1{
+    display:flex;
+    justify-content: space-evenly;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+    .home1_img{
+        height: auto;
+        width: 85%;
+        margin-top: -20px;
+    }
+
+    .home2_img {
+        height: auto;
+        width: 89%;
+        margin-top: 70px;
+        margin-left: -12%;
+
+    }
+
+    .home_sec_sent{
+        text-align:center;
+        width: 300px;
+        // margin-right: 130px;
+        margin-right: 5%;
+        margin-top: 10%;
+
+        p{
+            font-family: sans-serif;
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        .shopDesks{
+            outline: 2.5px solid rgba(4, 4, 179, 0.877);
+            color: rgba(4, 4, 179, 0.877);
+            max-width: 140px;
+            text-align: center;
+            padding: 7px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 35px;
+            padding-right: 35px;
+            margin-top: 25px;
+
+        }
+
+        .shopDesks:hover {
+            background-color: rgba(4, 4, 179, 0.877);
+            color: white;
+        }
+
+    }
+
 }
 
 

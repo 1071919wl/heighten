@@ -5,11 +5,30 @@ class Product extends React.Component {
     constructor(props){
         super(props)
 
+        this.state = {
+            quantity: 0
+        }
+        
     }    
 
     componentDidMount(){
         this.props.fetchProduct(this.props.productId);
     }
+
+    handleInput(field){
+        console.log(this.state)
+        return e => {
+         this.setState({[field]: e.target.value})
+        }
+    }
+
+
+    // test(){
+    //     return(
+
+    //         localStorage.setItem(this.props.product.id, JSON.stringify(this.props.product)) 
+    //     )
+    // }
     
     render(){
         let product = '';
@@ -26,7 +45,7 @@ class Product extends React.Component {
                     </Link>
                         <div>/</div>
                         <Link to={`/categories/${currId}`}>
-                        <span>{product.category[0].toUpperCase()+product.category.slice(1)}s</span>
+                        <span>{product.category[0].toUpperCase()+product.category.slice(1)}</span>
                     </Link>
                     <div>/</div>
                     <span className='productName'>{product.name}</span>
@@ -45,7 +64,20 @@ class Product extends React.Component {
                                 ${product.price}.00
                             </div> 
                             <div className='product_description'>{product.description}</div>
-                            <input type='submit' value='Add to Cart' className='addToCart'/>   
+
+
+
+
+                            
+                            <input type='number' min='0' onChange={this.handleInput('quantity')}/>
+                            <input type='submit' value='Add to Cart' className='addToCart' 
+                                onClick={() => {localStorage.setItem(product.id, JSON.stringify({'quantity':this.state.quantity, 'object': product}))} }
+                            />
+
+
+                                
+
+
                             <div className='shopbox'>
                                 <div className='test'>
                                     <div className='showBox_container'>

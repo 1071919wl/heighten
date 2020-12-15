@@ -76,7 +76,7 @@ class Category extends React.Component {
                 </div>
 
                 {/* {this.test()} */}
-
+                <div className='indexAmt'>{category.products.length} Items</div>
                 <div className='index_items_container'>
                     <ul className='index_img_flex'>
                         {this.shuffle(category.products).map( (product, i) =>  (

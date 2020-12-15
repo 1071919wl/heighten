@@ -69,7 +69,12 @@
 
     }
 
-
+    
+    .indexAmt{
+        white-space: nowrap;
+        display:flex;
+        justify-content: center;
+    }
 
     .index_items_container{
         display:flex;
@@ -78,7 +83,7 @@
         // margin-right: 250px;
         margin-left: 12%;
         margin-right: 12%;
-
+        
 
         .index_img_flex{
             display: flex;
