@@ -81,10 +81,12 @@ class Cart extends React.Component {
                                     
                                     <div className='cart-item-info'>
                                         <div className='toFlex'>
-                                            <p>{JSON.parse(el).object.name}</p>
+                                            <p className='nameoftheItem'>{JSON.parse(el).object.name}</p>
                                             {/* <p className='cart_cost_per'>$ {JSON.parse(el).object.price}.00</p> */}
-                                            <p className='cart_cost_per'>$ {this.multiplier(JSON.parse(el).object.price, JSON.parse(el).quantity)}.00</p>
-                                            <p className='cart_cost_per'>($ {JSON.parse(el).object.price}.00 each)</p>
+                                            <p className='cart_cost_total'>$ {this.multiplier(JSON.parse(el).object.price, JSON.parse(el).quantity)}.00</p>
+                                        </div>
+                                        <div className='cart_cost_per'>
+                                            <p>($ {JSON.parse(el).object.price}.00 each)</p>
                                         </div>
                                         <div className='cartUpdateSec'>
                                             <label className='cartQty'>Qty

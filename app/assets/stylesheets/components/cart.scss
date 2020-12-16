@@ -5,7 +5,8 @@
     justify-content: center;
     background-color: #F7F7F6;
     padding-top: 50px;
-    
+    padding-bottom: 50px;
+
     .cartLeft_contain{
         display: flex;
         flex-direction: column;
@@ -37,22 +38,34 @@
             padding-bottom: 25px;
             border-bottom: 2px solid lightgray;   
 
-            background-color: grey;
             
             .cart-item-info{
-                
+                width: 100%;
                 .toFlex{
                     display:flex;
                     justify-content: space-between;
+                    // width: 100%;
 
-
-                    background-color: tan;
-                    
-
-                    .cart_cost_per {
-                        font-size: 12px;
+                    .nameoftheItem{
+                        padding-right:80px;
                     }
+
+                    .cart_cost_total{
+                        margin-right: 10px;
+                        font-weight: bold;
+                    }
+
                 }
+
+                .cart_cost_per {
+                    display: flex;
+                    justify-content: flex-end;
+                    font-size: 13px;
+                    margin-right: 10px;
+
+
+                }
+
             }
 
             .removeContainer{
@@ -93,8 +106,6 @@
                 margin-left: 220px;
                 
 
-                background-color: yellow;
-
             }
 
             .update_contain{
@@ -110,7 +121,7 @@
     }
 
     .spacer_cart {
-        margin-left: 50px;
+        margin-left: 50;
         margin-right: 50px;
     }
 
