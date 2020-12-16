@@ -6,7 +6,8 @@ class Cart extends React.Component {
         super(props);
 
         this.state = {
-            subtotal: 0
+            subtotal: 0,
+            quantity: 0
         }
 
     }
@@ -39,7 +40,15 @@ class Cart extends React.Component {
         }
     }
 
-    testUpdate(){
+    cartUpdate(obj){
+        localStorage.setItem(obj.id,
+            JSON.stringify({
+                'quantity': this.state.quantity,
+                'object': obj
+            })
+        )
+
+        return this.calcTotal();
 
     }
 
@@ -50,7 +59,11 @@ class Cart extends React.Component {
         })
         return this.setState({
                 subtotal: total
-            })
+        })
+    }
+
+    multiplier(price, quantity){
+        return price * quantity;
     }
 
     
@@ -62,61 +75,85 @@ class Cart extends React.Component {
                     <ul>  
                         {this.allStorage().map( (el, i) => ( 
                             <div key={i}>
-                                <li key={i} className='cart_item_info'>
+                                <li key={i} className='cart_item_container'>
 
-                                    <div>
-                                        <img src={JSON.parse(el).object.photoUrl} className='cart-item-img'/>
-                                    </div>
+                                    <img src={JSON.parse(el).object.photoUrl} className='cart-item-img'/>
+                                    
                                     <div className='cart-item-info'>
-                                        <p>{JSON.parse(el).object.name}</p>
-                                        <p>{JSON.parse(el).object.price}</p>
-
-                                        <label className='cartQty'>Qty
-                                            <input type='number' min='0' 
-                                                placeholder={JSON.parse(el).quantity} 
-                                                onChange={this.handleInput('quantity')}
-                                                className='cart_quantity'
-                                            />
-                                        </label>
+                                        <div className='toFlex'>
+                                            <p>{JSON.parse(el).object.name}</p>
+                                            {/* <p className='cart_cost_per'>$ {JSON.parse(el).object.price}.00</p> */}
+                                            <p className='cart_cost_per'>$ {this.multiplier(JSON.parse(el).object.price, JSON.parse(el).quantity)}.00</p>
+                                            <p className='cart_cost_per'>($ {JSON.parse(el).object.price}.00 each)</p>
+                                        </div>
+                                        <div className='cartUpdateSec'>
+                                            <label className='cartQty'>Qty
+                                                <input type='number' min='0' 
+                                                    defaultValue={JSON.parse(el).quantity} 
+                                                    onChange={this.handleInput('quantity')}
+                                                    className='cart_quantity'
+                                                />
+                                            </label>
+                                            {/* <input type='submit' value='Update Cart' 
+                                                onClick={() => { 
+                                                    localStorage.setItem(JSON.parse(el).object.id, 
+                                                        JSON.stringify({ 
+                                                            'quantity': this.state.quantity, 
+                                                            'object': JSON.parse(el).object 
+                                                    
+                                                        })
+                                                    )
+                                                }
+                                            }/> */}
+                                        </div>   
+                                        <div className='update_contain'>
+                                            <input type='submit' value='Update Cart'
+                                                onClick={() => {
+                                                    this.cartUpdate(JSON.parse(el).object)
+                                                }
+                                            } />
+                                        </div>
+                                        <div className='removeContainer'>
+                                            <input type='submit' value='Remove Item' className='removeBtn'
+                                                onClick={() => {
+                                                    this.deleteStorageItem(JSON.parse(el).object.id)
+                                                }
+                                            } />
+                                        </div>
                                     </div> 
-                                    <input type='submit' value='Update Cart' 
-                                        onClick={() => { 
-                                            localStorage.setItem(JSON.parse(el).object.id, 
-                                                JSON.stringify({ 
-                                                    'quantity': this.state.quantity, 
-                                                    'object': JSON.parse(el).object 
-                                            
-                                                })
-                                            )
-                                        }
-                                    }/>
 
-
-                                    <br/>
-                                    <input type='submit' value='Remove Item'
-                                        onClick={() => {
-                                            this.deleteStorageItem(JSON.parse(el).object.id)
-                                        }}
-                                    />
                                 </li>
                             </div> 
                         ))}
                     </ul>
-                        <input type='submit' onClick={() => this.calcTotal()} value='Recalculate Total'/> 
-                    <br/>
+
+                    {/* <input type='submit' onClick={() => this.calcTotal()} value='Recalculate Total'/>  */}
+                    
                 </div> 
 
                 <div className='spacer_cart'></div>
 
                 <div className='cartright_contain'>
+
                     <h2 className='checkout_title'>Cart Summary</h2>
-                    <div>Subtotal</div>
-                    <div>${this.state.subtotal}.00</div>
-                    <div>Standard Shipping</div>
-                    <div>$0.00</div>
-                    <div>Order Total</div>
-                    <div>${this.state.subtotal}.00</div>
-                    <input type='submit' value='Proceed to checkout'/>
+
+                    <div className='cartSummary-total'>
+                        <div className='grandTotal'>Subtotal</div>
+                        <div>$ {this.state.subtotal}.00</div>
+                    </div> 
+                    <div className='cartSummary-ship'>
+                        <div className='grandTotal'>Standard Shipping</div>
+                        <div>${this.state.subtotal > 0 ? 5.79 : 0.00}</div>
+                    </div>
+                    <div className='cartSummary-grand'>
+                        <div>Order Total</div>
+                        <div className='grandTotal'>$ {this.state.subtotal > 0 ? this.state.subtotal + 5.79 : 0.00}</div>
+                    </div> 
+                    <div className='cartSummary-checkout'>
+                        <div className='tax'>Tax applied at checkout</div>
+                    </div>  
+
+                    <input type='submit' value='Proceed to checkout' className='checkoutButton'/>
                 </div> 
             </div> 
         )
