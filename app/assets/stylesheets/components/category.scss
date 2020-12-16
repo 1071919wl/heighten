@@ -104,6 +104,14 @@
             .starts_at_idx{
                 display:flex;
                 justify-content: center;
+
+
+                .starts_at{
+                    margin-top: 4px;
+                    margin-right: 5px;
+                    color: #6e6c63;
+                    font-size: 12px;
+                }
             }
 
             .idx_img_spacer {
@@ -122,5 +130,55 @@
             margin-top: 100px;
         }
     }
+
+    .idxSpacing{
+    margin-top: 145px;
+    margin-bottom: 150px;
+    }
+
+    .idxSpacing2 {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+
+    .idx_sec {
+        display: flex;
+        justify-content: center;
+        margin-left: 90px;
+        margin-right: 90px;
+        background-color: #F7F7F6;
+        .ergoIndex_img {
+            height: auto;
+            width: 500px;
+            margin-top: -20px;
+        }
+
+        .idx_sec_sent {
+            text-align: center;
+            width: 330px;
+            // margin-right: 130px;
+            margin-right: 50px;
+            margin-top: 180px;
+
+            h1{
+                font-size: 16px;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+
+            p {
+                font-family: sans-serif;
+                margin-bottom: 35px;
+                font-size: 16px;
+                min-width: 100px;
+            }
+
+
+         }
+
+    }   
+
+
 
 }    

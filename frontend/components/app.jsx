@@ -59,7 +59,7 @@ const App = () => (
                 <GreetingContainer className='test'/>
                 <Link to='/cart'>
                     <span>
-                        <img src={window.cartURL} className='actualCartImg'/>
+                        <img src={window.cartURL} className='actualCartImg' id='test'/>
                         </span>
                 </Link>
             </div>

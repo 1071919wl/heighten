@@ -121,7 +121,8 @@ class Category extends React.Component {
                                         <h1 className='idxProductTitle'>{product.name}</h1>
                                         <div className='starts_at_idx'>
                                             <span className='starts_at'>Starts at </span>    
-                                            ${product.price}.00
+                                            <div className='dollar_amt'>${product.price}.00</div>
+
                                         </div>
                                     </Link>
                                 </li>
@@ -130,6 +131,18 @@ class Category extends React.Component {
                     </ul>
                 </div>
 
+                <div className='idxSpacing'></div>
+
+                <div className='idx_sec'>
+                    <div>
+                        <img src={window.ergoIndexURL} className='ergoIndex_img' />
+                    </div>
+                    <div className='idxSpacing2'></div>
+                    <div className='idx_sec_sent'>
+                        <h1>What "ergonomic" really means for you</h1>
+                        <p>Something labeled “ergonomic” isn't going to fix all of our workplace pain. The key is creating a space that encourages movement, work flow, and showing up as your full self, in both mind and body.</p>
+                    </div>
+                </div> 
 
             </div>
         )

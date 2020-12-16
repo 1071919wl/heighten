@@ -9,26 +9,19 @@ class Product extends React.Component {
             quantity: 0
         }
         
-    }    
+    }   
+    
 
     componentDidMount(){
         this.props.fetchProduct(this.props.productId);
     }
 
     handleInput(field){
-        console.log(this.state)
         return e => {
          this.setState({[field]: e.target.value})
         }
     }
 
-    
-    // test(){
-    //     return(
-
-    //         localStorage.setItem(this.props.product.id, JSON.stringify(this.props.product)) 
-    //     )
-    // }
 
     render(){
         let product = '';
@@ -69,8 +62,13 @@ class Product extends React.Component {
                             <label className='productQty'>Qty  
                                 <input type='number' min='0' placeholder='0' onChange={this.handleInput('quantity')} className='quantityInput'/>
                             </label>
+
+
+
+
                                 <input type='submit' value='Add to Cart' className='addToCart' 
                                     onClick={() => {localStorage.setItem(product.id, JSON.stringify({'quantity':this.state.quantity, 'object': product}))}}
+                                    // onClick={() => { ani() }}
                                 />
 
 
