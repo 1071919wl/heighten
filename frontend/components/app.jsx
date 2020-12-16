@@ -7,6 +7,7 @@ import Home from './home/home';
 import Cart from './cart/cart';
 import ProductContainer from './product/product_container';
 import CategoryContainer from './category/category_container';
+import CartCheckoutContainer from './cart/cart_checkout_container';
 import Error404 from './error_404';
 import { AuthRoute } from '../util/route_util';
 
@@ -224,7 +225,7 @@ const App = () => (
                 <AuthRoute path="/signup" component={SignupFormContainer} />
                 <Route path="/products/:id" component={ProductContainer} /> //!need to call the container table first or youre skipping a step
                 <Route path="/categories/:id" component={CategoryContainer}/>
-                <Route path="/cart" component={Cart} />
+                <Route path="/cart" component={CartCheckoutContainer} />
                 <Route exact path="/" component={Home}/>
                 <Route path='*' component={Error404} />
             </Switch>

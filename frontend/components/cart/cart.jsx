@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Cart extends React.Component {
     constructor(props) {
@@ -7,7 +7,8 @@ class Cart extends React.Component {
 
         this.state = {
             subtotal: 0,
-            quantity: 0
+            quantity: 0,
+            redirect: null
         }
 
     }
@@ -22,7 +23,8 @@ class Cart extends React.Component {
             i = keys.length;
 
         while (i--) {
-            values.push(localStorage.getItem(keys[i]));
+            if( Number.isInteger( parseInt(keys[i])) === true) 
+                values.push(localStorage.getItem(keys[i]));
         }
         // console.log(keys);
         return values;
@@ -66,8 +68,19 @@ class Cart extends React.Component {
         return price * quantity;
     }
 
+    loggedInVerify(){
+        if (this.props.session.id === null || this.props.session.id === undefined){
+            alert('Please login to checkout!')
+            return false
+            // return <Redirect to="/login" />
+        }else{
+            alert('Thanks for demoing!')
+            return true
+        }
+    }
     
     render(){
+        // <Redirect to="/login" />
         return (
             <div className='cartComponent'>
                 <div className='cartLeft_contain'>
@@ -76,12 +89,14 @@ class Cart extends React.Component {
                         {this.allStorage().map( (el, i) => ( 
                             <div key={i}>
                                 <li key={i} className='cart_item_container'>
-
-                                    <img src={JSON.parse(el).object.photoUrl} className='cart-item-img'/>
-                                    
+                                    <Link to={`/products/${JSON.parse(el).object.id}`}>
+                                        <img src={JSON.parse(el).object.photoUrl} className='cart-item-img'/>
+                                    </Link>
                                     <div className='cart-item-info'>
                                         <div className='toFlex'>
-                                            <p className='nameoftheItem'>{JSON.parse(el).object.name}</p>
+                                            <Link to={`/products/${JSON.parse(el).object.id}`}>
+                                                <p className='nameoftheItem'>{JSON.parse(el).object.name}</p>
+                                            </Link>
                                             {/* <p className='cart_cost_per'>$ {JSON.parse(el).object.price}.00</p> */}
                                             <p className='cart_cost_total'>$ {this.multiplier(JSON.parse(el).object.price, JSON.parse(el).quantity)}.00</p>
                                         </div>
@@ -155,7 +170,12 @@ class Cart extends React.Component {
                         <div className='tax'>Tax applied at checkout</div>
                     </div>  
 
-                    <input type='submit' value='Proceed to checkout' className='checkoutButton'/>
+                    <input type='submit' 
+                        value='Proceed to checkout' 
+                        className='checkoutButton'
+                        onClick={() => { this.loggedInVerify() }}
+                    />
+                    {/* {this.loggedInVerify ? <Redirect to='/login' /> : null} */}
                 </div> 
             </div> 
         )

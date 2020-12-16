@@ -19,7 +19,7 @@ class Category extends React.Component {
         }
     }
 
-    test(){
+    indexPages(){
         
         if(this.props.categoryId === "1"){
             return (
@@ -105,7 +105,7 @@ class Category extends React.Component {
                     <img src={window.mainIndexURL} className='menuImg' />
                 </div> */}
 
-                {this.test()}
+                {this.indexPages()}
                 <div className='indexAmt'>{category.products.length} Items</div>
                 <div className='index_items_container'>
                     <ul className='index_img_flex'>
