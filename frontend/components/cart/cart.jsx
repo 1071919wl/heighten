@@ -26,7 +26,6 @@ class Cart extends React.Component {
             if( Number.isInteger( parseInt(keys[i])) === true) 
                 values.push(localStorage.getItem(keys[i]));
         }
-        // console.log(keys);
         return values;
     }
 

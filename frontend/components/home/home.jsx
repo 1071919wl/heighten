@@ -15,7 +15,7 @@ class Home extends React.Component {
                 <div className='jumpLady_sec'>
 
                     <div className='capisco_fp'>
-                        <Link to={'/products/14'} className='fp_pics'>
+                        <Link to={'/products/59'} className='fp_pics'>
                         <p className='randomSent'>Our company founder</p>  
                             <img src={window.capiscoURL} />
                             Capisco
@@ -26,7 +26,7 @@ class Home extends React.Component {
                         <img src={window.heroURL} />
                     </div>
                     <div className='luna_fp'>
-                        <Link to="/products/15" className='fp_pics'>
+                        <Link to="/products/60" className='fp_pics'>
                         <p className='randomSent'>Easy Leaning for Active Work</p>  
                             <img src={window.lunaURL} />
                             Luna
@@ -34,7 +34,7 @@ class Home extends React.Component {
                         </Link>
                     </div>
                     <div className='jarvis_fp'>
-                        <Link to="/products/5" className='fp_pics'>
+                        <Link to="/products/50" className='fp_pics'>
                         <p className='randomSent2'>Best standing desk on the planet</p>  
                             <img src={window.jarvis1URL} />
                             Jarvis
@@ -42,7 +42,7 @@ class Home extends React.Component {
                         </Link>
                     </div>
                     <div className='tictoc_fp'>
-                        <Link to="/products/16" className='fp_pics'>
+                        <Link to="/products/61" className='fp_pics'>
                             <p className='randomSent'>Evolution of the everyday chair</p>  
                             <img src={window.tictocURL} />
                             Tic Toc
@@ -50,7 +50,7 @@ class Home extends React.Component {
                         </Link>
                     </div>
                     <div className='regen_fp'>
-                        <Link to="/products/13" className='fp_pics'>
+                        <Link to="/products/58" className='fp_pics'>
                             <p className='randomSent2'>The modern office chair, perfected</p>  
                             <img src={window.regenURL} />
                             ReGeneration
@@ -73,7 +73,7 @@ class Home extends React.Component {
                     </div> 
                     <div className='home_sec_sent'>
                         <p>Working from home? Feel healthy and engaged with our collection of award-winning standing desks, including the new Jarvis.</p>
-                        <Link to='/categories/1' className='shopDesks'>Shop desks</Link>
+                        <Link to='/categories/8' className='shopDesks'>Shop desks</Link>
                     </div> 
                 </div> 
 
@@ -82,7 +82,7 @@ class Home extends React.Component {
                 <div className='home_sec2'>
                     <div className='home_sec2_sent'>
                         <p>Working from home? Feel healthy and engaged with our collection of award-winning standing desks, including the new Jarvis.</p>
-                        <Link to='/categories/2' className='shopExplore'>Explore</Link>
+                        <Link to='/categories/9' className='shopExplore'>Explore</Link>
                     </div>
                     <div>
                         <img src={window.home3URL} className='home3_img' />
@@ -104,7 +104,7 @@ class Home extends React.Component {
                         </div>
                         <h1>Working from home</h1>
                         <p>From adjustable-height desks to active chairs, standing mats to lighting — everything you need to create a home office that makes you feel good in your body and do your most inspired work.</p>
-                        <Link to='/categories/1' className='shopWFH'>Products</Link>
+                        <Link to='/categories/8' className='shopWFH'>Products</Link>
                     </div>
                 </div> 
 

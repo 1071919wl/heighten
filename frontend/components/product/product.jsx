@@ -42,7 +42,7 @@ class Product extends React.Component {
                         <span>Home</span>
                     </Link>
                         <div>/</div>
-                        <Link to={`/categories/${currId}`}>
+                    <Link to={`/categories/${currId}`}>
                         <span>{product.category[0].toUpperCase()+product.category.slice(1)}</span>
                     </Link>
                     <div>/</div>
