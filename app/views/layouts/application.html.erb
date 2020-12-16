@@ -5,6 +5,72 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+<!--
+        # .actualCartImg{
+        #   animation: shake 0.5s;
+        #   animation-iteration-count: 0.5;
+        #   display: none; 
+        # }
+-->        
+    <style>
+        
+      
+        @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0deg);
+        }
+
+        10% {
+            transform: translate(-1px, -2px) rotate(-1deg);
+        }
+
+        20% {
+            transform: translate(-3px, 0px) rotate(1deg);
+        }
+
+        30% {
+            transform: translate(3px, 2px) rotate(0deg);
+        }
+
+        40% {
+            transform: translate(1px, -1px) rotate(1deg);
+        }
+
+        50% {
+            transform: translate(-1px, 2px) rotate(-1deg);
+        }
+
+        60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+        }
+
+        70% {
+            transform: translate(3px, 1px) rotate(-1deg);
+        }
+
+        80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+        }
+
+        90% {
+            transform: translate(1px, 2px) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+        }
+      }
+    
+    </style>
+    <script>
+
+      function ani(){
+        document.getElementById('test').style.display = 'block';
+      }
+    </script>
+
+
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 <!-- auth page -->
@@ -138,6 +204,46 @@
       window.mainIndexURL = "<%= image_url('index/mainIndex.jpg') %>";
     </script>
 
+    <script type="text/javascript">
+      window.chrURL = "<%= image_url('index/chr.jpg') %>";
+    </script>
+
+    <script type="text/javascript">
+      window.dskURL = "<%= image_url('index/dsk.jpg') %>";
+    </script>
+
+    <script type="text/javascript">
+      window.wrkplcURL = "<%= image_url('index/wrkplc.jpg') %>";
+    </script>
+
+    <script type="text/javascript">
+      window.ergoIndexURL = "<%= image_url('index/ergoIndex.jpg') %>";
+    </script>
+
+<!-- home page-->
+    <script type="text/javascript">
+      window.home1URL = "<%= image_url('home/home1.jpg') %>";
+    </script>
+
+    <script type="text/javascript">
+      window.home2URL = "<%= image_url('home/home2.jpg') %>";
+    </script>
+
+    <script type="text/javascript">
+      window.home3URL = "<%= image_url('home/home3.jpg') %>";
+    </script>
+
+    <script type="text/javascript">
+      window.home4URL = "<%= image_url('home/home4.jpg') %>";
+    </script>
+
+    <script type="text/javascript">
+      window.home5URL = "<%= image_url('home/home5.jpg') %>";
+    </script>
+
+    <script type="text/javascript">
+      window.icnhomeURL = "<%= image_url('home/icnhome.png') %>";
+    </script>
 
   </head>
 

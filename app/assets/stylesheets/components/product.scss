@@ -62,12 +62,33 @@
                     padding: 10px;
                     padding-left: 25px;
                     padding-right: 25px;
+
+                    //random css ripple
+                    background-position: center;
+                    transition: background .4s;
             }
     
+            // .addToCart:hover {
+            //     background-color: rgb(248, 207, 24);
+            //     outline: 3px solid rgb(248, 207, 24);
+            // }
+            
+            /* Ripple effect */
+
             .addToCart:hover {
-                background-color: rgb(248, 207, 24);
-                outline: 3px solid rgb(248, 207, 24);
+                background: rgb(248, 205, 11) radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
             }
+
+            .addToCart:active {
+                background-color: #6eb9f7;
+                background-size: 100%;
+                transition: background 0s;
+            }
+
+      
+            
+            
+
 
             .product_description{
                 margin-top: 40px;
@@ -114,7 +135,23 @@
                     display:flex;
                 }
             }
-    
+            
+            .productQty{
+                font-size: 12px;
+                outline: 1px solid lightgray;
+                color: #6e6c6e;;
+                margin-top: 25px;
+                margin-right: 10px;
+                padding: 10px;
+            }
+
+
+            .quantityInput{
+                font-size:14px;
+                width: 40px;
+                margin-left: 10px;
+                color: #414141;
+            }
         }
     
     }

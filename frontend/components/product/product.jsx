@@ -5,12 +5,29 @@ class Product extends React.Component {
     constructor(props){
         super(props)
 
-    }    
+        this.state = {
+            quantity: 0
+        }
+        
+    }   
+    
 
     componentDidMount(){
         this.props.fetchProduct(this.props.productId);
     }
-    
+
+    handleInput(field){
+        return e => {
+         this.setState({[field]: e.target.value})
+        }
+    }
+
+    cartValidate(product) {
+        if(this.state.quantity > 0){
+            return localStorage.setItem(product.id, JSON.stringify({ 'quantity': this.state.quantity, 'object': product }))
+        }
+    }
+
     render(){
         let product = '';
         let currId= null;
@@ -26,7 +43,7 @@ class Product extends React.Component {
                     </Link>
                         <div>/</div>
                         <Link to={`/categories/${currId}`}>
-                        <span>{product.category[0].toUpperCase()+product.category.slice(1)}s</span>
+                        <span>{product.category[0].toUpperCase()+product.category.slice(1)}</span>
                     </Link>
                     <div>/</div>
                     <span className='productName'>{product.name}</span>
@@ -45,7 +62,22 @@ class Product extends React.Component {
                                 ${product.price}.00
                             </div> 
                             <div className='product_description'>{product.description}</div>
-                            <input type='submit' value='Add to Cart' className='addToCart'/>   
+
+
+                            <label className='productQty'>Qty  
+                                <input type='number' min='0' placeholder='0' onChange={this.handleInput('quantity')} className='quantityInput'/>
+                            </label>
+
+
+
+
+                                <input type='submit' value='Add to Cart' className='addToCart' 
+                                    // onClick={() => { localStorage.setItem(product.id, JSON.stringify({ 'quantity': this.state.quantity, 'object': product }))}}
+                                    onClick={() => {this.cartValidate(product)}}
+                                />
+
+
+                                
                             <div className='shopbox'>
                                 <div className='test'>
                                     <div className='showBox_container'>
