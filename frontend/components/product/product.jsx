@@ -22,6 +22,11 @@ class Product extends React.Component {
         }
     }
 
+    cartValidate(product) {
+        if(this.state.quantity > 0){
+            return localStorage.setItem(product.id, JSON.stringify({ 'quantity': this.state.quantity, 'object': product }))
+        }
+    }
 
     render(){
         let product = '';
@@ -67,8 +72,8 @@ class Product extends React.Component {
 
 
                                 <input type='submit' value='Add to Cart' className='addToCart' 
-                                    onClick={() => {localStorage.setItem(product.id, JSON.stringify({'quantity':this.state.quantity, 'object': product}))}}
-                                    // onClick={() => { ani() }}
+                                    // onClick={() => { localStorage.setItem(product.id, JSON.stringify({ 'quantity': this.state.quantity, 'object': product }))}}
+                                    onClick={() => {this.cartValidate(product)}}
                                 />
 
 

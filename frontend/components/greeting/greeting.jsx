@@ -5,8 +5,8 @@ const Greeting = ({ currentUser, logout }) => {
 
     const sessionLinks = () => {
         return (
-            <div>
-                <Link to='/login' className='infoSignin'>Sign In</Link>
+            <div className='infoSignin'>
+                <Link to='/login' >Sign In</Link>
                 <br/>
                 {/* <Link to='/signup'>Create an account</Link> */}
             </div>
