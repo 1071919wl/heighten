@@ -11,7 +11,7 @@ class Home extends React.Component {
     render(){
         
         return(
-            <div>
+            <div className='home_component'>
                 <div className='jumpLady_sec'>
 
                     <div className='capisco_fp'>
@@ -75,6 +75,37 @@ class Home extends React.Component {
                         <p>Working from home? Feel healthy and engaged with our collection of award-winning standing desks, including the new Jarvis.</p>
                         <Link to='/categories/1' className='shopDesks'>Shop desks</Link>
                     </div> 
+                </div> 
+
+                <div className='homeSpacing'></div>
+
+                <div className='home_sec2'>
+                    <div className='home_sec2_sent'>
+                        <p>Working from home? Feel healthy and engaged with our collection of award-winning standing desks, including the new Jarvis.</p>
+                        <Link to='/categories/2' className='shopExplore'>Explore</Link>
+                    </div>
+                    <div>
+                        <img src={window.home3URL} className='home3_img' />
+                    </div>
+                </div> 
+
+                <div className='homeSpacing'></div>
+
+                <div className='home_sec3'>
+                    <div>
+                        <img src={window.home4URL} className='home4_img' />
+                    </div>
+                    <div>
+                        <img src={window.home5URL} className='home5_img' />
+                    </div>
+                    <div className='home_sec3_sent'>
+                        <div className='icnHome_contain'>
+                            <img src={window.icnhomeURL} className='icnhome_img' />
+                        </div>
+                        <h1>Working from home</h1>
+                        <p>From adjustable-height desks to active chairs, standing mats to lighting — everything you need to create a home office that makes you feel good in your body and do your most inspired work.</p>
+                        <Link to='/categories/1' className='shopWFH'>Products</Link>
+                    </div>
                 </div> 
 
             </div>

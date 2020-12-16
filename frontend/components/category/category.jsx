@@ -23,19 +23,49 @@ class Category extends React.Component {
         
         if(this.props.categoryId === "1"){
             return (
-                <p>
-                    cat 1
-                </p>
+                <div>
+                    <div className='indexContainer'>
+                        <div className='indexCenter'>
+                            <div >
+                                <h1 className='indexTitle'>A human-centered approach to the workplace</h1>
+                                <p>Fully makes and sells office furniture that is beautiful, well-built, and designed to create a healthy, supportive workplace where everyone can feel and do their best.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='idxImg'>
+                        <img src={window.wrkplcURL} className='menuImg' />
+                    </div>
+                </div>
             );
         }else if(this.props.categoryId === "2"){
             return (
             <div>
-                cat 2
+                <div className='indexContainer'>
+                    <div className='indexCenter'>
+                        <div >
+                            <h1 className='indexTitle'>Ergonomic Office Chairs</h1>
+                            <p>Active sitting can make a big difference. Our ergonomic office chairs and stools help keep your body moving, your blood flowing, and your mind engaged so you can be your full, beautiful self at work.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='idxImg'>
+                    <img src={window.chrURL} className='menuImg' />
+                </div>
             </div> 
         )}else{
             return (
             <div>
-                cat 4
+                <div className='indexContainer'>
+                    <div className='indexCenter'>
+                        <div >
+                            <h1 className='indexTitle'>Accessories</h1>
+                            <p>Like our desks and chairs, our accessories were designed to better support the human body. If you have questions about how monitor arms, LED lamps, keyboard trays, or standing mats help create a healthier workspace, please give us a call.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className='idxImg'>
+                    <img src={window.mainIndexURL} className='menuImg' />
+                </div>
             </div> 
         )}
 
@@ -63,7 +93,7 @@ class Category extends React.Component {
                         <span>Home</span>
                     </Link>
                 </div>
-                <div className='indexContainer'>
+                {/* <div className='indexContainer'>
                     <div className='indexCenter'>
                         <div >
                             <h1 className='indexTitle'>A human-centered approach to the workplace</h1>
@@ -73,9 +103,9 @@ class Category extends React.Component {
                 </div>
                 <div className='idxImg'>
                     <img src={window.mainIndexURL} className='menuImg' />
-                </div>
+                </div> */}
 
-                {/* {this.test()} */}
+                {this.test()}
                 <div className='indexAmt'>{category.products.length} Items</div>
                 <div className='index_items_container'>
                     <ul className='index_img_flex'>
