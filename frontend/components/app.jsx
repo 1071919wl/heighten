@@ -51,7 +51,7 @@ const App = () => (
         <div className='info'>
             <div className='github'>
                 <span><a href="https://www.linkedin.com/in/william-leung-60589a73/"><img id='linkedin_info' src={window.linkedinURL} /></a> </span>
-                <span><a href="#"><img src={window.email2URL} /></a> </span>
+                <span><a href="mailto:w.leung.93@gmail.com"><img src={window.email2URL} /></a> </span>
                 <span><a href="https://github.com/1071919wl"><img src={window.githubURL} /></a> </span>
                 <span><a href="https://github.com/1071919wl/heighten_fullstack"><img src={window.fork2URL} /></a> </span>     
             </div>
