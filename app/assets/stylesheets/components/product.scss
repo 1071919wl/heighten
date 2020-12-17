@@ -169,13 +169,28 @@
         margin-top: 100px;
         display: flex;
         justify-content: center;
-        border-bottom: 1px solid #b4b4b4;
-        margin-bottom: 50px;
+        // border-bottom: 1px solid #b4b4b4;
+        // margin-bottom: 50px;
         padding-bottom: 8px;
         font-size: 14px;
+
+        input{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+    }
+    
+    .option_accessory1:hover,
+    .option_accessory2:hover{
+        text-decoration: underline;
     }
 
+
     .otherContainer{
+        border-top: 1px solid #b4b4b4;
+        padding-top: 80px;
+
         display: flex;
         margin-left:125px;
         margin-right:125px;
