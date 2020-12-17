@@ -4,7 +4,6 @@ import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import Home from './home/home';
-import Cart from './cart/cart';
 import ProductContainer from './product/product_container';
 import CategoryContainer from './category/category_container';
 import CartCheckoutContainer from './cart/cart_checkout_container';
@@ -12,16 +11,22 @@ import Error404 from './error_404';
 import { AuthRoute } from '../util/route_util';
 
 
-const App = () => (
-// class App extends React.Component {
-//     constructor(prop){
-//         super(props)
+import SearchContainer from './search/search_container';
 
-//         this.state = {
-//             searchFlag: false
-//         }
 
-//     }
+//! const App = () => (
+
+
+class App extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            products: [],
+            searchfield: ''
+        }
+
+    }
 
 //     changeFlag(){
 //         this.setState({
@@ -30,7 +35,8 @@ const App = () => (
 //     }
 
 
-    // render(){
+    render(){
+
     //     let status = null;
     //     if(!this.state.searchFlag){
     //         status = <div className='search_bar'>
@@ -44,7 +50,7 @@ const App = () => (
     //                     <span><button type='submit' onClick={() => this.changeFlag()} className='search_icon'><img src={window.searchURL} /></button></span>
     //                 </div>
     //     }
-    //     return (
+        return (
 
         
     <div>
@@ -226,16 +232,20 @@ const App = () => (
                 <Route path="/products/:id" component={ProductContainer} /> //!need to call the container table first or youre skipping a step
                 <Route path="/categories/:id" component={CategoryContainer}/>
                 <Route path="/cart" component={CartCheckoutContainer} />
+                <Route exact path="/search" component={SearchContainer} />
                 <Route exact path="/" component={Home}/>
                 <Route path='*' component={Error404} />
             </Switch>
         </div>
         
     </div>
-//         )
-//     }
-// }    
-);
+        
+        
+        )
+    }
+}    
+
+//! );
 
 export default App;
 

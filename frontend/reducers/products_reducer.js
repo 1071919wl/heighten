@@ -1,4 +1,5 @@
 import {RECEIVE_PRODUCT} from '../actions/product_actions';
+import {RECEIVE_PRODUCTS} from '../actions/product_actions';
 
 
 const productsReducer = (state={}, action) => {
@@ -9,6 +10,8 @@ const productsReducer = (state={}, action) => {
         case RECEIVE_PRODUCT:
             let test =  Object.assign({}, newState, { [action.product.id]: action.product });
             return test;
+        case RECEIVE_PRODUCTS:
+            return action.products;
         default:
             return state;    
     }

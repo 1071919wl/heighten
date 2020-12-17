@@ -4,3 +4,10 @@ export const fetchProduct = (productId) => {
         url: `/api/products/${productId}`
     })
 };
+
+export const fetchProducts = () => {
+    return $.ajax({
+        metod: 'GET',
+        url: '/api/products'
+    })
+}

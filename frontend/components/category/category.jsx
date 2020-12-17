@@ -1,10 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 class Category extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state= {
+
+            filter: 'mostPopular',
+            redirect: null
+
+        }
+        this.handleSelect = this.handleSelect.bind(this);
     }
 
     componentDidMount() {
@@ -51,7 +59,7 @@ class Category extends React.Component {
                     <img src={window.chrURL} className='menuImg' />
                 </div>
             </div> 
-        )}else{
+        )}else if(this.props.categoryId === '10'){
             return (
             <div>
                 <div className='indexContainer'>
@@ -66,10 +74,23 @@ class Category extends React.Component {
                     <img src={window.mainIndexURL} className='menuImg' />
                 </div>
             </div> 
-        )}
+        )}else{
+            // this.setState({redirect: '/Error404PageNotFound'})
+        }
 
     }
 
+    handleSelect(e){
+        this.setState({
+            filter: e.target.value
+        })
+    }
+    
+    handleSubmit(e){
+        e.preventDefault();
+        
+    }
+    
     shuffle(a) {
     var j, x, i;
         for (i = a.length - 1; i > 0; i--) {
@@ -81,9 +102,44 @@ class Category extends React.Component {
         return a;
     }
 
+    filterName(objs) {
+        if(this.state.filter === 'mostPopular'){
+            return this.shuffle(objs)
+        }else if( this.state.filter === 'productName' ){
+            objs.sort(function(a, b){
+                if(a.name < b.name){
+                    return -1;
+                }else if ( a.name > b.name){
+                    return 1;
+                }else{
+                    return 0;
+                }
+            })
+        }else{
+            objs.sort(function (a, b) {
+                if (a.price < b.price) {
+                    return -1;
+                } else if (a.name > b.name) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            })
+        }
+
+
+
+        return objs;
+    }
+
     render(){
         let category = '';
         this.props.category ? category = this.props.category : category = null
+
+        if(this.state.redirect){
+            return <Redirect to ={this.state.redirect} />
+        }
+
         return (
             category === null ? <div></div> :
             <div className='category_show_page'>
@@ -105,10 +161,26 @@ class Category extends React.Component {
                 </div> */}
 
                 {this.indexPages()}
-                <div className='indexAmt'>{category.products.length} Items</div>
+                <div className='indexAmt'>View all - {category.products.length} Items</div>
+
+
+                    <form onSubmit={this.handleSubmit} className='selectForm'> <div className='sortby'>Sort By</div>
+                        <select value={this.state.filter} onChange={this.handleSelect}>
+                            <option defaultValue='mostPopular'>Most Popular</option>
+                            <option value='productName'>Product Name</option>
+                            <option value='price'>Price</option>
+                        </select>
+                        {/* <input type='submit' value='submit' /> */}
+                    </form>
+                
+
+
                 <div className='index_items_container'>
                     <ul className='index_img_flex'>
-                        {this.shuffle(category.products).map( (product, i) =>  (
+
+                        {/* {this.filterName(category.products)} */}
+                        {/* {this.shuffle(category.products).map( (product, i) =>  ( */}
+                        {this.filterName(category.products).map((product, i) => (
                             <div key={i} className='idx_img_spacer'>
                                 <li key={product.id} >
                                     <Link to={`/products/${product.id}`}>

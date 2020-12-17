@@ -6,7 +6,8 @@ class Product extends React.Component {
         super(props)
 
         this.state = {
-            quantity: 0
+            quantity: 0,
+            //! redirect: null,
         }
         
     }   
@@ -33,10 +34,15 @@ class Product extends React.Component {
         let currId= null;
         this.props.product ? product = this.props.product : product = null
         this.props.product ? currId = this.props.product.type_id : currId = null
+
+        //! if(this.state.redirect){
+        //!     return <Redirect to ={this.state.redirect} />
+        //! }
         
         return (
             product === null ? <div></div> :
             <div className='product_show_page'>
+                {/* {currId === null ? this.setState({ redirect: '/Error404PageNotFound'}) : null} */}
                 <div className='product_directory'>
                     <Link to='/'>
                         <span>Home</span>

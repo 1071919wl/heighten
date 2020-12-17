@@ -5,7 +5,8 @@ import Root from './components/root';
 
 
 //! testing
-import { fetchProduct } from './actions/product_actions';
+// import { fetchProduct } from './actions/product_actions';
+import { fetchProducts } from './actions/product_actions';
 import { fetchCategory } from './actions/category_actions';
 //! testing
 
@@ -31,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.store = store;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.fetchProduct = fetchProduct; //!store.dispatch(fetchProduct(1)) in browser
+    // window.fetchProduct = fetchProduct; //!store.dispatch(fetchProduct(1)) in browser
+    // window.fetchProducts = fetchProducts; //!store.dispatch(fetchProduct(1)) in browser
     window.fetchCategory = fetchCategory; //!store.dispatch(fetchProduct(1)) in browser
     //! testing
 
