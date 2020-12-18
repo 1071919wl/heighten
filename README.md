@@ -36,5 +36,6 @@ Hi there! Thanks for visiting :]
 ### Roadmap
 
 * Customer reviews
-* Additional features of each product
-** images, videos, etc.
+* Additional features of each product:
+  * images
+  * videos
