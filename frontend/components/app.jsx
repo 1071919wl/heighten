@@ -214,7 +214,7 @@ class App extends React.Component {
 
 
                 <div className='hoverPadding'>
-                    <div className='darn_search_btn'><img src={window.searchURL} className='actualSearchImg'/>
+                    <div className='darn_search_btn'> <img src={window.searchURL} className='actualSearchImg'/>
                         <div className="darn_search_content">
                             <div className='forFlex_search'>
                                 <div>

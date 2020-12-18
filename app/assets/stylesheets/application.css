@@ -185,12 +185,22 @@
     width: 25px;
 }
 
+.result_search_photo{
+    height: auto;
+    width: 100px;
+}
+
 /* -------------begin-----------------search */
 
 .actualSearchImg{
     height: auto;
     width: 30px;
 }
+
+.actualSearchImg:hover{
+    cursor: pointer;
+}
+
 .hoverPadding{
     padding-bottom: 10px;
 }
@@ -198,7 +208,6 @@
 
 .hoverPadding:hover .darn_search_content {
     display: block;
-    cursor: pointer;
 }
 
 .darn_search_content {
@@ -216,13 +225,39 @@
 
 .forFlex_search {
     display: flex;
+    width: 100%;
+    left:0;
     margin-top: 30px;
-    margin-bottom: 30px;
-    justify-content: center;
+    margin-bottom: 50px;
+    /* justify-content: center; */
 
 }
 
+.searchInput{
+    font-family: sans-serif;
+    color: #6e6c63;
+    /* width: 100%; */
+    font-size: 20px;
+    padding-right: 425px;
+    margin-left: 50px;
 
+
+}
+
+.searchList{
+    margin-left: 50px;
+    font-family: sans-serif;
+    color: lightgray;
+    margin-bottom: 5px;
+
+    display:flex;
+    width: 100%;
+    /* background-color: yellow; */
+}
+
+.searchList:hover {
+    background-color: rgb(155, 155, 155);
+}
 /* ------------------------------search */
 
 .header-group{

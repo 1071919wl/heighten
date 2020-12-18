@@ -58,16 +58,15 @@ class Search extends React.Component {
     }
 
     render() {
-        
-        let results = this.matches().map((result) => {
+        let results = this.matches().map((result, i) => {
             if(result === 'No match'){
                 return (
-                    <li key={result.id} className='notWorking'>There are no results for "{this.state.inputVal}".</li>
+                    <li key={i} className='searchList'>There are no results for "{this.state.inputVal}".</li>
                 );
             }else{
                 return (
                     <Link to={`/products/${result.id}`} key={result.id}>
-                        <li key={result.id} className='notWorking'>{result.name}</li>
+                        <li key={result.id} className='searchList'>{result.name}</li>
                     </Link>
                 );
             }
@@ -75,13 +74,14 @@ class Search extends React.Component {
         
         return (
             <div>
-                <div>
+                <div className='divWrapInput'>
                     <input type='text' onChange={this.handleInput('inputVal')} 
                         placeholder='Search for products...' 
                         value={this.state.inputVal} 
                         className='searchInput'
+                        id='input'
                     />
-                    <ul>
+                    <ul id='list'>
                         {results}
                     </ul>
                 </div>
