@@ -3,11 +3,13 @@ import React from 'react';
 import Search from './search';
 import { fetchProducts } from '../../actions/product_actions';
 
+import App from '../app'
+
 
 const mapStateToProps = (state, ownProps) => {
     return {
         products: Object.values(state.entities.products),
-        product: state.entities.products[ownProps.match.params.id]
+        // product: state.entities.products[ownProps.match.params.id]
     }
 }
 
@@ -20,3 +22,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class Search extends React.Component {
@@ -10,13 +11,20 @@ class Search extends React.Component {
         };
 
         this.handleInput = this.handleInput.bind(this);
-
-        // this.selectName = this.selectName.bind(this);
     }
+
 
     componentDidMount() {
         this.props.fetchProducts()
     }
+
+    // componentWillUnmount() {
+    //     this.setState({
+    //         inputVal: ''
+    //     })
+    // }
+
+
 
     handleInput(field) {
         return e => {
@@ -49,31 +57,30 @@ class Search extends React.Component {
 
     }
 
-    // selectName(event) {
-    //     const productName = event.currentTarget.innerText;
-    //     this.setState({ input: productName });
-    // }
-
     render() {
         
-        let results = this.matches().map((result, i) => {
+        let results = this.matches().map((result) => {
             if(result === 'No match'){
-                console.log(result)
                 return (
-                <li key={i} className='notWorking'>There are no results for "{this.state.inputVal}".</li>
+                    <li key={result.id} className='notWorking'>There are no results for "{this.state.inputVal}".</li>
                 );
             }else{
                 return (
-                    <li key={i} className='notWorking'>{result.name}</li>
+                    <Link to={`/products/${result.id}`} key={result.id}>
+                        <li key={result.id} className='notWorking'>{result.name}</li>
+                    </Link>
                 );
             }
         });
         
         return (
             <div>
-                <h1>Autocomplete</h1>
                 <div>
-                    <input type='text' onChange={this.handleInput('inputVal')} placeholder='Search for products...' value={this.state.inputVal} />
+                    <input type='text' onChange={this.handleInput('inputVal')} 
+                        placeholder='Search for products...' 
+                        value={this.state.inputVal} 
+                        className='searchInput'
+                    />
                     <ul>
                         {results}
                     </ul>

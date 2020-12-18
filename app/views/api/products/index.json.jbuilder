@@ -11,8 +11,7 @@
 #! same as above but this doesnt returns it in an array
 @products.each do |product|
     json.set! product.id do
-        json.extract! product, :id, :name
-        # , :type_id, :description, :price
+        json.extract! product, :id, :name, :type_id, :description, :price
         #!extract may need to be in a _product.json.jbuilder partial file.
         #! json.partial! 'product', product: product
     end

@@ -179,10 +179,51 @@
     border-bottom: 6px solid #6e6c63;
 }
 
+
 .search_icon img{
     height: 25px;
     width: 25px;
 }
+
+/* -------------begin-----------------search */
+
+.actualSearchImg{
+    height: auto;
+    width: 30px;
+}
+.hoverPadding{
+    padding-bottom: 10px;
+}
+
+
+.hoverPadding:hover .darn_search_content {
+    display: block;
+    cursor: pointer;
+}
+
+.darn_search_content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    margin-top: 5px;
+    border-top: 1px solid rgb(240, 240, 240);
+    border-bottom: 1px solid #F7F7F6;
+}
+
+
+.forFlex_search {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+
+}
+
+
+/* ------------------------------search */
 
 .header-group{
     font-size: 14px;
@@ -568,6 +609,7 @@ footer{
     z-index: 1;
     margin-top: 40px;
     border-top: 1px solid rgb(240, 240, 240);
+    border-bottom: 1px solid #F7F7F6;
 
 }
 
@@ -585,6 +627,7 @@ footer{
     z-index: 1;
     margin-top: 40px;
     border-top: 1px solid rgb(240, 240, 240);
+    border-bottom: 1px solid #F7F7F6;
 }
 
 .chair_btn:hover .chair_content {
@@ -600,6 +643,7 @@ footer{
     z-index: 1;
     margin-top: 40px;
     border-top: 1px solid rgb(240, 240, 240);
+    border-bottom: 1px solid #F7F7F6;
 }
 
 .workplace_btn:hover .workplace_content {
@@ -616,6 +660,7 @@ footer{
     z-index: 1;
     margin-top: 40px;
     border-top: 1px solid rgb(240, 240, 240);
+    border-bottom: 1px solid #F7F7F6;
 }
 
 .accessories_btn:hover .accessories_content {
@@ -710,11 +755,3 @@ footer{
 } */
 
 
-
-.notWorking{
-    font-size: 30px;
-    font-weight: bold;
-    background-color: tan;
-    display: flex;
-    justify-content: center;
-}

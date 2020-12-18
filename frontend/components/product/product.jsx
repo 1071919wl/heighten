@@ -18,6 +18,19 @@ class Product extends React.Component {
         this.props.fetchProduct(this.props.productId);
     }
 
+
+
+
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.productId !== this.props.productId) {
+            this.props.fetchProduct(this.props.productId);
+        }
+    }
+
+
+
+
     handleInput(field){
         return e => {
          this.setState({[field]: e.target.value})
@@ -158,10 +171,6 @@ class Product extends React.Component {
         let currId= null;
         this.props.product ? product = this.props.product : product = null
         this.props.product ? currId = this.props.product.type_id : currId = null
-
-        //! if(this.state.redirect){
-        //!     return <Redirect to ={this.state.redirect} />
-        //! }
         
         return (
             product === null ? <div></div> :
@@ -169,11 +178,12 @@ class Product extends React.Component {
                 {/* {currId === null ? this.setState({ redirect: '/Error404PageNotFound'}) : null} */}
                 <div className='product_directory'>
                     <Link to='/'>
-                        <span>Home</span>
+                        <span>home</span>
                     </Link>
                         <div>/</div>
                     <Link to={`/categories/${currId}`}>
-                        <span>{product.category[0].toUpperCase()+product.category.slice(1)}</span>
+                        {/* <span>{product.category[0].toUpperCase()+product.category.slice(1)}</span> */}
+                            <span>{product.category}</span>
                     </Link>
                     <div>/</div>
                     <span className='productName'>{product.name}</span>

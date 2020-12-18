@@ -12,6 +12,7 @@ import { AuthRoute } from '../util/route_util';
 
 
 import SearchContainer from './search/search_container';
+// import Search from './search/search';
 
 
 //! const App = () => (
@@ -21,18 +22,18 @@ class App extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            products: [],
-            searchfield: ''
-        }
-
     }
+
 
 //     changeFlag(){
 //         this.setState({
 //             searchFlag: !this.state.searchFlag
 //         })
 //     }
+
+    // componentDidMount() {
+    //     this.props.fetchProducts()
+    // }
 
 
     render(){
@@ -211,17 +212,18 @@ class App extends React.Component {
                     </ul>
                 </div>
 
-                <div className='search'>
-                    <span><button type='submit' onClick={() => this.changeFlag()} className='search_icon'><img src={window.searchURL} /></button></span>
-                </div>
 
-                {/* <div className='search_bar'>
-                    <input type="text" input='value' />
-                    <div onClick={() => this.changeFlag()}>
-                        X
+                <div className='hoverPadding'>
+                    <div className='darn_search_btn'><img src={window.searchURL} className='actualSearchImg'/>
+                        <div className="darn_search_content">
+                            <div className='forFlex_search'>
+                                <div>
+                                    <SearchContainer />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div> */}
-                {/* {status} */}
+                </div>
             </div>
 
         </header>
@@ -232,7 +234,7 @@ class App extends React.Component {
                 <Route path="/products/:id" component={ProductContainer} /> //!need to call the container table first or youre skipping a step
                 <Route path="/categories/:id" component={CategoryContainer}/>
                 <Route path="/cart" component={CartCheckoutContainer} />
-                <Route exact path="/search" component={SearchContainer} />
+                {/* <Route exact path="/search" component={SearchContainer} /> */}
                 <Route exact path="/" component={Home}/>
                 <Route path='*' component={Error404} />
             </Switch>
