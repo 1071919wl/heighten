@@ -6,34 +6,35 @@ Hi there! Thanks for visiting :]
 * Users can find products by name using the search / navigation bar.
 * Each product category can be filtered by popularity, name or price.
 
+![image](https://github.com/1071919wl/heighten_fullstack/blob/master/app/assets/images/header_readme.png)
+
+* In each product page, you can read a short description of the item and add it to your cart.
+
+![image](https://github.com/1071919wl/heighten_fullstack/blob/master/app/assets/images/show_readme.png)
 
 
+* When the user is ready to checkout, they can view the items in their cart and make any final decisions.
+
+![image](https://github.com/1071919wl/heighten_fullstack/blob/master/app/assets/images/cart_readme.png)
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Backend Technologies
 
-Things you may want to cover:
+* Ruby on Rails
+* AWS
+* PostgresSQL
+* JBuilder
+* Heroku
 
-* Ruby version
+### Frontend Technologies
 
-* System dependencies
+* React
+* Redux
+* css/scss
+* html.erb
 
-* Configuration# README
+### Roadmap
 
-### Features
-* Users can find products by name using the search / navigation bar.
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
+* Customer reviews
+* Additional features of each product
+** images, videos, etc.
