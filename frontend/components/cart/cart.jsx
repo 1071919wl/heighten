@@ -27,6 +27,7 @@ class Cart extends React.Component {
                 values.push(localStorage.getItem(keys[i]));
         }
         return values;
+
     }
 
     deleteStorageItem(objId){
@@ -72,6 +73,8 @@ class Cart extends React.Component {
             alert('Please login to checkout!')
             return false
             // return <Redirect to="/login" />
+        } else if (this.allStorage().length < 1){
+            alert('You have no items in your shopping cart!')
         }else{
             alert('Thanks for demoing!')
             return true
@@ -79,7 +82,12 @@ class Cart extends React.Component {
     }
     
     render(){
-        // <Redirect to="/login" />
+
+        //!! thomas solution to localstorage. Not sure where it belongs
+        // let oldCart = JSON.parse(localStorage.getItem('cart')); // turns the stringified cart back into a json object
+        // let newCart = Object.assign({}, oldCart, { [this.props.product.id]: { 'quantity': quantity, 'product': this.props.product } })
+        // localStorage.setItem('cart', JSON.stringify(newCart))
+        
         return (
             <div className='cartComponent'>
                 <div className='cartLeft_contain'>
