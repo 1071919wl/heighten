@@ -12,8 +12,6 @@ import { AuthRoute } from '../util/route_util';
 
 
 import SearchContainer from './search/search_container';
-// import Search from './search/search';
-
 
 //! const App = () => (
 
@@ -25,35 +23,8 @@ class App extends React.Component {
     }
 
 
-//     changeFlag(){
-//         this.setState({
-//             searchFlag: !this.state.searchFlag
-//         })
-//     }
-
-    // componentDidMount() {
-    //     this.props.fetchProducts()
-    // }
-
-
     render(){
-
-    //     let status = null;
-    //     if(!this.state.searchFlag){
-    //         status = <div className='search_bar'>
-    //                     <input type="text" input='value' />
-    //                     <div onClick={() => this.changeFlag()}>
-    //                         X
-    //                     </div>
-    //                 </div>
-    //     }else{
-    //         status = <div className='search'>
-    //                     <span><button type='submit' onClick={() => this.changeFlag()} className='search_icon'><img src={window.searchURL} /></button></span>
-    //                 </div>
-    //     }
         return (
-
-        
     <div>
         <div className='info'>
             <div className='github'>
