@@ -37,5 +37,6 @@ Hi there! Thanks for visiting :]
 
 * User account page
 * Customer reviews
-* Additional features of each product
-** images, videos, etc.
+* Additional features of each product:
+  * images
+  * videos
