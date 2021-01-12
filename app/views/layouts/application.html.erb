@@ -5,6 +5,14 @@
     <%= favicon_link_tag asset_path('me3.png'), :rel => 'icon', :type =>  'image/png' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta property="og:title" content="Heighten" />
+    <meta property="og:image" content="<%= image_url('header_readme.png') %>" />
+    <meta property="og:description"
+      content="Heighten is a clone of a e-commerce website (most known for their standing desks), Fully."
+    />
+    <meta property="og:url"
+      content="https://heighten-fullstack.herokuapp.com/#/"
+    >
 
 <!--
         # .actualCartImg{
