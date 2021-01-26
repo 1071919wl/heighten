@@ -6,7 +6,7 @@ class Product extends React.Component {
         super(props)
 
         this.state = {
-            quantity: 0,
+            quantity: 1,
             info: 1,
             // redirect: null,
         }
@@ -205,7 +205,7 @@ class Product extends React.Component {
 
 
                             <label className='productQty'>Qty  
-                                <input type='number' min='0' placeholder='0' onChange={this.handleInput('quantity')} className='quantityInput'/>
+                                <input type='number' min='0' placeholder='1' onChange={this.handleInput('quantity')} className='quantityInput'/>
                             </label>
 
 
