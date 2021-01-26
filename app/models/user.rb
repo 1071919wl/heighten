@@ -17,6 +17,10 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: { minimum: 6, allow_nil: true }
+
+    has_many :reviews,
+    foreign_key: :user_id,
+    class_name: :Review
     
 
     def self.find_by_credentials(email, password)
