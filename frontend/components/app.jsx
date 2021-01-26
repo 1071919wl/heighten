@@ -9,7 +9,7 @@ import CategoryContainer from './category/category_container';
 import CartCheckoutContainer from './cart/cart_checkout_container';
 import Error404 from './error_404';
 import { AuthRoute } from '../util/route_util';
-
+import ScrollToTop from './ScrollToTop';
 
 import SearchContainer from './search/search_container';
 
@@ -199,6 +199,7 @@ class App extends React.Component {
 
         </header>
         <div className='login_signup'>
+            <ScrollToTop />
             <Switch>
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <AuthRoute path="/signup" component={SignupFormContainer} />
