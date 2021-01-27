@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import Review from '../review/review';
+import ReviewContainer from '../review/review_container';
 
 class Product extends React.Component {
     constructor(props){
@@ -167,11 +169,15 @@ class Product extends React.Component {
     }
 
     render(){
+        {console.log('look here', this.props.reviews)}
         let product = '';
-        let currId= null;
+        let currId = null;
+        // let reviews = [];
         this.props.product ? product = this.props.product : product = null
         this.props.product ? currId = this.props.product.type_id : currId = null
+        // this.props.product.reviews ? reviews = this.props.product.reviews : reviews = null
         
+
         return (
             product === null ? <div></div> :
             <div className='product_show_page'>
@@ -244,6 +250,22 @@ class Product extends React.Component {
                         
 
                 </div>
+                <div>
+                    <ReviewContainer product={product}/>
+                </div>
+
+                <div>
+                    {/* {product.reviews.map((review, i) => (
+                            <li key={i}>
+                                {review.reviewer}
+                                {review.score}
+                                {review.review}
+                            </li>
+                        )
+                    )} */}
+                </div>
+                {/* {console.log('look here', this.props.product.reviews)} */}
+
             </div>
         )
     }

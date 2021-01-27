@@ -1,3 +1,21 @@
 import * as APIUtil from '../util/review_api_util'
-export const CREATE_REVIEW = 'CREATE_REVIEW';
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+
+export const receiveReview = (review) => {
+    return {
+        type: RECEIVE_REVIEW,
+        review
+    }
+}
+
+//THUNK ACTION
+
+export const createReview = (review) => dispatch => {
+    return(
+        APIUtil.createReview(review)
+            .then( review => {
+                return (dispatch(receiveReview(review)))
+            })
+    )
+}
 

@@ -6,8 +6,10 @@ json.photoUrl url_for(@product.photo)
 #!grabbing reviews for a specific product
 json.reviews @product.reviews do |review|
     json.id review.id
-    json.reviewer review.review
+    json.reviewer review.reviewer
     json.score review.score
     json.user_id review.user_id
+    json.review review.review
+    json.product_id review.product_id
 
 end
