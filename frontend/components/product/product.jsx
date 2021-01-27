@@ -182,20 +182,22 @@ class Product extends React.Component {
 
     sendMessage(e){
         e.preventDefault();
-
         const reviewObj = {
-            // user_id: this.props.userId,
-            // product_id: props.product.id,
-            // score: score,
-            // reviewer: reviewer,
-            // review: review
+            id: this.state.reviewId,
+            user_id: this.props.userId,
+            product_id: this.props.productId,
+            score: this.state.score,
+            reviewer: this.state.reviewer,
+            review: this.state.review
         };
 
         this.props.updateReview(reviewObj);
+        this.setState({reviewId: 0})
     }
 
 
     updateSection(review, i){
+        const deleteReview = this.props.deleteReview;
         if( this.state.reviewId !== review.id){
             return(
                 <li key={i}>
@@ -203,52 +205,51 @@ class Product extends React.Component {
                     {review.score}
                     {review.review}
                     <input type='submit' onClick={() => deleteReview(review.id)} value='Delete'/>
-                    <input type='submit' onClick={() => this.setState({update: true})} value='Update'/>
+                    <input type='submit' onClick={() => this.setState({reviewId: review.id, review: review.review, reviewer: review.reviewer})} value='Update'/>
                 </li>   
             )
         }else{
             return(
-                <form onSubmit={this.sendMessage}>
+                <form onSubmit={this.sendMessage} key={i}>
                     <label className="score_radio">Score:
-                    {/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_star_rating */}
                         <input type="radio"
                             name='score'
                             value={1}
-                            // onChange={e => setScore(e.target.value)}
+                            onChange={this.handleInput('score')}
                         />
                         <input type="radio"
                             name='score'
                             value={2}
-                            // onChange={e => setScore(e.target.value)}
+                            onChange={this.handleInput('score')}
                         />
                         <input type="radio"
                             name='score'
                             value={3}
-                            // onChange={e => setScore(e.target.value)}
+                            onChange={this.handleInput('score')}
                         />
                         <input type="radio"
                             name='score'
                             value={4}
-                            // onChange={e => setScore(e.target.value)}
+                            onChange={this.handleInput('score')}
                         />
                         <input type="radio"
                             name='score'
                             value={5}
-                            // onChange={e => setScore(e.target.value)}
+                            onChange={this.handleInput('score')}
                         />
                     </label>
 
                     <label>Review:
                         <textarea type="text"
-                            value={review}
-                            // onChange={e => setReview(e.target.value)}
+                            value={this.state.review}
+                            onChange={this.handleInput('review')}
                         />
                     </label>
 
                     <label>Use your name:
                         <input type="text"
-                            // value={reviewer}
-                            // onChange={e => setReviewer(e.target.value)}
+                            value={this.state.reviewer}
+                            onChange={this.handleInput('reviewer')}
                         />
                     </label>
                     <input type='submit' value='Save Changes' />
@@ -258,7 +259,6 @@ class Product extends React.Component {
     }
 
     render(){
-        // {console.log('look here', this.props.reviews)}
         let product = '';
         let currId = null;
         const deleteReview = this.props.deleteReview;
@@ -346,19 +346,10 @@ class Product extends React.Component {
 
                 <div>
                     {product.reviews.map((review, i) => (
-                            // <li key={i}>
-                            //     {review.reviewer}
-                            //     {review.score}
-                            //     {review.review}
-                            //     <input type='submit' onClick={() => deleteReview(review.id)} value='Delete'/>
-                            //     <input type='submit' onClick={() => deleteReview(review.id)} value='Update'/>
-                            // </li>
                             this.updateSection(review, i)
-                            
                         )
                     )}
                 </div>
-                {/* {console.log('look here', this.props.product.reviews)} */}
 
             </div>
         )
