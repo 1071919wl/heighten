@@ -10,8 +10,20 @@ class Product extends React.Component {
         this.state = {
             quantity: 1,
             info: 1,
+
+            update: false,
+            reviewId: 0,
+            reviewer: '',
+            review: '',
+            score: null,
+            userId: null,
+            productId: null
             // redirect: null,
         }
+
+        this.updateSection = this.updateSection.bind(this);
+        this.sendMessage = this.sendMessage.bind(this);
+        
         
     }   
     
@@ -168,14 +180,92 @@ class Product extends React.Component {
         }
     }
 
+    sendMessage(e){
+        e.preventDefault();
+
+        const reviewObj = {
+            // user_id: this.props.userId,
+            // product_id: props.product.id,
+            // score: score,
+            // reviewer: reviewer,
+            // review: review
+        };
+
+        this.props.updateReview(reviewObj);
+    }
+
+
+    updateSection(review, i){
+        if( this.state.reviewId !== review.id){
+            return(
+                <li key={i}>
+                    {review.reviewer}
+                    {review.score}
+                    {review.review}
+                    <input type='submit' onClick={() => deleteReview(review.id)} value='Delete'/>
+                    <input type='submit' onClick={() => this.setState({update: true})} value='Update'/>
+                </li>   
+            )
+        }else{
+            return(
+                <form onSubmit={this.sendMessage}>
+                    <label className="score_radio">Score:
+                    {/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_star_rating */}
+                        <input type="radio"
+                            name='score'
+                            value={1}
+                            // onChange={e => setScore(e.target.value)}
+                        />
+                        <input type="radio"
+                            name='score'
+                            value={2}
+                            // onChange={e => setScore(e.target.value)}
+                        />
+                        <input type="radio"
+                            name='score'
+                            value={3}
+                            // onChange={e => setScore(e.target.value)}
+                        />
+                        <input type="radio"
+                            name='score'
+                            value={4}
+                            // onChange={e => setScore(e.target.value)}
+                        />
+                        <input type="radio"
+                            name='score'
+                            value={5}
+                            // onChange={e => setScore(e.target.value)}
+                        />
+                    </label>
+
+                    <label>Review:
+                        <textarea type="text"
+                            value={review}
+                            // onChange={e => setReview(e.target.value)}
+                        />
+                    </label>
+
+                    <label>Use your name:
+                        <input type="text"
+                            // value={reviewer}
+                            // onChange={e => setReviewer(e.target.value)}
+                        />
+                    </label>
+                    <input type='submit' value='Save Changes' />
+                </form>
+            )
+        }
+    }
+
     render(){
-        {console.log('look here', this.props.reviews)}
+        // {console.log('look here', this.props.reviews)}
         let product = '';
         let currId = null;
-        // let reviews = [];
+        const deleteReview = this.props.deleteReview;
+
         this.props.product ? product = this.props.product : product = null
         this.props.product ? currId = this.props.product.type_id : currId = null
-        // this.props.product.reviews ? reviews = this.props.product.reviews : reviews = null
+
         
 
         return (
@@ -255,14 +345,18 @@ class Product extends React.Component {
                 </div>
 
                 <div>
-                    {/* {product.reviews.map((review, i) => (
-                            <li key={i}>
-                                {review.reviewer}
-                                {review.score}
-                                {review.review}
-                            </li>
+                    {product.reviews.map((review, i) => (
+                            // <li key={i}>
+                            //     {review.reviewer}
+                            //     {review.score}
+                            //     {review.review}
+                            //     <input type='submit' onClick={() => deleteReview(review.id)} value='Delete'/>
+                            //     <input type='submit' onClick={() => deleteReview(review.id)} value='Update'/>
+                            // </li>
+                            this.updateSection(review, i)
+                            
                         )
-                    )} */}
+                    )}
                 </div>
                 {/* {console.log('look here', this.props.product.reviews)} */}
 

@@ -19,3 +19,20 @@ export const createReview = (review) => dispatch => {
     )
 }
 
+export const updateReview = (review) => dispatch => {
+    return(
+        APIUtil.updateReview(review)
+            .then( updatedReview => {
+                return (dispatch(receiveReview(updatedReview)))
+            })
+    )
+}
+
+export const deleteReview = (reviewId) => dispatch => {
+    return(
+        APIUtil.deleteReview(reviewId)
+            .then( review => {
+                return (dispatch(receiveReview(review)))
+            })
+    )
+}

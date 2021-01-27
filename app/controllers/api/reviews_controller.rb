@@ -23,14 +23,24 @@ class Api::ReviewsController < ApplicationController
 
     def update
         # @review = Review.find(id: review_params.id)
-        # how i will need to grab the review by its ID
+        @review = Review.find(params[:id])
 
-        # @review = Review.update(review_params)
+        if @review.update(review_params)
+            render :show
+        else
+            render json: @review.errors.full_messages, status: 422
+        end
+    end
 
-        # if @review.save
+    def destroy
+        @review = Review.find(params[:id])
 
-        # end
-        
+        if @review.destroy
+            render :show
+        else
+            render json: @review.errors.full_messages, status: 422
+        end
+
     end
 
     

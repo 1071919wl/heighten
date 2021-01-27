@@ -24,3 +24,24 @@ export const createReview = (review) => {
 // }
 // $.ajax({ 'method': 'POST', 'url': `/api/reviews/`, 'data': {review} })
 //! for console ajax testing
+
+export const updateReview = (review) => {
+    return $.ajax({
+        method: 'PATCH',
+        url: `/api/reviews/${review.id}`,
+        data: {review}
+    })
+};
+
+
+
+export const deleteReview = (reviewId) => {
+    return $.ajax({
+        method: 'DELETE',
+        url: `/api/reviews/${reviewId}`
+    })
+};
+
+//! for console ajax testing
+// $.ajax({ 'method': 'DELETE', 'url': `/api/reviews/4` })
+//! for console ajax testing
