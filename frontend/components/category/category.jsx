@@ -29,6 +29,7 @@ class Category extends React.Component {
 
     indexPages(){
         if(this.props.categoryId === "8"){
+        // if(this.props.categoryId === "1"){
             return (
                 <div>
                     <div className='indexContainer'>
@@ -45,6 +46,7 @@ class Category extends React.Component {
                 </div>
             );
         }else if(this.props.categoryId === "9"){
+        // }else if(this.props.categoryId === "2"){
             return (
             <div>
                 <div className='indexContainer'>
@@ -60,6 +62,7 @@ class Category extends React.Component {
                 </div>
             </div> 
         )}else if(this.props.categoryId === '10'){
+        // )}else if(this.props.categoryId === '3'){
             return (
             <div>
                 <div className='indexContainer'>
