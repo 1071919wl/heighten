@@ -125,7 +125,7 @@
             // background-color: green;
 
             .idxProductTitle{
-                margin-bottom: 20px;
+                margin-bottom: 8px;
                 margin-top: 20px;
                 display: flex;
                 justify-content:center;
@@ -158,6 +158,27 @@
             margin-right: 20px;
 
             margin-top: 60px;
+        }
+
+        .cat_review_sec{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 7px;
+        }
+        .cat_review_sec div{
+            margin-right: 1px;
+        }
+
+        .star {
+            color: gold;
+
+        }
+        
+        .gold:before {
+            content: "\2605";
+            color: gold;
+            position: absolute
         }
     }
 

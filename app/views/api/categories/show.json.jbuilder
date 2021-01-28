@@ -17,5 +17,7 @@ json.products @products do |product|
     json.price product.price
 
     #! testing
+    json.reviews product.reviews
     json.photoUrl url_for(product.photo)
 end
+
