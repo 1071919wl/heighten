@@ -5,8 +5,11 @@ import { createReview } from '../../actions/review_actions';
 
 
 const mapStateToProps = (state) => {
+    let currUser = Object.values(state.entities.users).length ? Object.values(state.entities.users)[0].id : {};
     return {
-        userId: Object.values(state.entities.users)[0].id
+        // userId: Object.values(state.entities.users)[0].id
+        userId: currUser,
+        // userId: state.entities.users
     }
 }
 

@@ -23,50 +23,119 @@ const Review = (props) => {
         props.createReview(reviewObj);
     }
 
+    useEffect(() => {
+        console.log('hi');
+        let star1 = document.getElementById('star1');
+        let star2 = document.getElementById('star2');
+        let star3 = document.getElementById('star3');
+        let star4 = document.getElementById('star4');
+        let star5 = document.getElementById('star5');
+
+        if(score === 1){
+            star1.classList.add('goldSelectHold');
+            star2.classList.remove('goldSelect');
+            star2.classList.remove('goldSelectHold');
+            star3.classList.remove('goldSelect');
+            star3.classList.remove('goldSelectHold');
+            star4.classList.remove('goldSelect');
+            star4.classList.remove('goldSelectHold');
+            star5.classList.remove('goldSelect');
+            star5.classList.remove('goldSelectHold');
+
+        }
+        else if(score === 2){
+            star1.classList.add('goldSelectHold');
+            star2.classList.add('goldSelectHold');
+
+            star3.classList.remove('goldSelect');
+            star3.classList.remove('goldSelectHold');
+            star4.classList.remove('goldSelect');
+            star4.classList.remove('goldSelectHold');
+            star5.classList.remove('goldSelect');
+            star5.classList.remove('goldSelectHold');
+        }
+        else if(score === 3){
+            star1.classList.add('goldSelectHold');
+            star2.classList.add('goldSelectHold');
+            star3.classList.add('goldSelectHold');
+
+            star4.classList.remove('goldSelect');
+            star4.classList.remove('goldSelectHold');
+            star5.classList.remove('goldSelect');
+            star5.classList.remove('goldSelectHold');
+        }
+        else if(score === 4){
+            star1.classList.add('goldSelectHold');
+            star2.classList.add('goldSelectHold');
+            star3.classList.add('goldSelectHold');
+            star4.classList.add('goldSelectHold');
+
+
+            star5.classList.remove('goldSelect');
+            star5.classList.remove('goldSelectHold');
+        }
+        else if(score === 5){
+            star1.classList.add('goldSelectHold');
+            star2.classList.add('goldSelectHold');
+            star3.classList.add('goldSelectHold');
+            star4.classList.add('goldSelectHold');   
+            star5.classList.add('goldSelectHold');   
+        }
+    }, [score])
+
+
 
     return(
         <div className="review-container">
             <div>
-                <div>
-                    <h1># Reviews</h1>
-                    <p>Stars Rating</p>
-                </div>
-                <button>Write a Review</button>
-            </div>
-
-            <div>
-                <h1>Write a Review</h1>
+                <h1 className='review_instruction'>Write a Review</h1>
                 <form onSubmit={sendMessage}>
-                    <p>Indicates a required field</p>
+                    <p className="required_field"><span className='asterisk_review'>*</span>Indicates a required field</p>
 
-                    <label className="score_radio">Score:
-                    {/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_star_rating */}
-                        <input type="radio"
+                    <label className="score_radio"><span className='asterisk_review'>*</span>Score:</label>
+
+                    <div className='star_list'>
+
+                        {/* <input type="radio"
+                            id="r1"
                             name='score'
                             value={1}
                             onChange={e => setScore(e.target.value)}
-                        />
-                        <input type="radio"
+                        /> */}
+                        <span className='goldSelect' htmlFor="r1" id='star5' onClick={() => setScore(5)}>☆</span>
+
+                        {/* <input type="radio"
+                            id="r2"
                             name='score'
                             value={2}
                             onChange={e => setScore(e.target.value)}
-                        />
-                        <input type="radio"
+                        /> */}
+                        <span className='goldSelect' htmlFor="r2" id='star4' onClick={() => setScore(4)}>☆</span>
+
+                        {/* <input type="radio"
+                            id="r3"
                             name='score'
                             value={3}
                             onChange={e => setScore(e.target.value)}
-                        />
-                        <input type="radio"
+                        /> */}
+                        <span className='goldSelect' htmlFor="r3" id='star3' onClick={() => setScore(3)} >☆</span>
+
+                        {/* <input type="radio"
+                            id="r4"
                             name='score'
                             value={4}
                             onChange={e => setScore(e.target.value)}
-                        />
-                        <input type="radio"
+                        /> */}
+                        <span className='goldSelect' htmlFor="r4" id='star2' onClick={() => setScore(2)}>☆</span>
+
+                        {/* <input type="radio"
+                            id="r5"
                             name='score'
                             value={5}
                             onChange={e => setScore(e.target.value)}
-                        />
-                    </label>
+                        /> */}
+                        <span className='goldSelect' htmlFor="r5"  id='star1' onClick={() => setScore(1)}>☆</span>
+                    </div>
 
                     <label>Review:
                         <textarea type="text"

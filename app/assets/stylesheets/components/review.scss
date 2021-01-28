@@ -1,4 +1,68 @@
+
+
+.review_instruction {
+    font-size: 17px;
+    margin-top: 30px;
+    margin-bottom: 37px;
+}
+
 .score_radio{
     display: flex;
-    background-color: yellow;
+    // flex-direction: column;
+    // background-color: yellow;
 }
+
+.asterisk_review {
+    font-size: 17px;
+    color: rgb(255, 98, 59);
+    align-content: row;
+
+}
+
+.required_field{
+    margin-bottom: 30px;
+}
+
+
+    // #r1, #r2, #r3, #r4, #r5 {
+    //     display:none;
+    // }
+   
+
+ .star_list {
+     unicode-bidi: bidi-override;
+     direction: ltr;
+     text-align: center;
+     color: gold;
+     display: flex;
+     flex-direction: row-reverse;
+     justify-content: flex-end;
+
+ }
+
+ .star_list>span {
+     display: inline-block;
+     position: relative;
+     width: 1.1em;
+ }
+
+ .star_list>span:hover,
+ .star_list>span:hover~span {
+     color: transparent;
+ }
+
+ .star_list>span:hover:before,
+ .star_list>span:hover~span:before {
+     content: "\2605";
+     position: absolute;
+     left: 0;
+     color: gold;
+ }
+
+ .goldSelectHold:before{
+     content: "\2605";
+     position: absolute;
+     left:0;
+     color: gold;
+
+ }

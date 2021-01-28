@@ -16,13 +16,16 @@ class Product extends React.Component {
             reviewer: '',
             review: '',
             score: null,
-            userId: null,
             productId: null
             // redirect: null,
         }
 
         this.updateSection = this.updateSection.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
+        this.averageReview = this.averageReview.bind(this);
+        this.starAmt = this.starAmt.bind(this);
+        
+        
         
         
     }   
@@ -178,6 +181,67 @@ class Product extends React.Component {
                 </div>
             )
         }
+    }
+
+    averageReview(product){
+        let scoreSum = 0;
+        {product.reviews.map((review, i) => (
+                scoreSum += review.score
+            )
+        )}
+        let avg = scoreSum / product.reviews.length;
+        return (
+            <div className='star_container'>
+                <div className='avgNum'>
+                    {avg.toFixed(1)}
+                </div>
+                <div>
+                    {this.starAmt(avg)}
+                </div>
+            </div>
+        )
+
+    }
+
+    starAmt(score){
+        if( score === 0){
+            return(
+                <div className='star'>
+                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+            )
+        }else if( score >= 1 && score < 2){
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+            )
+        }else if ( score >= 2 && score < 3){
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span className='gold'>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+            )
+        }else if ( score >= 3 && score < 4){
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span>☆</span><span>☆</span>
+                </div>
+            )
+        }else if ( score >= 4 && score < 5){
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span>☆</span>
+                </div>
+            )
+        }else{
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span>
+                </div>
+            )
+        }
+
     }
 
     sendMessage(e){
@@ -340,15 +404,29 @@ class Product extends React.Component {
                         
 
                 </div>
-                <div>
-                    <ReviewContainer product={product}/>
-                </div>
+                <div className='reviewContainer'>
+                    <div className="reviewHeader">
+                        <div>
+                            <h1 className='reviewLength'>{product.reviews.length} Reviews</h1>
+                            <div className='avgReview'>
+                                <div>{this.averageReview(product)}</div>
+                            </div>
+                        </div>
 
-                <div>
-                    {product.reviews.map((review, i) => (
-                            this.updateSection(review, i)
-                        )
-                    )}
+                        <button className="writeReview">Write a Review</button>
+                    </div>
+
+                    
+                    <div>
+                        <ReviewContainer product={product}/>
+                    </div>
+
+                    <div>
+                        {product.reviews.map((review, i) => (
+                                this.updateSection(review, i)
+                            )
+                        )}
+                    </div>
                 </div>
 
             </div>

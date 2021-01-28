@@ -6,12 +6,15 @@ import { updateReview } from '../../actions/review_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+    let currUser = Object.values(state.entities.users).length ? Object.values(state.entities.users)[0].id : {};
     return{
         product: state.entities.products[ownProps.match.params.id],
         productId: ownProps.match.params.id,
         reviews: state.entities.products[ownProps.match.params.id],
 
-        userId: Object.values(state.entities.users)[0].id
+        // userId: Object.values(state.entities.users)[0].id
+        userId: currUser,
+        // userId: state.entities.users
     }
 }
 
