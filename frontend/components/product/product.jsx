@@ -24,6 +24,9 @@ class Product extends React.Component {
         this.sendMessage = this.sendMessage.bind(this);
         this.averageReview = this.averageReview.bind(this);
         this.starAmt = this.starAmt.bind(this);
+        this.openNav = this.openNav.bind(this);
+        this.closeNav = this.closeNav.bind(this);
+        
         
         
         
@@ -165,7 +168,7 @@ class Product extends React.Component {
                             </h2>
                             <ul>
                                 <li>BIFMA level® 3 certified</li>
-                                <li>Rated SMaRT© Sustainable Platinum</li>
+                                <li>Rated SMART© Sustainable Platinum</li>
                                 <li>GREENGUARD and GREENGUARD Gold Certified</li>
                                 <li>Can contribute to U.S. Green Building Council LEED® certification</li>
                             </ul>
@@ -193,7 +196,7 @@ class Product extends React.Component {
         return (
             <div className='star_container'>
                 <div className='avgNum'>
-                    {avg.toFixed(1)}
+                    {avg ? avg.toFixed(1) : <p>No Reviews</p>}
                 </div>
                 <div>
                     {this.starAmt(avg)}
@@ -204,7 +207,7 @@ class Product extends React.Component {
     }
 
     starAmt(score){
-        if( score === 0){
+        if( score === 0 || !score ){
             return(
                 <div className='star'>
                     <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
@@ -322,6 +325,21 @@ class Product extends React.Component {
         }
     }
 
+    openNav() {
+
+        // document.getElementById("mySidenav").style.height = "620px";
+        if (document.getElementById("mySidenav").style.height === '620px' ){
+            document.getElementById("mySidenav").style.height = "0";
+        }else{
+            document.getElementById("mySidenav").style.height = "620px";
+        }
+
+    }
+
+    closeNav() {
+        document.getElementById("mySidenav").style.height = "0";
+    }
+
     render(){
         let product = '';
         let currId = null;
@@ -413,7 +431,8 @@ class Product extends React.Component {
                             </div>
                         </div>
 
-                        <button className="writeReview">Write a Review</button>
+                        <button className="writeReview thecloseBtn" onClick={()=>this.openNav()}>Write a Review</button>
+                        {/* <button className="writeReview thecloseBtn" onClick={()=>this.closeNav()}>Write a Review</button> */}
                     </div>
 
                     
@@ -421,7 +440,7 @@ class Product extends React.Component {
                         <ReviewContainer product={product}/>
                     </div>
 
-                    <div>
+                    <div className='reviews_container'>
                         {product.reviews.map((review, i) => (
                                 this.updateSection(review, i)
                             )

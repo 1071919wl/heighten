@@ -23,8 +23,10 @@ const Review = (props) => {
         props.createReview(reviewObj);
     }
 
+    
+
+    //css star rating
     useEffect(() => {
-        console.log('hi');
         let star1 = document.getElementById('star1');
         let star2 = document.getElementById('star2');
         let star3 = document.getElementById('star3');
@@ -87,7 +89,7 @@ const Review = (props) => {
 
     return(
         <div className="review-container">
-            <div>
+            <div id="mySidenav" className="sidenav">
                 <h1 className='review_instruction'>Write a Review</h1>
                 <form onSubmit={sendMessage}>
                     <p className="required_field"><span className='asterisk_review'>*</span>Indicates a required field</p>
@@ -104,54 +106,34 @@ const Review = (props) => {
                         /> */}
                         <span className='goldSelect' htmlFor="r1" id='star5' onClick={() => setScore(5)}>☆</span>
 
-                        {/* <input type="radio"
-                            id="r2"
-                            name='score'
-                            value={2}
-                            onChange={e => setScore(e.target.value)}
-                        /> */}
                         <span className='goldSelect' htmlFor="r2" id='star4' onClick={() => setScore(4)}>☆</span>
 
-                        {/* <input type="radio"
-                            id="r3"
-                            name='score'
-                            value={3}
-                            onChange={e => setScore(e.target.value)}
-                        /> */}
                         <span className='goldSelect' htmlFor="r3" id='star3' onClick={() => setScore(3)} >☆</span>
 
-                        {/* <input type="radio"
-                            id="r4"
-                            name='score'
-                            value={4}
-                            onChange={e => setScore(e.target.value)}
-                        /> */}
                         <span className='goldSelect' htmlFor="r4" id='star2' onClick={() => setScore(2)}>☆</span>
 
-                        {/* <input type="radio"
-                            id="r5"
-                            name='score'
-                            value={5}
-                            onChange={e => setScore(e.target.value)}
-                        /> */}
                         <span className='goldSelect' htmlFor="r5"  id='star1' onClick={() => setScore(1)}>☆</span>
                     </div>
-
-                    <label>Review:
+                    <div className='review_input_contain'>
+                        <label className='review_title'><span className='asterisk_review'>*</span>Review:</label>
                         <textarea type="text"
                             value={review}
                             onChange={e => setReview(e.target.value)}
+                            className='review_text_area'
                         />
-                    </label>
+                        
+                        <div className='name_and_post'>
+                            <label className='review_name_title'><span className='asterisk_review'>*</span>Use your name:</label>
+                            <input type="text"
+                                value={reviewer}
+                                onChange={e => setReviewer(e.target.value)}
+                                className='name_input_area'
+                            />
+                            
+                            <input type='submit' value='POST' className='postButton'/>
+                        </div>
 
-
-                    <label>Use your name:
-                        <input type="text"
-                            value={reviewer}
-                            onChange={e => setReviewer(e.target.value)}
-                        />
-                    </label>
-                    <input type='submit' value='POST' />
+                    </div>
                 </form>
             </div>
 

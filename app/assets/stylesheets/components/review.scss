@@ -10,17 +10,21 @@
     display: flex;
     // flex-direction: column;
     // background-color: yellow;
+    margin-bottom: 10px;
 }
 
 .asterisk_review {
     font-size: 17px;
     color: rgb(255, 98, 59);
     align-content: row;
+    margin-right: 3px;
 
 }
 
 .required_field{
     margin-bottom: 30px;
+    display:flex; 
+
 }
 
 
@@ -64,5 +68,72 @@
      position: absolute;
      left:0;
      color: gold;
+
+ }
+
+ .review_input_contain{
+     display: flex;
+     flex-direction: column;
+
+     .review_title{
+         margin-top: 20px;
+
+         display:flex;
+     }
+
+     .review_text_area{
+         font-size: 14px;
+         outline: 1px solid lightgray;
+         color:#414141;
+         margin-top: 25px;
+         padding: 12px;
+         height: 80px;
+         max-width: 510px;
+         margin-bottom: 20px;
+     }
+
+     .name_input_area{
+        font-size: 14px;
+        outline: 1px solid lightgray;
+        color: #414141;
+        margin-top: 25px;
+        padding: 12px;
+        // height: 100px;
+
+     }
+
+     .name_and_post{
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-end;
+
+        .review_name_title{
+            display:flex;
+        }
+
+         .review_and_title{
+             display: flex;
+         }
+
+         .postButton{
+            font-size: 16px;
+            color: white;
+            background-color: #0C649E;
+            // outline: 3px solid rgb(255, 220, 61);
+            max-width: 100px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 10px;
+            padding-left: 25px;
+            padding-right: 25px;
+         }
+
+         .postButton:hover {
+             background-color: #0b4e7a;
+            
+         }
+     }
+
 
  }
