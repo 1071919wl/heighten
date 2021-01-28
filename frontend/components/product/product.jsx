@@ -265,6 +265,7 @@ class Product extends React.Component {
 
     updateSection(review, i){
         const deleteReview = this.props.deleteReview;
+        // console.log('need date', review.created_at)
         if( this.state.reviewId !== review.id){
             return(
                 <li key={i} className='review_individual_list'>
