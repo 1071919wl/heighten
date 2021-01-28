@@ -383,6 +383,105 @@
     .reviews_container{
         margin-top: 40px;
         padding-bottom: 30px;
+
+
+        .review_individual_list{
+            // background-color: orange;
+            list-style-type: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .gold:before {
+                content: "\2605";
+                color: gold;
+                position: absolute;
+                font-size: 14px;
+            }
+            .star {
+                color: gold;
+                font-size: 14px;
+            }
+            .review_indiv_name{
+                color: rgba(4, 4, 179, 0.877);
+                font-size: 17px;
+            }
+
+            .review_indiv_score{
+                margin-bottom: 30px;
+            }
+
+            .review_indiv_review{
+                padding-bottom: 40px;
+                border-bottom: 1px solid lightgray;
+            }
+
+            .review-update-delete{
+                display: flex;
+                justify-content: space-between;
+
+                .indv_update{
+                    margin-right: 5px;
+                }
+
+                .indv_delete{
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    .update_Form{
+        display:flex;
+        flex-direction: column;
+
+        .update_text_area{
+            // background-color: yellow;
+            font-size: 14px;
+            outline: 1px solid lightgray;
+            color:#414141;
+            margin-top: 25px;
+            padding: 12px;
+            height: 50px;
+            max-width: 510px;
+            margin-bottom: 20px;
+        }
+
+        .score_update{
+            max-width: 100px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .name_update_area{
+            font-size: 14px;
+            outline: 1px solid lightgray;
+            color: #414141;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 12px;
+        }
+
+        .saveButtonUpdate {
+            font-size: 16px;
+            color: #0C649E;
+            // background-color: #0C649E;
+            // outline: 3px solid rgb(255, 220, 61);
+            max-width: 100px;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 3px;
+            padding-right: 5px;
+            // padding-left: 25px;
+            // padding-right: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .saveButtonUpdate:hover {
+            // background-color: #0b4e7a;
+            cursor: pointer;
+
+        }
+        
     }
     
 }

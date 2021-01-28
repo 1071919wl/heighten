@@ -267,60 +267,65 @@ class Product extends React.Component {
         const deleteReview = this.props.deleteReview;
         if( this.state.reviewId !== review.id){
             return(
-                <li key={i}>
-                    {review.reviewer}
-                    {review.score}
-                    {review.review}
-                    <input type='submit' onClick={() => deleteReview(review.id)} value='Delete'/>
-                    <input type='submit' onClick={() => this.setState({reviewId: review.id, review: review.review, reviewer: review.reviewer})} value='Update'/>
+                <li key={i} className='review_individual_list'>
+                    <div className='review-update-delete'>
+                        <div className='review_indiv_name'>
+                            {review.reviewer}
+                        </div>
+                        <div>
+                            {review.user_id === this.props.userId ?
+                            <div>
+                                <input type='submit' className='indv_update' onClick={() => this.setState({reviewId: review.id, review: review.review, reviewer: review.reviewer, score: review.score})} value='Update'/>
+                                <input type='submit' className='indv_delete' onClick={() => deleteReview(review.id)} value='Delete'/>
+                            </div>
+                            :
+                            null
+                            }
+                        </div>
+                    </div>
+
+                    <div className='review_indiv_score' >
+                        {this.starAmt( review.score ) }
+                    </div>
+                    <div className='review_indiv_review' >
+                        {review.review}
+                    </div>
+                    
                 </li>   
             )
         }else{
             return(
-                <form onSubmit={this.sendMessage} key={i}>
-                    <label className="score_radio">Score:
-                        <input type="radio"
-                            name='score'
-                            value={1}
-                            onChange={this.handleInput('score')}
-                        />
-                        <input type="radio"
-                            name='score'
-                            value={2}
-                            onChange={this.handleInput('score')}
-                        />
-                        <input type="radio"
-                            name='score'
-                            value={3}
-                            onChange={this.handleInput('score')}
-                        />
-                        <input type="radio"
-                            name='score'
-                            value={4}
-                            onChange={this.handleInput('score')}
-                        />
-                        <input type="radio"
-                            name='score'
-                            value={5}
-                            onChange={this.handleInput('score')}
-                        />
-                    </label>
+                <div key={i}>
+                    <form onSubmit={this.sendMessage} key={i} className='update_Form' key={i}>
+                        <label>Score:</label>
+                        <select onChange={this.handleInput('score')} className='score_update'>
+                            <option value={this.state.score} >Score</option>
+                            <option value={1} >1 Star</option>
+                            <option value={2} >2 Star</option>
+                            <option value={3} >3 Star</option>
+                            <option value={4} >4 Star</option>
+                            <option value={5} >5 Star</option>
+                        </select>
 
-                    <label>Review:
+
+                        <label>Review:</label>
                         <textarea type="text"
                             value={this.state.review}
                             onChange={this.handleInput('review')}
+                            className='update_text_area'
                         />
-                    </label>
+                        
 
-                    <label>Use your name:
+                        <label>Use your name:</label>
                         <input type="text"
                             value={this.state.reviewer}
                             onChange={this.handleInput('reviewer')}
+                            className='name_update_area'
                         />
-                    </label>
-                    <input type='submit' value='Save Changes' />
-                </form>
+                        
+                        <input type='submit' value='Save Changes' className="saveButtonUpdate"/>
+                    </form>
+                </div>
             )
         }
     }
@@ -432,7 +437,6 @@ class Product extends React.Component {
                         </div>
 
                         <button className="writeReview thecloseBtn" onClick={()=>this.openNav()}>Write a Review</button>
-                        {/* <button className="writeReview thecloseBtn" onClick={()=>this.closeNav()}>Write a Review</button> */}
                     </div>
 
                     
