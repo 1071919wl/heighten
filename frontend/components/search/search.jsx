@@ -12,18 +12,37 @@ class Search extends React.Component {
 
         this.handleInput = this.handleInput.bind(this);
         this.searchcloseNav = this.searchcloseNav.bind(this);
+
+
+        this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 
 
     componentDidMount() {
         this.props.fetchProducts()
+
+        document.addEventListener('mousedown', this.handleClickOutside);
     }
 
-    // componentWillUnmount() {
-    //     this.setState({
-    //         inputVal: ''
-    //     })
-    // }
+    handleClickOutside(e) {
+        let input = document.getElementById('input');
+        if(e.target && !e.target.matches("li.searchList") && e.target !== input){
+            this.setState({
+                inputVal: ''
+            })
+            this.searchcloseNav()
+        }
+
+    }
+
+    componentWillUnmount() {
+        // this.setState({
+        //     inputVal: ''
+        // })
+        // this.searchcloseNav()
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
 
 
 
@@ -59,14 +78,8 @@ class Search extends React.Component {
     }
 
     searchcloseNav() {
-
-        // document.getElementById("mySearchnav").style.height = "620px";
-        // if (document.getElementById("mySearchnav").style.height === '100px' ){
-            document.getElementById("mySearchnav").style.height = "0";
-            document.getElementById('theSearchContent').style.zIndex = '-1';
-        // }else{
-        //     document.getElementById("mySearchnav").style.height = "100px";
-        // }
+        document.getElementById("mySearchnav").style.height = "0";
+        document.getElementById('theSearchContent').style.zIndex = '-1';
 
     }
 
