@@ -102,9 +102,10 @@ const Review = (props) => {
 
 
     function renderErrors(){
+        console.log('test'. props?.errors)
         return(
             <ul>
-                {props.errors.map((error, i) =>(
+                {props?.errors.map((error, i) =>(
                     <li key={`error-${i}`}>
                         {error}
                     </li>
