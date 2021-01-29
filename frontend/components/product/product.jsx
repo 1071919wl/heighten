@@ -44,7 +44,7 @@ class Product extends React.Component {
             this.props.fetchProduct(this.props.productId);
         }
         if( this.state.create){
-            console.log('hi')
+
             this.props.fetchProduct(this.props.productId);
             this.setState({reviewId: 0})
             this.setState({create: false})

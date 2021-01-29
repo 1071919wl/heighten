@@ -102,7 +102,7 @@ const Review = (props) => {
 
 
     function renderErrors(){
-        console.log('test'. props?.errors)
+
         return(
             <ul>
                 {props?.errors.map((error, i) =>(
