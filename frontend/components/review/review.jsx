@@ -29,6 +29,11 @@ const Review = (props) => {
     useEffect(() => {
         props.removeErrors();
         document.getElementById("mySidenav").style.height = "0";
+        props.products()
+        setReviewer('');
+        setReview('');
+        setScore(0);
+        setWork(false);
     }, [work])
 
     useEffect(() => {
