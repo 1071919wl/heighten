@@ -16,8 +16,8 @@ class Product extends React.Component {
             reviewer: '',
             review: '',
             score: null,
-            productId: null
-            // redirect: null,
+            productId: null,
+            create: false,
         }
 
         this.updateSection = this.updateSection.bind(this);
@@ -26,9 +26,8 @@ class Product extends React.Component {
         this.starAmt = this.starAmt.bind(this);
         this.openNav = this.openNav.bind(this);
         this.closeNav = this.closeNav.bind(this);
-        
-        
-        
+        this.deleteReview = this.deleteReview.bind(this);
+
         
         
     }   
@@ -36,19 +35,27 @@ class Product extends React.Component {
 
     componentDidMount(){
         this.props.fetchProduct(this.props.productId);
+        
     }
-
-
-
 
 
     componentDidUpdate(prevProps) {
         if (prevProps.productId !== this.props.productId) {
             this.props.fetchProduct(this.props.productId);
         }
+        if( this.state.create){
+            console.log('hi')
+            this.props.fetchProduct(this.props.productId);
+            this.setState({reviewId: 0})
+            this.setState({create: false})
+        }
+        
+
     }
 
-
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
 
 
     handleInput(field){
@@ -258,13 +265,20 @@ class Product extends React.Component {
             review: this.state.review
         };
 
-        this.props.updateReview(reviewObj);
-        this.setState({reviewId: 0})
+        this.props.updateReview(reviewObj).then(res => {
+            this.setState({create: true})
+        })
+        
+    }
+
+    deleteReview(id){
+        this.props.deleteReview(id);
+        this.setState({create: true})
     }
 
 
     updateSection(review, i){
-        const deleteReview = this.props.deleteReview;
+        // const deleteReview = this.props.deleteReview;
         // console.log('need date', review.created_at)
         if( this.state.reviewId !== review.id){
             return(
@@ -276,8 +290,8 @@ class Product extends React.Component {
                         <div>
                             {review.user_id === this.props.userId ?
                             <div>
-                                <input type='submit' className='indv_update' onClick={() => this.setState({reviewId: review.id, review: review.review, reviewer: review.reviewer, score: review.score})} value='Update'/>
-                                <input type='submit' className='indv_delete' onClick={() => deleteReview(review.id)} value='Delete'/>
+                                <input type='submit' className='indv_update' onClick={() => this.setState({reviewId: review.id, review: review.review, reviewer: review.reviewer, score: review.score})} value='Edit'/>
+                                <input type='submit' className='indv_delete' onClick={() => this.deleteReview(review.id)} value='Delete'/>
                             </div>
                             :
                             null
@@ -323,9 +337,18 @@ class Product extends React.Component {
                             onChange={this.handleInput('reviewer')}
                             className='name_update_area'
                         />
-                        
-                        <input type='submit' value='Save Changes' className="saveButtonUpdate"/>
+                        <div className='edit_button_options'>
+                            <div>
+                                <input type='submit' value='Save Changes' className="saveButtonUpdate"/>
+                            </div>
+                            <div>
+                                <button className="cancelButtonUpdate" onClick={() => this.setState({reviewId: 0})}>Cancel</button>
+                            </div>
+                        </div>
                     </form>
+                    <div className='review_error_message'>
+                        {this.renderErrors()}
+                    </div>
                 </div>
             )
         }
@@ -346,15 +369,27 @@ class Product extends React.Component {
         document.getElementById("mySidenav").style.height = "0";
     }
 
+
+    renderErrors(){
+        return(
+            <ul>
+                {this.props.reviewErrors.map((error, i) =>(
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
+
     render(){
         let product = '';
         let currId = null;
-        const deleteReview = this.props.deleteReview;
 
         this.props.product ? product = this.props.product : product = null
         this.props.product ? currId = this.props.product.type_id : currId = null
 
-        
 
         return (
             product === null ? <div></div> :

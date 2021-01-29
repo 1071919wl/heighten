@@ -13,6 +13,10 @@ class Category extends React.Component {
 
         }
         this.handleSelect = this.handleSelect.bind(this);
+        this.averageReview = this.averageReview.bind(this);
+        this.starAmt = this.starAmt.bind(this);
+
+        
     }
 
     componentDidMount() {
@@ -132,6 +136,75 @@ class Category extends React.Component {
         return objs;
     }
 
+
+
+
+
+    averageReview(product){
+        let scoreSum = 0;
+        {product.reviews.map((review, i) => (
+                scoreSum += review.score
+            )
+        )}
+        let avg = scoreSum / product.reviews.length;
+        return (
+            <div className='star_container'>
+                {/* <div className='avgNum'>
+                    {avg ? avg.toFixed(1) : <p>No Reviews</p>}
+                </div> */}
+                <div>
+                    {this.starAmt(avg)}
+                </div>
+            </div>
+        )
+
+    }
+
+
+
+    starAmt(score){
+        if( score === 0 || !score ){
+            return(
+                <div className='star'>
+                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+            )
+        }else if( score >= 1 && score < 2){
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+            )
+        }else if ( score >= 2 && score < 3){
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span className='gold'>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+            )
+        }else if ( score >= 3 && score < 4){
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span>☆</span><span>☆</span>
+                </div>
+            )
+        }else if ( score >= 4 && score < 5){
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span>☆</span>
+                </div>
+            )
+        }else{
+            return(
+                <div className='star'>
+                    <span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span><span className='gold'>☆</span>
+                </div>
+            )
+        }
+
+    }
+
+
+
     render(){
         let category = '';
         this.props.category ? category = this.props.category : category = null
@@ -172,6 +245,10 @@ class Category extends React.Component {
                                     </Link>
                                     <Link to={`/products/${product.id}`}>
                                         <h1 className='idxProductTitle'>{product.name}</h1>
+                                        <div className='cat_review_sec'>
+                                            <div>{this.averageReview(product)}</div>
+                                            <div>({product.reviews.length})</div>
+                                        </div>
                                         <div className='starts_at_idx'>
                                             <span className='starts_at'>Starts at </span>    
                                             <div className='dollar_amt'>${product.price}.00</div>

@@ -3,6 +3,8 @@ import Product from './product';
 import { fetchProduct } from '../../actions/product_actions';
 import { deleteReview } from '../../actions/review_actions';
 import { updateReview } from '../../actions/review_actions';
+import { removeErrors } from '../../actions/review_actions';
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,9 +14,12 @@ const mapStateToProps = (state, ownProps) => {
         productId: ownProps.match.params.id,
         reviews: state.entities.products[ownProps.match.params.id],
 
-        // userId: Object.values(state.entities.users)[0].id
+        //arr of review
+        review: state.entities.products[ownProps.match.params.id]?.reviews,
+
+        reviewErrors: state.errors.review,
         userId: currUser,
-        // userId: state.entities.users
+
     }
 }
 
@@ -22,7 +27,10 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchProduct: (productId) => dispatch(fetchProduct(productId)),
         deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
-        updateReview: (review) => dispatch(updateReview(review))
+        updateReview: (review) => dispatch(updateReview(review)),
+        removeErrors: () => dispatch(removeErrors()),
+
+
     }
 }
 

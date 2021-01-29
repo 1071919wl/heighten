@@ -11,18 +11,38 @@ class Search extends React.Component {
         };
 
         this.handleInput = this.handleInput.bind(this);
+        this.searchcloseNav = this.searchcloseNav.bind(this);
+
+
+        this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 
 
     componentDidMount() {
         this.props.fetchProducts()
+
+        document.addEventListener('mousedown', this.handleClickOutside);
     }
 
-    // componentWillUnmount() {
-    //     this.setState({
-    //         inputVal: ''
-    //     })
-    // }
+    handleClickOutside(e) {
+        let input = document.getElementById('input');
+        if(e.target && !e.target.matches("li.searchList") && e.target !== input){
+            this.setState({
+                inputVal: ''
+            })
+            this.searchcloseNav()
+        }
+
+    }
+
+    componentWillUnmount() {
+        // this.setState({
+        //     inputVal: ''
+        // })
+        // this.searchcloseNav()
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
 
 
 
@@ -57,6 +77,14 @@ class Search extends React.Component {
 
     }
 
+    searchcloseNav() {
+        document.getElementById("mySearchnav").style.height = "0";
+        document.getElementById('theSearchContent').style.zIndex = '-1';
+
+    }
+
+
+
     render() {
         let results = this.matches().map((result, i) => {
             if(result === 'No match'){
@@ -74,13 +102,16 @@ class Search extends React.Component {
         
         return (
             <div>
-                <div className='divWrapInput'>
-                    <input type='text' onChange={this.handleInput('inputVal')} 
-                        placeholder='Search for products...' 
-                        value={this.state.inputVal} 
-                        className='searchInput'
-                        id='input'
-                    />
+                <div className='divWrapInput' id='mySearchnav'>
+                    <div className='searchAndClose'>
+                        <input type='text' onChange={this.handleInput('inputVal')} 
+                            placeholder='Search for products...' 
+                            value={this.state.inputVal} 
+                            className='searchInput'
+                            id='input'
+                        />
+                        <button className="searchclosebtn" onClick={()=>this.searchcloseNav()} >&times;</button>
+                    </div>
                     <ul id='list'>
                         {results}
                     </ul>

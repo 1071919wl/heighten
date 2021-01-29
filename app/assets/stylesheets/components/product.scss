@@ -319,6 +319,7 @@
     margin-right: 125px;
     // justify-content: center;
     padding-left: 30px;
+    padding-bottom: 50px;
     background-color: #EEF7FC;
     width: 580px;
 
@@ -420,11 +421,12 @@
                 justify-content: space-between;
 
                 .indv_update{
-                    margin-right: 5px;
+                    margin-right: 10px;
                 }
 
                 .indv_delete{
-                    margin-right: 15px;
+                    margin-right: 35px;
+                    // color: red;
                 }
             }
         }
@@ -460,26 +462,38 @@
             padding: 12px;
         }
 
-        .saveButtonUpdate {
-            font-size: 16px;
-            color: #0C649E;
-            // background-color: #0C649E;
-            // outline: 3px solid rgb(255, 220, 61);
-            max-width: 100px;
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 3px;
-            padding-right: 5px;
-            // padding-left: 25px;
-            // padding-right: 25px;
+        .edit_button_options {
             display: flex;
-            align-items: center;
-        }
+            // align-items: center;
 
-        .saveButtonUpdate:hover {
-            // background-color: #0b4e7a;
-            cursor: pointer;
+            .saveButtonUpdate {
+                font-size: 16px;
+                color: #0C649E;
+                // background-color: #0C649E;
+                // outline: 3px solid rgb(255, 220, 61);
+                max-width: 100px;
+                text-align: center;
+                margin-bottom: 30px;
+                padding: 3px;
+                padding-right: 5px;
+                // padding-left: 25px;
+                // padding-right: 25px;
+                display: flex;
+                align-items: center;
+            }
 
+            .saveButtonUpdate:hover {
+                // background-color: #0b4e7a;
+                cursor: pointer;
+
+            }
+
+        
+            .cancelButtonUpdate{
+                font-size: 14px;
+                margin-left: 40px;
+                margin-top: 5px;
+            }
         }
         
     }

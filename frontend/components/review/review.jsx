@@ -7,7 +7,7 @@ const Review = (props) => {
     const [reviewer, setReviewer] = useState("");
     const [review, setReview] = useState("");
     const [score, setScore] = useState();
-
+    const [work, setWork] = useState(false);
 
     function sendMessage(e){
         e.preventDefault();
@@ -20,10 +20,25 @@ const Review = (props) => {
             review: review
         };
 
-        props.createReview(reviewObj);
+        props.createReview(reviewObj).then(res =>{
+            setWork(true);
+        })
+        
     }
 
-    
+    useEffect(() => {
+        props.removeErrors();
+        document.getElementById("mySidenav").style.height = "0";
+        props.products()
+        setReviewer('');
+        setReview('');
+        setScore(0);
+        setWork(false);
+    }, [work])
+
+    useEffect(() => {
+        props.removeErrors();
+    }, [])
 
     //css star rating
     useEffect(() => {
@@ -86,6 +101,18 @@ const Review = (props) => {
     }, [score])
 
 
+    function renderErrors(){
+        console.log('test'. props?.errors)
+        return(
+            <ul>
+                {props?.errors.map((error, i) =>(
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
     return(
         <div className="review-container">
@@ -133,6 +160,9 @@ const Review = (props) => {
                             <input type='submit' value='POST' className='postButton'/>
                         </div>
 
+                    </div>
+                    <div className='review_error_message'>
+                            {renderErrors()}
                     </div>
                 </form>
             </div>
