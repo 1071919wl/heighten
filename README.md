@@ -17,6 +17,10 @@ Hi there! Thanks for visiting :]
 
 ![image](https://github.com/1071919wl/heighten_fullstack/blob/master/app/assets/images/cart_readme.png)
 
+* Users loggedin can write, edit and delete reviews for each product.
+
+![image](https://github.com/1071919wl/heighten_fullstack/blob/master/app/assets/images/review_readme.png)
+
 
 ### Backend Technologies
 
@@ -36,7 +40,6 @@ Hi there! Thanks for visiting :]
 ### Roadmap
 
 * User account page
-* Customer reviews
 * Additional features of each product:
   * images
   * videos
