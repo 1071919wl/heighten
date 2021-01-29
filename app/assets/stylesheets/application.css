@@ -194,7 +194,7 @@
 
 /* -------------begin-----------------search */
 
-.actualSearchImg{
+/* .actualSearchImg{
     height: auto;
     width: 30px;
 }
@@ -231,14 +231,13 @@
     left:0;
     margin-top: 30px;
     margin-bottom: 50px;
-    /* justify-content: center; */
+
 
 }
 
 .searchInput{
     font-family: sans-serif;
     color: #6e6c63;
-    /* width: 100%; */
     font-size: 20px;
     padding-right: 425px;
     margin-left: 40px;
@@ -255,12 +254,17 @@
 
     display:flex;
     width: 100%;
-    /* background-color: yellow; */
+
 }
 
 .searchList:hover {
     background-color: rgb(155, 155, 155);
-}
+} */
+
+
+/*! up top is good. */
+
+
 /* ------------------------------search */
 
 .header-group{
@@ -823,4 +827,136 @@ footer{
     .sidenav {
         padding-top: 5px;
     }
+}
+
+
+
+
+
+/*! search toggle */
+.divWrapInput {
+    height: 0;
+    width: 500;
+    z-index: 1;
+    overflow-x: hidden;
+    /* padding-top: 50px; */
+    /* padding-bottom: 50px; */
+
+    
+    /* background-color: yellow; */
+
+}
+
+.divWrapInput .searchInput .searchclosebtn{
+    /* display: block; */
+    /* transition: 0.1s; */
+}
+
+.searchAndClose{
+    display:flex;
+}
+
+.searchclosebtn {
+    top: 0;
+    /* right: 25px; */
+    margin-left: 10px;
+    font-size: 50px;
+    margin-right: 240px;
+    /* background-color: lightcoral; */
+}
+
+@media screen and (max-height: 450px) {
+    .divWrapInput {
+        padding-top: 5px;
+    }
+}
+
+
+
+
+.actualSearchImg {
+    height: auto;
+    width: 30px;
+}
+
+.actualSearchImg:hover {
+    cursor: pointer;
+}
+
+.hoverPadding {
+    padding-bottom: 10px;
+}
+
+
+.hoverPadding:hover .darn_search_content {
+    /* display: block; */
+}
+
+.darn_search_content {
+    /* display: none; */
+    position: absolute;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    /* z-index: -1; */
+    margin-top: -60px;
+    border-top: 1px solid rgb(240, 240, 240);
+    border-bottom: 1px solid #F7F7F6;
+
+    padding-top:20px;
+    padding-bottom:23px;
+
+
+    /* background-color: lightgray; */
+}
+
+#theSearchContent{
+    z-index: -1;
+}
+
+
+.forFlex_search {
+    /* display: flex;
+    width: 100%;
+    left: 0;
+    position: absolute; 
+    z-index: -1;
+
+
+    background-color: green; */
+}
+
+.searchInput {
+    font-family: sans-serif;
+    color: #6e6c63;
+    font-size: 25px;
+    /* padding-right: 425px; */
+    margin-left: 240px;
+    width: 100%;
+
+
+    /* background-color: brown; */
+
+}
+
+.searchList {
+    margin-left: 50px;
+    font-family: sans-serif;
+    color: lightgray;
+    margin-bottom: 5px;
+    font-size: 18px;
+    display: flex;
+    /* width: 100%; */
+
+    /* position: fixed; */
+    /* z-index: 10; */
+    margin-left: 240px;
+    margin-right: 240px;
+    /* background-color: blue; */
+
+}
+
+.searchList:hover {
+    color:white;
+    background-color: rgb(155, 155, 155);
 }

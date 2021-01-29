@@ -20,8 +20,15 @@ class App extends React.Component {
     constructor(props){
         super(props);
 
+
+        this.searchopenNav = this.searchopenNav.bind(this);
     }
 
+
+    searchopenNav() {
+        document.getElementById("mySearchnav").style.height = "auto";
+        document.getElementById('theSearchContent').style.zIndex = '1';
+    }
 
     render(){
         return (
@@ -185,8 +192,8 @@ class App extends React.Component {
 
 
                 <div className='hoverPadding'>
-                    <div className='darn_search_btn'> <img src={window.searchURL} className='actualSearchImg'/>
-                        <div className="darn_search_content">
+                    <div className='darn_search_btn'> <img src={window.searchURL} className='actualSearchImg' onClick={()=>this.searchopenNav()}/>
+                        <div className="darn_search_content" id='theSearchContent'>
                             <div className='forFlex_search'>
                                 <div>
                                     <SearchContainer />

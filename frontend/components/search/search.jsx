@@ -11,6 +11,7 @@ class Search extends React.Component {
         };
 
         this.handleInput = this.handleInput.bind(this);
+        this.searchcloseNav = this.searchcloseNav.bind(this);
     }
 
 
@@ -57,6 +58,20 @@ class Search extends React.Component {
 
     }
 
+    searchcloseNav() {
+
+        // document.getElementById("mySearchnav").style.height = "620px";
+        // if (document.getElementById("mySearchnav").style.height === '100px' ){
+            document.getElementById("mySearchnav").style.height = "0";
+            document.getElementById('theSearchContent').style.zIndex = '-1';
+        // }else{
+        //     document.getElementById("mySearchnav").style.height = "100px";
+        // }
+
+    }
+
+
+
     render() {
         let results = this.matches().map((result, i) => {
             if(result === 'No match'){
@@ -74,13 +89,16 @@ class Search extends React.Component {
         
         return (
             <div>
-                <div className='divWrapInput'>
-                    <input type='text' onChange={this.handleInput('inputVal')} 
-                        placeholder='Search for products...' 
-                        value={this.state.inputVal} 
-                        className='searchInput'
-                        id='input'
-                    />
+                <div className='divWrapInput' id='mySearchnav'>
+                    <div className='searchAndClose'>
+                        <input type='text' onChange={this.handleInput('inputVal')} 
+                            placeholder='Search for products...' 
+                            value={this.state.inputVal} 
+                            className='searchInput'
+                            id='input'
+                        />
+                        <button className="searchclosebtn" onClick={()=>this.searchcloseNav()} >&times;</button>
+                    </div>
                     <ul id='list'>
                         {results}
                     </ul>
