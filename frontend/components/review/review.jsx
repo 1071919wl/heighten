@@ -23,7 +23,9 @@ const Review = (props) => {
         props.createReview(reviewObj);
     }
 
-    
+    useEffect(() => {
+        props.removeErrors();
+    }, [])
 
     //css star rating
     useEffect(() => {
@@ -86,6 +88,17 @@ const Review = (props) => {
     }, [score])
 
 
+    function renderErrors(){
+        return(
+            <ul>
+                {props.errors.map((error, i) =>(
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
     return(
         <div className="review-container">
@@ -133,6 +146,9 @@ const Review = (props) => {
                             <input type='submit' value='POST' className='postButton'/>
                         </div>
 
+                    </div>
+                    <div className='review_error_message'>
+                            {renderErrors()}
                     </div>
                 </form>
             </div>
