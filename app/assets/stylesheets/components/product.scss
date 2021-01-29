@@ -152,6 +152,31 @@
                 margin-left: 10px;
                 color: #414141;
             }
+
+
+
+
+            .pro_review_sec{
+                display:flex;
+                align-items: center;
+                // justify-content: center;
+                margin-top: 7px;
+            }
+            .pro_review_sec div{
+                margin-right: 1px;
+            }
+
+            .star {
+                color: gold;
+
+                .gold:before {
+                    content: "\2605";
+                    color: gold;
+                    position: absolute
+                }
+            }
+            
+
         }
     
     }

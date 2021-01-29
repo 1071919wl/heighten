@@ -210,8 +210,24 @@ class Product extends React.Component {
                 </div>
             </div>
         )
-
     }
+
+    averageReview2(product){
+        let scoreSum = 0;
+        {product.reviews.map((review, i) => (
+                scoreSum += review.score
+            )
+        )}
+        let avg = scoreSum / product.reviews.length;
+        return (
+            <div className='star_container'>
+                <div>
+                    {this.starAmt(avg)}
+                </div>
+            </div>
+        )
+    }
+
 
     starAmt(score){
         if( score === 0 || !score ){
@@ -397,14 +413,14 @@ class Product extends React.Component {
                 {/* {currId === null ? this.setState({ redirect: '/Error404PageNotFound'}) : null} */}
                 <div className='product_directory'>
                     <Link to='/'>
-                        <span>home</span>
+                        <span>Home</span>
                     </Link>
                         <div>/</div>
-                    <Link to={`/categories/${currId}`}>
+                    {/* <Link to={`/categories/${currId}`}> */}
                         {/* <span>{product.category[0].toUpperCase()+product.category.slice(1)}</span> */}
-                            <span>{product.category}</span>
-                    </Link>
-                    <div>/</div>
+                            {/* <span>{product.category}</span> */}
+                    {/* </Link> */}
+                    {/* <div>/</div> */}
                     <span className='productName'>{product.name}</span>
                     
                 </div>
@@ -420,6 +436,12 @@ class Product extends React.Component {
                                 <span className='starts_at'>Starts at </span>    
                                 ${product.price}.00
                             </div> 
+
+                            <div className='pro_review_sec'>
+                                <div>{this.averageReview2(product)}</div>
+                                <div>({product.reviews.length})</div>
+                            </div>
+
                             <div className='product_description'>{product.description}</div>
 
 
