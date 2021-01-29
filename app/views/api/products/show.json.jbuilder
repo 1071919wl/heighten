@@ -10,6 +10,6 @@ json.reviews @product.reviews do |review|
     json.score review.score
     json.user_id review.user_id
     json.review review.review
-    json.product_id review.product_id
+json.product_id review.product_id
 
 end

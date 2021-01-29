@@ -16,8 +16,8 @@ class Product extends React.Component {
             reviewer: '',
             review: '',
             score: null,
-            productId: null
-            // redirect: null,
+            productId: null,
+            create: false,
         }
 
         this.updateSection = this.updateSection.bind(this);
@@ -26,6 +26,8 @@ class Product extends React.Component {
         this.starAmt = this.starAmt.bind(this);
         this.openNav = this.openNav.bind(this);
         this.closeNav = this.closeNav.bind(this);
+        this.deleteReview = this.deleteReview.bind(this);
+
         
         
     }   
@@ -33,6 +35,7 @@ class Product extends React.Component {
 
     componentDidMount(){
         this.props.fetchProduct(this.props.productId);
+        
     }
 
 
@@ -40,6 +43,14 @@ class Product extends React.Component {
         if (prevProps.productId !== this.props.productId) {
             this.props.fetchProduct(this.props.productId);
         }
+        if( this.state.create){
+            console.log('hi')
+            this.props.fetchProduct(this.props.productId);
+            this.setState({reviewId: 0})
+            this.setState({create: false})
+        }
+        
+
     }
 
     componentWillUnmount() {
@@ -254,16 +265,20 @@ class Product extends React.Component {
             review: this.state.review
         };
 
-        this.props.updateReview(reviewObj)
+        this.props.updateReview(reviewObj).then(res => {
+            this.setState({create: true})
+        })
+        
+    }
 
-        // if(this.props.errors.length === 0){
-        //     this.setState({reviewId: 0})
-        // }
+    deleteReview(id){
+        this.props.deleteReview(id);
+        this.setState({create: true})
     }
 
 
     updateSection(review, i){
-        const deleteReview = this.props.deleteReview;
+        // const deleteReview = this.props.deleteReview;
         // console.log('need date', review.created_at)
         if( this.state.reviewId !== review.id){
             return(
@@ -276,7 +291,7 @@ class Product extends React.Component {
                             {review.user_id === this.props.userId ?
                             <div>
                                 <input type='submit' className='indv_update' onClick={() => this.setState({reviewId: review.id, review: review.review, reviewer: review.reviewer, score: review.score})} value='Edit'/>
-                                <input type='submit' className='indv_delete' onClick={() => deleteReview(review.id)} value='Delete'/>
+                                <input type='submit' className='indv_delete' onClick={() => this.deleteReview(review.id)} value='Delete'/>
                             </div>
                             :
                             null
@@ -371,12 +386,10 @@ class Product extends React.Component {
     render(){
         let product = '';
         let currId = null;
-        const deleteReview = this.props.deleteReview;
 
         this.props.product ? product = this.props.product : product = null
         this.props.product ? currId = this.props.product.type_id : currId = null
 
-        
 
         return (
             product === null ? <div></div> :

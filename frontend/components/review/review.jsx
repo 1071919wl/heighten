@@ -7,7 +7,7 @@ const Review = (props) => {
     const [reviewer, setReviewer] = useState("");
     const [review, setReview] = useState("");
     const [score, setScore] = useState();
-
+    const [work, setWork] = useState(false);
 
     function sendMessage(e){
         e.preventDefault();
@@ -20,8 +20,16 @@ const Review = (props) => {
             review: review
         };
 
-        props.createReview(reviewObj);
+        props.createReview(reviewObj).then(res =>{
+            setWork(true);
+        })
+        
     }
+
+    useEffect(() => {
+        props.removeErrors();
+        document.getElementById("mySidenav").style.height = "0";
+    }, [work])
 
     useEffect(() => {
         props.removeErrors();
